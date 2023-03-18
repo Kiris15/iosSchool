@@ -11,15 +11,14 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    var generator: ColorGeneratorProtocol
+    generator = ColorGenerator(alpha: 1)
     
+    let red = generator.color.red
+    generator.color = Color(red: 0, green: 0, blue: 0, alpha: .bright)
     
-    var newGen = ColorGenerator(alpha: 1)
-    newGen.alpha = 0.5
-    var color = Color(red: 1, green: 1, blue: 1, alpha: .bright)
-    color.description()
-    
+
   }
 
-
 }
-
