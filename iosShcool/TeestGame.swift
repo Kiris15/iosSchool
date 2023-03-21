@@ -7,8 +7,6 @@
 
 import Foundation
 
-import UIKit
-
 class Player {
 
   var attack: Int
@@ -33,52 +31,32 @@ class Player {
     }
   }
 
- private func modifiedAttack(protect: Int) -> Int {
-
+  private func modifiedAttack(protect: Int) -> Int {
     let attackMod = self.attack - protect + 1
     if attackMod > 0 {
       return attackMod
     } else {
       return 1
     }
-
   }
 
   func attackPower(protect: Int) -> Int {
-
     let countOfTries = modifiedAttack(protect: protect)
     var throwingResult = [Int()]
-
     for _ in 1...countOfTries {
-
-      var cube = Int.random(in: 1..<7)
+      let cube = Int.random(in: 1..<7)
       throwingResult.append(cube)
     }
-
     if throwingResult.contains(5) || throwingResult.contains(6) {
       return self.damage.randomElement() ?? 0
-
     } else {
       return 0
     }
-
   }
 
   func healing() {
     if healthPoision > 0 {
-
-      var healhCount: Int
-
-      switch difficulty {
-      case .easy:
-        healhCount = 10
-      case .middle:
-        healhCount = 25
-      case .hard:
-        healhCount = 50
-      }
-
-      self.health +=  maxHealth / (100 / healhCount)
+      self.health +=  maxHealth / (100 / difficulty.rawValue)
       self.healthPoision -= 1
       if health > maxHealth {
         health = maxHealth
@@ -89,10 +67,10 @@ class Player {
   }
 }
 
-enum Difficulty {
-  case easy
-  case middle
-  case hard
+enum Difficulty: Int {
+  case easy = 10
+  case middle = 25
+  case hard = 50
 }
 
 struct Monster {
@@ -114,34 +92,26 @@ struct Monster {
   }
 
  private func modifiedAttack(protect: Int) -> Int {
-
     let attackMod = self.attack - protect + 1
     if attackMod > 0 {
       return attackMod
     } else {
       return 1
     }
-
   }
 
   func attackPower(protect: Int) -> Int {
-
     let countOfTries = modifiedAttack(protect: protect)
     var throwingResult = [Int()]
-
     for _ in 1...countOfTries {
-
-      var cube = Int.random(in: 1..<7)
+      let cube = Int.random(in: 1..<7)
       throwingResult.append(cube)
     }
-
     if throwingResult.contains(5) || throwingResult.contains(6) {
       return self.damage.randomElement() ?? 0
-
     } else {
       return 0
     }
-
   }
 }
 
@@ -154,30 +124,50 @@ class MonsterWrapper {
 }
 
 class Factory {
-  func makePlayer(attack: Int, defence: Int, diapazoneMin: Int, diapazoneMax: Int, difficulty: Difficulty) -> Player? {
-    let isDataCorrect = checkData(attack: attack,
-                                  defence: defence,
-                                  diapazoneMin: diapazoneMin,
-                                  diapazoneMax: diapazoneMax)
+
+  func makePlayer(
+    attack: Int,
+    defence: Int,
+    diapazoneMin: Int,
+    diapazoneMax: Int,
+    difficulty: Difficulty
+  ) -> Player? {
+    let isDataCorrect = checkData(
+      attack: attack,
+      defence: defence,
+      diapazoneMin: diapazoneMin,
+      diapazoneMax: diapazoneMax
+    )
     if !isDataCorrect {
       return nil
     }
-    return Player(attack: attack,
-                  defence: defence,
-                  diapazoneMin: diapazoneMin,
-                  diapazoneMax: diapazoneMax,
-                  difficulty: difficulty)
+    return Player(
+      attack: attack,
+      defence: defence,
+      diapazoneMin: diapazoneMin,
+      diapazoneMax: diapazoneMax,
+      difficulty: difficulty
+    )
   }
-  func makeMonster(attack: Int, defence: Int?, diapazoneMin: Int, diapazoneMax: Int) -> Monster? {
-    let isDataCorrect = checkData(attack: attack,
-                                  defence: defence ?? 0,
-                                  diapazoneMin: diapazoneMin,
-                                  diapazoneMax: diapazoneMax)
+
+  func makeMonster(
+    attack: Int,
+    defence: Int?,
+    diapazoneMin: Int,
+    diapazoneMax: Int
+  ) -> Monster? {
+    let isDataCorrect = checkData(
+      attack: attack,
+      defence: defence ?? 0,
+      diapazoneMin: diapazoneMin,
+      diapazoneMax: diapazoneMax
+    )
     if !isDataCorrect {
       return nil
     }
     return Monster(attack: attack, defence: defence, diapazoneMin: diapazoneMin, diapazoneMax: diapazoneMax)
   }
+
   private func checkData(attack: Int, defence: Int, diapazoneMin: Int, diapazoneMax: Int) -> Bool {
     if attack < 1 || attack > 20 {
       print("Attack should be from 1 to 20")
@@ -202,9 +192,9 @@ class Factory {
 class Arena {
 
   func fight(player: Player, monsterWrapper: MonsterWrapper) {
-    var playerHit = player.attackPower(protect: monsterWrapper.monster.defense ?? 0)
+    let playerHit = player.attackPower(protect: monsterWrapper.monster.defense ?? 0)
     monsterWrapper.monster.health -= playerHit
-    var monsterHit = monsterWrapper.monster.attackPower(protect: player.defense)
+    let monsterHit = monsterWrapper.monster.attackPower(protect: player.defense)
     player.health -= monsterHit
     if monsterWrapper.monster.health <= 0 {
       print("Monster is dead. Player wins")
@@ -219,6 +209,7 @@ class Example {
   // Пример использования
   let factory = Factory()
   let arena = Arena()
+
   func doExample() {
     if let player = factory.makePlayer(attack: 20, defence: 20, diapazoneMin: 1, diapazoneMax: 6, difficulty: .easy),
        let monster = factory.makeMonster(attack: 20, defence: 20, diapazoneMin: 1, diapazoneMax: 6) {
