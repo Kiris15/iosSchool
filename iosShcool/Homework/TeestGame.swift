@@ -7,7 +7,16 @@
 
 import Foundation
 
-class Player {
+protocol Creature {
+  var attack: Int { get }
+  var health: Int { get set }
+  var damage: [Int] { get set }
+
+  func attackPower(protect: Int) -> Int
+  func getDefense() -> Int
+}
+
+class Player: Creature {
 
   var attack: Int
   var defense: Int
@@ -38,6 +47,10 @@ class Player {
     for counter in diapazoneMin...diapazoneMax {
       damage.append(counter)
     }
+  }
+
+  func getDefense() -> Int {
+    return defense
   }
 
   private func modifiedAttack(protect: Int) -> Int {
@@ -82,7 +95,7 @@ enum Difficulty: Int {
   case hard = 50
 }
 
-struct Monster {
+struct Monster: Creature {
 
   var attack: Int
   var defense: Int?
@@ -109,6 +122,10 @@ struct Monster {
     }
   }
 
+  func getDefense() -> Int {
+    return defense ?? 0
+  }
+
  private func modifiedAttack(protect: Int) -> Int {
     let attackMod = self.attack - protect + 1
     if attackMod > 0 {
@@ -133,11 +150,11 @@ struct Monster {
   }
 }
 
-class MonsterWrapper {
-  var monster: Monster
+class CreatureWrapper {
+  var creature: Creature
 
-  init(monster: Monster) {
-    self.monster = monster
+  init(creature: Creature) {
+    self.creature = creature
   }
 }
 
@@ -166,16 +183,16 @@ class DataChecker {
 
 class Arena {
 
-  func fight(player: Player, monsterWrapper: MonsterWrapper) {
-    let playerHit = player.attackPower(protect: monsterWrapper.monster.defense ?? 0)
-    monsterWrapper.monster.health -= playerHit
-    let monsterHit = monsterWrapper.monster.attackPower(protect: player.defense)
-    player.health -= monsterHit
-    if monsterWrapper.monster.health <= 0 {
-      print("Monster is dead. Player wins")
+  func fight(creatureFirst: CreatureWrapper, creatureSecond: CreatureWrapper) {
+    let creatureFirstHit = creatureFirst.creature.attackPower(protect: creatureSecond.creature.getDefense())
+    creatureSecond.creature.health -= creatureFirstHit
+    let creatureSecondHit = creatureSecond.creature.attackPower(protect: creatureFirst.creature.getDefense())
+    creatureFirst.creature.health -= creatureSecondHit
+    if creatureSecond.creature.health <= 0 {
+      print("creatureSecond is dead. creatureFirst wins")
     }
-    if player.health <= 0 {
-      print("Player is dead. Monster wins")
+    if creatureFirst.creature.health <= 0 {
+      print("creatureFirst is dead. creatureSecond wins")
     }
   }
 }
@@ -187,32 +204,32 @@ class Example {
   func doExample() {
     if let player = Player(attack: 20, defence: 20, diapazoneMin: 1, diapazoneMax: 6, difficulty: .easy),
        let monster = Monster(attack: 20, defence: 20, diapazoneMin: 1, diapazoneMax: 6) {
-      arena.fight(player: player, monsterWrapper: MonsterWrapper(monster: monster))
+      arena.fight(creatureFirst: CreatureWrapper(creature: player), creatureSecond: CreatureWrapper(creature: monster))
       print(player.health, monster.health)
       player.healing()
       print(player.health, monster.health)
 
-      arena.fight(player: player, monsterWrapper: MonsterWrapper(monster: monster))
+      arena.fight(creatureFirst: CreatureWrapper(creature: player), creatureSecond: CreatureWrapper(creature: monster))
       print(player.health, monster.health)
       player.healing()
       print(player.health, monster.health)
 
-      arena.fight(player: player, monsterWrapper: MonsterWrapper(monster: monster))
+      arena.fight(creatureFirst: CreatureWrapper(creature: player), creatureSecond: CreatureWrapper(creature: monster))
       print(player.health, monster.health)
       player.healing()
       print(player.health, monster.health)
 
-      arena.fight(player: player, monsterWrapper: MonsterWrapper(monster: monster))
+      arena.fight(creatureFirst: CreatureWrapper(creature: player), creatureSecond: CreatureWrapper(creature: monster))
       print(player.health, monster.health)
       player.healing()
       print(player.health, monster.health)
 
-      arena.fight(player: player, monsterWrapper: MonsterWrapper(monster: monster))
+      arena.fight(creatureFirst: CreatureWrapper(creature: player), creatureSecond: CreatureWrapper(creature: monster))
       print(player.health, monster.health)
       player.healing()
       print(player.health, monster.health)
 
-      arena.fight(player: player, monsterWrapper: MonsterWrapper(monster: monster))
+      arena.fight(creatureFirst: CreatureWrapper(creature: player), creatureSecond: CreatureWrapper(creature: monster))
       print(player.health, monster.health)
       player.healing()
       print(player.health, monster.health)
