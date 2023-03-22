@@ -25,6 +25,12 @@
 		C475DA4C29C89F1B00F8F263 /* SplashDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA4B29C89F1B00F8F263 /* SplashDataProvider.swift */; };
 		C475DA4E29C89F5A00F8F263 /* SplashAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA4D29C89F5A00F8F263 /* SplashAssembly.swift */; };
 		C475DA5029C8A19F00F8F263 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA4F29C8A19F00F8F263 /* SplashCoordinator.swift */; };
+		C475DA5429CB48F600F8F263 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA5329CB48F600F8F263 /* RegistrationViewController.swift */; };
+		C475DA5629CB495800F8F263 /* RegistrationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA5529CB495800F8F263 /* RegistrationDataProvider.swift */; };
+		C475DA5829CB497400F8F263 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA5729CB497400F8F263 /* RegistrationAssembly.swift */; };
+		C475DA5A29CB499800F8F263 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA5929CB499800F8F263 /* RegistrationCoordinator.swift */; };
+		C475DA5C29CB49B500F8F263 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA5B29CB49B500F8F263 /* RegistrationView.swift */; };
+		C475DA5E29CB49C800F8F263 /* RegistrationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA5D29CB49C800F8F263 /* RegistrationViewData.swift */; };
 		C47873AC29C456EA00C5ABB7 /* TeestGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47873AB29C456EA00C5ABB7 /* TeestGame.swift */; };
 		C47873AE29C4A63400C5ABB7 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47873AD29C4A63400C5ABB7 /* Assembly.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +56,12 @@
 		C475DA4B29C89F1B00F8F263 /* SplashDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashDataProvider.swift; sourceTree = "<group>"; };
 		C475DA4D29C89F5A00F8F263 /* SplashAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAssembly.swift; sourceTree = "<group>"; };
 		C475DA4F29C8A19F00F8F263 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		C475DA5329CB48F600F8F263 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		C475DA5529CB495800F8F263 /* RegistrationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataProvider.swift; sourceTree = "<group>"; };
+		C475DA5729CB497400F8F263 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
+		C475DA5929CB499800F8F263 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
+		C475DA5B29CB49B500F8F263 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		C475DA5D29CB49C800F8F263 /* RegistrationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewData.swift; sourceTree = "<group>"; };
 		C47873AB29C456EA00C5ABB7 /* TeestGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeestGame.swift; sourceTree = "<group>"; };
 		C47873AD29C4A63400C5ABB7 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +96,7 @@
 		C46D609D29BF4B9C009247EE /* iosShcool */ = {
 			isa = PBXGroup;
 			children = (
+				C475DA5229CB487900F8F263 /* Registration */,
 				C475DA4829C89E5700F8F263 /* Splash */,
 				C475DA3B29C8979500F8F263 /* Auth */,
 				C46D609E29BF4B9C009247EE /* AppDelegate.swift */,
@@ -123,6 +136,19 @@
 				C475DA4F29C8A19F00F8F263 /* SplashCoordinator.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		C475DA5229CB487900F8F263 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				C475DA5529CB495800F8F263 /* RegistrationDataProvider.swift */,
+				C475DA5329CB48F600F8F263 /* RegistrationViewController.swift */,
+				C475DA5729CB497400F8F263 /* RegistrationAssembly.swift */,
+				C475DA5929CB499800F8F263 /* RegistrationCoordinator.swift */,
+				C475DA5B29CB49B500F8F263 /* RegistrationView.swift */,
+				C475DA5D29CB49C800F8F263 /* RegistrationViewData.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C46D60A329BF4B9C009247EE /* ViewController.swift in Sources */,
+				C475DA5629CB495800F8F263 /* RegistrationDataProvider.swift in Sources */,
+				C475DA5C29CB49B500F8F263 /* RegistrationView.swift in Sources */,
 				C475DA4129C8992A00F8F263 /* AuthAssembly.swift in Sources */,
+				C475DA5A29CB499800F8F263 /* RegistrationCoordinator.swift in Sources */,
+				C475DA5429CB48F600F8F263 /* RegistrationViewController.swift in Sources */,
 				C47873AE29C4A63400C5ABB7 /* Assembly.swift in Sources */,
 				C475DA5029C8A19F00F8F263 /* SplashCoordinator.swift in Sources */,
 				C475DA4C29C89F1B00F8F263 /* SplashDataProvider.swift in Sources */,
@@ -227,6 +257,7 @@
 				C475DA4E29C89F5A00F8F263 /* SplashAssembly.swift in Sources */,
 				C475DA3F29C8984000F8F263 /* AuthViewController.swift in Sources */,
 				C46D60B329BF58B0009247EE /* ColorGenerator.swift in Sources */,
+				C475DA5E29CB49C800F8F263 /* RegistrationViewData.swift in Sources */,
 				C46D609F29BF4B9C009247EE /* AppDelegate.swift in Sources */,
 				C475DA3A29C8918E00F8F263 /* AppCoordinator.swift in Sources */,
 				C475DA4729C89CCB00F8F263 /* AuthViewData.swift in Sources */,
@@ -236,6 +267,7 @@
 				C46D60A129BF4B9C009247EE /* SceneDelegate.swift in Sources */,
 				C475DA4329C89A3C00F8F263 /* AuthCoordinator.swift in Sources */,
 				C475DA3D29C897B800F8F263 /* AuthDataProvider.swift in Sources */,
+				C475DA5829CB497400F8F263 /* RegistrationAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
