@@ -62,6 +62,7 @@
 		C46D609D29BF4B9C009247EE /* iosShcool */ = {
 			isa = PBXGroup;
 			children = (
+				C475DA5129CB267000F8F263 /* Homework */,
 				C46D609E29BF4B9C009247EE /* AppDelegate.swift */,
 				C46D60A029BF4B9C009247EE /* SceneDelegate.swift */,
 				C46D60A229BF4B9C009247EE /* ViewController.swift */,
@@ -70,10 +71,17 @@
 				C46D60A929BF4B9F009247EE /* LaunchScreen.storyboard */,
 				C46D60AC29BF4B9F009247EE /* Info.plist */,
 				C46D60B229BF58B0009247EE /* ColorGenerator.swift */,
-				C47873AB29C456EA00C5ABB7 /* TeestGame.swift */,
 				C47873AD29C4A63400C5ABB7 /* Assembly.swift */,
 			);
 			path = iosShcool;
+			sourceTree = "<group>";
+		};
+		C475DA5129CB267000F8F263 /* Homework */ = {
+			isa = PBXGroup;
+			children = (
+				C47873AB29C456EA00C5ABB7 /* TeestGame.swift */,
+			);
+			path = Homework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

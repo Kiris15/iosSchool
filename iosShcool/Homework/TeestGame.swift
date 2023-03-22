@@ -17,7 +17,16 @@ class Player {
   var healthPoision: Int
   var difficulty: Difficulty
 
-  init(attack: Int, defence: Int, diapazoneMin: Int, diapazoneMax: Int, difficulty: Difficulty) {
+  init?(attack: Int, defence: Int, diapazoneMin: Int, diapazoneMax: Int, difficulty: Difficulty) {
+
+    let isDataCorrect = DataChecker().checkData(attack: attack,
+                                  defence: defence,
+                                  diapazoneMin: diapazoneMin,
+                                  diapazoneMax: diapazoneMax)
+    if !isDataCorrect {
+      return nil
+    }
+
     self.attack = attack
     self.defense = defence
     self.health = diapazoneMax
@@ -80,7 +89,16 @@ struct Monster {
   var health: Int
   var damage: [Int]
 
-  init(attack: Int, defence: Int?, diapazoneMin: Int, diapazoneMax: Int) {
+  init?(attack: Int, defence: Int?, diapazoneMin: Int, diapazoneMax: Int) {
+
+    let isDataCorrect = DataChecker().checkData(attack: attack,
+                                  defence: defence ?? 0,
+                                  diapazoneMin: diapazoneMin,
+                                  diapazoneMax: diapazoneMax)
+    if !isDataCorrect {
+      return nil
+    }
+
     self.attack = attack
     self.defense = defence
     self.health = diapazoneMax
@@ -123,52 +141,9 @@ class MonsterWrapper {
   }
 }
 
-class Factory {
+class DataChecker {
 
-  func makePlayer(
-    attack: Int,
-    defence: Int,
-    diapazoneMin: Int,
-    diapazoneMax: Int,
-    difficulty: Difficulty
-  ) -> Player? {
-    let isDataCorrect = checkData(
-      attack: attack,
-      defence: defence,
-      diapazoneMin: diapazoneMin,
-      diapazoneMax: diapazoneMax
-    )
-    if !isDataCorrect {
-      return nil
-    }
-    return Player(
-      attack: attack,
-      defence: defence,
-      diapazoneMin: diapazoneMin,
-      diapazoneMax: diapazoneMax,
-      difficulty: difficulty
-    )
-  }
-
-  func makeMonster(
-    attack: Int,
-    defence: Int?,
-    diapazoneMin: Int,
-    diapazoneMax: Int
-  ) -> Monster? {
-    let isDataCorrect = checkData(
-      attack: attack,
-      defence: defence ?? 0,
-      diapazoneMin: diapazoneMin,
-      diapazoneMax: diapazoneMax
-    )
-    if !isDataCorrect {
-      return nil
-    }
-    return Monster(attack: attack, defence: defence, diapazoneMin: diapazoneMin, diapazoneMax: diapazoneMax)
-  }
-
-  private func checkData(attack: Int, defence: Int, diapazoneMin: Int, diapazoneMax: Int) -> Bool {
+  func checkData(attack: Int, defence: Int, diapazoneMin: Int, diapazoneMax: Int) -> Bool {
     if attack < 1 || attack > 20 {
       print("Attack should be from 1 to 20")
       return false
@@ -207,12 +182,11 @@ class Arena {
 
 class Example {
   // Пример использования
-  let factory = Factory()
   let arena = Arena()
 
   func doExample() {
-    if let player = factory.makePlayer(attack: 20, defence: 20, diapazoneMin: 1, diapazoneMax: 6, difficulty: .easy),
-       let monster = factory.makeMonster(attack: 20, defence: 20, diapazoneMin: 1, diapazoneMax: 6) {
+    if let player = Player(attack: 20, defence: 20, diapazoneMin: 1, diapazoneMax: 6, difficulty: .easy),
+       let monster = Monster(attack: 20, defence: 20, diapazoneMin: 1, diapazoneMax: 6) {
       arena.fight(player: player, monsterWrapper: MonsterWrapper(monster: monster))
       print(player.health, monster.health)
       player.healing()
