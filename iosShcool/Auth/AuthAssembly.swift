@@ -15,20 +15,17 @@ protocol AuthAssembly {
 }
 
 extension Assembly: AuthAssembly {
-  
+
   func authCootdinator() -> AuthCoordinator {
     AuthCoordinator(assembly: self, context: .init())
   }
-
 
   func authVC() -> AuthViewController {
     .init(dataProvider: authDataProvider())
   }
 
-
   func authDataProvider() -> AuthDataProvider {
     AuthDataProviderImp()
   }
-
 
 }

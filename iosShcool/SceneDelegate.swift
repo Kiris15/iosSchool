@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
 
   private lazy var appCoordinator: AppCoordinator? = {
-    if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
+    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
       return appDelegate.assembly.appCoordinator()
     }
     return nil
