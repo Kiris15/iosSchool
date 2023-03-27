@@ -25,6 +25,15 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
 
       view.backgroundColor = .red
+
+      dataProvider.authorization(username: "ann", password: "1111") { [weak self] resut in
+        switch resut {
+        case .success(let success):
+          print("success")
+        case .failure(let failure):
+          print(failure.rawValue)
+        }
+      }
     }
 
 }
