@@ -26,5 +26,4 @@ class RegistrationViewController: UIViewController {
 
       view.backgroundColor = .red
     }
-
 }
