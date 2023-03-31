@@ -31,4 +31,3 @@ struct Location: Decodable {
            self.dim = try container.decode(String.self, forKey: .dim)
   }
   }
-
