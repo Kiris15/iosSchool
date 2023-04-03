@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="4HK-CG-ddz" customClass="AuthViewImp" customModule="iosSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="upL-e1-cEq">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5p6-3A-R7b">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2WM-7d-zZA">
+                            <rect key="frame" x="20" y="150" width="353" height="166.33333333333337"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uYc-bp-66d">
+                                    <rect key="frame" x="43" y="19.999999999999993" width="267" height="124.33333333333331"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amG-Xa-sdz">
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="26.333333333333332"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизуйтесь, чтобы получить доступ к полному функционалу приложения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjT-Ry-g1O">
+                                            <rect key="frame" x="0.0" y="38.333333333333343" width="267" height="86"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" name="Lilac80"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="uYc-bp-66d" secondAttribute="trailing" constant="43" id="4v5-aF-MJF"/>
+                                <constraint firstItem="uYc-bp-66d" firstAttribute="leading" secondItem="2WM-7d-zZA" secondAttribute="leading" constant="43" id="6b8-m7-Wbc"/>
+                                <constraint firstAttribute="bottom" secondItem="uYc-bp-66d" secondAttribute="bottom" constant="22" id="tcY-iC-msN"/>
+                                <constraint firstItem="uYc-bp-66d" firstAttribute="top" secondItem="2WM-7d-zZA" secondAttribute="top" constant="20" id="tzc-wz-gUC"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Y5j-fh-SpU">
+                            <rect key="frame" x="0.0" y="725.33333333333337" width="393" height="80.666666666666629"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvd-4k-TyE" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="34.333333333333336"/>
+                                    <color key="backgroundColor" name="VelvetBlue"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Войти"/>
+                                    <connections>
+                                        <action selector="loginButtonDidTapWithSender:" destination="4HK-CG-ddz" eventType="touchUpInside" id="evP-ZC-end"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfW-TN-t8s" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="46.333333333333258" width="393" height="34.333333333333343"/>
+                                    <color key="backgroundColor" name="VelvetBlue"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Зарегистрироваться"/>
+                                    <connections>
+                                        <action selector="registrationButtonDidTapWithSender:" destination="4HK-CG-ddz" eventType="touchUpInside" id="1id-wH-iTi"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="lTI-kU-b48">
+                            <rect key="frame" x="58" y="483.33333333333326" width="277" height="92"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PR2-iR-tUM">
+                                    <rect key="frame" x="0.0" y="0.0" width="277" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="70Q-Ro-bhb"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ekz-GY-1SI">
+                                    <rect key="frame" x="0.0" y="58.000000000000057" width="277" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="Lilac50"/>
+                    <constraints>
+                        <constraint firstItem="2WM-7d-zZA" firstAttribute="top" secondItem="5p6-3A-R7b" secondAttribute="top" constant="150" id="09I-fE-2J3"/>
+                        <constraint firstItem="2WM-7d-zZA" firstAttribute="leading" secondItem="5p6-3A-R7b" secondAttribute="leading" constant="20" id="98M-KJ-Cen"/>
+                        <constraint firstItem="lTI-kU-b48" firstAttribute="leading" secondItem="5p6-3A-R7b" secondAttribute="leading" constant="58" id="9oh-He-3ky"/>
+                        <constraint firstAttribute="trailing" secondItem="Y5j-fh-SpU" secondAttribute="trailing" id="TuF-if-bty"/>
+                        <constraint firstAttribute="bottom" secondItem="Y5j-fh-SpU" secondAttribute="bottom" constant="46" id="UPe-bF-kZm"/>
+                        <constraint firstItem="lTI-kU-b48" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2WM-7d-zZA" secondAttribute="bottom" constant="15" id="VDE-kR-2jn"/>
+                        <constraint firstAttribute="trailing" secondItem="2WM-7d-zZA" secondAttribute="trailing" constant="20" id="aRJ-s8-zIe"/>
+                        <constraint firstItem="Y5j-fh-SpU" firstAttribute="leading" secondItem="5p6-3A-R7b" secondAttribute="leading" id="bIr-Ht-SDx"/>
+                        <constraint firstItem="Y5j-fh-SpU" firstAttribute="top" secondItem="lTI-kU-b48" secondAttribute="bottom" priority="250" constant="150" id="vaa-dy-CVe"/>
+                        <constraint firstAttribute="trailing" secondItem="lTI-kU-b48" secondAttribute="trailing" constant="58" id="zVq-8z-lih"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="bRE-Xe-aTh"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="bRE-Xe-aTh" firstAttribute="trailing" secondItem="upL-e1-cEq" secondAttribute="trailing" id="5KT-Zn-Yn3"/>
+                <constraint firstItem="5p6-3A-R7b" firstAttribute="leading" secondItem="bRE-Xe-aTh" secondAttribute="leading" id="9Fm-gS-C1b"/>
+                <constraint firstAttribute="bottom" secondItem="5p6-3A-R7b" secondAttribute="bottom" id="PG7-Kb-84N"/>
+                <constraint firstItem="upL-e1-cEq" firstAttribute="top" secondItem="4HK-CG-ddz" secondAttribute="top" id="VOc-sh-hbe"/>
+                <constraint firstItem="upL-e1-cEq" firstAttribute="leading" secondItem="bRE-Xe-aTh" secondAttribute="leading" id="XQu-uO-SKg"/>
+                <constraint firstItem="5p6-3A-R7b" firstAttribute="top" secondItem="4HK-CG-ddz" secondAttribute="top" id="mb8-Wc-jDI"/>
+                <constraint firstAttribute="bottom" secondItem="upL-e1-cEq" secondAttribute="bottom" id="mhw-6d-n5c"/>
+                <constraint firstItem="bRE-Xe-aTh" firstAttribute="trailing" secondItem="5p6-3A-R7b" secondAttribute="trailing" id="rGs-W7-gqG"/>
+            </constraints>
+            <connections>
+                <outlet property="helloLabel" destination="amG-Xa-sdz" id="FVs-W0-ZCr"/>
+                <outlet property="helloView" destination="2WM-7d-zZA" id="60J-Eo-mQO"/>
+                <outlet property="loginButton" destination="Xvd-4k-TyE" id="gHd-cp-bnt"/>
+                <outlet property="loginTextField" destination="PR2-iR-tUM" id="rbf-LG-A8A"/>
+                <outlet property="passwordTextField" destination="Ekz-GY-1SI" id="E3F-yS-5sz"/>
+                <outlet property="registrationButton" destination="qfW-TN-t8s" id="oeM-Rj-vx6"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="-16"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="background" width="390" height="844"/>
+        <namedColor name="Lilac50">
+            <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Lilac80">
+            <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="VelvetBlue">
+            <color red="0.32941176470588235" green="0.50588235294117645" blue="0.70588235294117652" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

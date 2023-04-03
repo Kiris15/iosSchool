@@ -7,7 +7,9 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
+class AuthViewController<View: AuthView>: BaseViewController<View> {
+
+  var onOpenRegistration: (() -> Void)?
 
   private let dataProvider: AuthDataProvider
 
@@ -21,14 +23,21 @@ class AuthViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
-  
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-      view.backgroundColor = .red
-    }
 
+     // view.backgroundColor = .red
+
+      rootView.update(with: AuthViewData())
+      rootView.registrationAction = onOpenRegistration
+      dataProvider.authorization(username: "ann", password: "1111") { [weak self] resut in
+        switch resut {
+        case .success(let success):
+          print("success")
+        case .failure(let failure):
+          print(failure.rawValue)
+        }
+      }
+    }
 
 }

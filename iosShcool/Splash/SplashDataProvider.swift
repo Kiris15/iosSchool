@@ -12,6 +12,4 @@ protocol SplashDataProvider {
 
 class SplashDataProviderImp: SplashDataProvider {
 
-
 }
-

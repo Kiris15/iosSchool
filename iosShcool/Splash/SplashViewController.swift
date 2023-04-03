@@ -5,16 +5,16 @@
 //  Created by Savely on 20.03.2023.
 //
 
-import Foundation
-
 import UIKit
 
 class SplashViewController: UIViewController {
 
     private let dataProvider: SplashDataProvider
+    private let onSuccess: (() -> Void)?
 
-    init(dataProvider: SplashDataProvider) {
+    init(dataProvider: SplashDataProvider, onSuccess: (() -> Void)?) {
         self.dataProvider = dataProvider
+      self.onSuccess = onSuccess
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,4 +28,12 @@ class SplashViewController: UIViewController {
 
         view.backgroundColor = .green
     }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] timer in
+      self?.onSuccess?()
+      timer.invalidate()
+    }
+  }
 }

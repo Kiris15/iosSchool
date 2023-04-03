@@ -10,25 +10,22 @@ import Foundation
 protocol AuthAssembly {
 
   func authCootdinator() -> AuthCoordinator
-  func authVC() -> AuthViewController
+  func authVC() -> AuthViewController<AuthViewImp>
   func authDataProvider() -> AuthDataProvider
 }
 
 extension Assembly: AuthAssembly {
-  
+
   func authCootdinator() -> AuthCoordinator {
     AuthCoordinator(assembly: self, context: .init())
   }
 
-
-  func authVC() -> AuthViewController {
+  func authVC() -> AuthViewController<AuthViewImp> {
     .init(dataProvider: authDataProvider())
   }
 
-
   func authDataProvider() -> AuthDataProvider {
-    AuthDataProviderImp()
+    AuthDataProviderImp(apiClient: apiClient)
   }
-
 
 }

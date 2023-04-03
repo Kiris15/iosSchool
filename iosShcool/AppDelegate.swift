@@ -9,8 +9,7 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  
+
   internal lazy var assembly = Assembly()
-  
-  
+
 }
