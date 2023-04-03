@@ -26,6 +26,14 @@ class Player {
       diapazoneMax: diapazoneMax
     )
 
+    if !DataChecker().checkData(
+    attack: attack,
+    defence: defence,
+    diapazoneMin: diapazoneMin,
+    diapazoneMax: diapazoneMax
+    ) {
+    }
+
     self.attack = attack
     self.defense = defence
     self.health = diapazoneMax
@@ -96,6 +104,14 @@ struct Monster {
       diapazoneMin: diapazoneMin,
       diapazoneMax: diapazoneMax
     )
+
+    if !DataChecker().checkData(
+    attack: attack,
+    defence: defence ?? 0,
+    diapazoneMin: diapazoneMin,
+    diapazoneMax: diapazoneMax
+    ) {
+    }
 
     self.attack = attack
     self.defense = defence
