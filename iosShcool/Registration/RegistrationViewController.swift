@@ -1,17 +1,17 @@
 //
-//  AuthViewController.swift
+//  RegistrationViewController.swift
 //  iosSchool
 //
-//  Created by Savely on 20.03.2023.
+//  Created by Savely on 22.03.2023.
 //
 
 import UIKit
 
-class AuthViewController: UIViewController {
+class RegistrationViewController: UIViewController {
 
-  private let dataProvider: AuthDataProvider
+  private let dataProvider: RegistrationDataProvider
 
-  init(dataProvider: AuthDataProvider) {
+  init(dataProvider: RegistrationDataProvider) {
     self.dataProvider = dataProvider
 
     super.init(nibName: nil, bundle: nil)
@@ -26,19 +26,13 @@ class AuthViewController: UIViewController {
 
       view.backgroundColor = .red
 
-      let dataPr = LocationDataProviderImp(apiClient: ApiClient())
-      dataPr.location { result in
-        print(result)
-      }
-
-      dataProvider.authorization(username: "kiriss", password: "123456") { [weak self] resut in
+      dataProvider.registration(username: "ann", password: "1111") { [weak self] resut in
         switch resut {
         case .success(let success):
-          print(success)
+          print("success")
         case .failure(let failure):
           print(failure.rawValue)
         }
       }
     }
-
 }
