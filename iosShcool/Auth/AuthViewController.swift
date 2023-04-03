@@ -9,6 +9,8 @@ import UIKit
 
 class AuthViewController<View: AuthView>: BaseViewController<View> {
 
+  var onOpenRegistration: (() -> Void)?
+
   private let dataProvider: AuthDataProvider
 
   init(dataProvider: AuthDataProvider) {
@@ -26,8 +28,8 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 
      // view.backgroundColor = .red
 
-      rootView.update(with: AuthViewData()) 
-
+      rootView.update(with: AuthViewData())
+      rootView.registrationAction = onOpenRegistration
       dataProvider.authorization(username: "ann", password: "1111") { [weak self] resut in
         switch resut {
         case .success(let success):

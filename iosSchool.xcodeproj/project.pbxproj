@@ -156,8 +156,8 @@
 				C4A7882929D7075E002714FD /* Subviews */,
 				C475DA3C29C897B800F8F263 /* AuthDataProvider.swift */,
 				C475DA3E29C8984000F8F263 /* AuthViewController.swift */,
-				C475DA4029C8992A00F8F263 /* AuthAssembly.swift */,
 				C475DA4229C89A3C00F8F263 /* AuthCoordinator.swift */,
+				C475DA4029C8992A00F8F263 /* AuthAssembly.swift */,
 				C475DA4429C89C5400F8F263 /* AuthView.swift */,
 				C475DA4629C89CCB00F8F263 /* AuthViewData.swift */,
 			);
