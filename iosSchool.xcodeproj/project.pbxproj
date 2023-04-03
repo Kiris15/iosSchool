@@ -199,6 +199,8 @@ C475DA5229CB487900F8F263 /* Registration */ = {
 				C475DA5D29CB49C800F8F263 /* RegistrationViewData.swift */,
 			);
 			path = Registration;
+      sourceTree = "<group>";
+   };
 		C4A7882929D7075E002714FD /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
