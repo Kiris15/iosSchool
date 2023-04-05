@@ -19,19 +19,13 @@ class Player {
 
   init?(attack: Int, defence: Int, diapazoneMin: Int, diapazoneMax: Int, difficulty: Difficulty) {
 
-    let isDataCorrect = DataChecker().checkData(
+    if !DataChecker().checkData(
       attack: attack,
       defence: defence,
       diapazoneMin: diapazoneMin,
       diapazoneMax: diapazoneMax
-    )
-
-    if !DataChecker().checkData(
-    attack: attack,
-    defence: defence,
-    diapazoneMin: diapazoneMin,
-    diapazoneMax: diapazoneMax
     ) {
+      return nil
     }
 
     self.attack = attack
@@ -98,19 +92,13 @@ struct Monster {
 
   init?(attack: Int, defence: Int?, diapazoneMin: Int, diapazoneMax: Int) {
 
-    let isDataCorrect = DataChecker().checkData(
+    if !DataChecker().checkData(
       attack: attack,
       defence: defence ?? 0,
       diapazoneMin: diapazoneMin,
       diapazoneMax: diapazoneMax
-    )
-
-    if !DataChecker().checkData(
-    attack: attack,
-    defence: defence ?? 0,
-    diapazoneMin: diapazoneMin,
-    diapazoneMax: diapazoneMax
     ) {
+      return nil
     }
 
     self.attack = attack
