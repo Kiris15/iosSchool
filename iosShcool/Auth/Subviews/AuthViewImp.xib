@@ -88,6 +88,9 @@
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ekz-GY-1SI">
                                     <rect key="frame" x="0.0" y="58.000000000000057" width="277" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="2Ki-5E-gUI"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>

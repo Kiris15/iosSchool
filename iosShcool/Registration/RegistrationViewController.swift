@@ -7,7 +7,9 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
+
+  var backToAuth: (() -> Void)?
 
   private let dataProvider: RegistrationDataProvider
 
@@ -24,6 +26,9 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      view.backgroundColor = .red
+      //view.backgroundColor = .red
+
+      rootView.update(with: RegistrationViewData())
+      rootView.backToAuthorization = backToAuth
     }
 }

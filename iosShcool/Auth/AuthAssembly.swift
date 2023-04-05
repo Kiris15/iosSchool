@@ -9,14 +9,14 @@ import Foundation
 
 protocol AuthAssembly {
 
-  func authCootdinator() -> AuthCoordinator
+  func authCoordinator() -> AuthCoordinator
   func authVC() -> AuthViewController<AuthViewImp>
   func authDataProvider() -> AuthDataProvider
 }
 
 extension Assembly: AuthAssembly {
 
-  func authCootdinator() -> AuthCoordinator {
+  func authCoordinator() -> AuthCoordinator {
     AuthCoordinator(assembly: self, context: .init())
   }
 

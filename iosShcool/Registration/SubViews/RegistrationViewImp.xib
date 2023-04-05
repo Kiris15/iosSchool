@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RegistrationViewImp" customModule="iosSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="6p5-4E-5Ps">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="852"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95t-rK-gur">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqe-LM-a6o">
+                            <rect key="frame" x="160" y="218" width="142" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oku-QT-LXT">
+                            <rect key="frame" x="58" y="404" width="277" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="YqL-YB-a3i"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wwl-GT-m6K">
+                            <rect key="frame" x="58" y="462" width="277" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="QQZ-73-raT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jlk-Se-O3A">
+                            <rect key="frame" x="58" y="520" width="277" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="hVA-TQ-Sq5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbv-qP-nMO" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="714" width="393" height="40"/>
+                            <color key="backgroundColor" name="VelvetBlue"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="igx-gW-ecy"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Готово"/>
+                            <connections>
+                                <action selector="registrConfirmationButtonWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="fBe-eZ-rMQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUc-do-Qov" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="766" width="393" height="40"/>
+                            <color key="backgroundColor" name="VelvetBlue"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="3Kb-Dc-Hhu"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Назад"/>
+                            <connections>
+                                <action selector="registrBackButtonWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="GyB-1v-Uhc"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegistrationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HNH-wl-IcW">
+                            <rect key="frame" x="84" y="204" width="56" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="56" id="OX1-D2-Pyw"/>
+                                <constraint firstAttribute="height" constant="56" id="Rim-1D-Hcj"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" name="Lilac50"/>
+                    <constraints>
+                        <constraint firstItem="nbv-qP-nMO" firstAttribute="leading" secondItem="95t-rK-gur" secondAttribute="leading" id="1m3-sC-omj"/>
+                        <constraint firstItem="oku-QT-LXT" firstAttribute="top" secondItem="Xqe-LM-a6o" secondAttribute="bottom" constant="151" id="1nG-B5-Y5M"/>
+                        <constraint firstAttribute="trailing" secondItem="Xqe-LM-a6o" secondAttribute="trailing" constant="91" id="4UL-dZ-6HR"/>
+                        <constraint firstItem="Xqe-LM-a6o" firstAttribute="leading" secondItem="HNH-wl-IcW" secondAttribute="trailing" constant="20" id="5Oz-hc-aYg"/>
+                        <constraint firstAttribute="trailing" secondItem="Jlk-Se-O3A" secondAttribute="trailing" constant="58" id="5i6-Ik-Svc"/>
+                        <constraint firstAttribute="trailing" secondItem="Wwl-GT-m6K" secondAttribute="trailing" constant="58" id="7hU-Jl-Ysb"/>
+                        <constraint firstAttribute="bottom" secondItem="eUc-do-Qov" secondAttribute="bottom" constant="46" id="BwW-2C-baS"/>
+                        <constraint firstAttribute="trailing" secondItem="nbv-qP-nMO" secondAttribute="trailing" id="ChI-zF-pts"/>
+                        <constraint firstItem="nbv-qP-nMO" firstAttribute="top" secondItem="Jlk-Se-O3A" secondAttribute="bottom" constant="154" id="E65-J7-eFo"/>
+                        <constraint firstItem="Jlk-Se-O3A" firstAttribute="leading" secondItem="95t-rK-gur" secondAttribute="leading" constant="58" id="H6W-xd-eey"/>
+                        <constraint firstItem="eUc-do-Qov" firstAttribute="leading" secondItem="95t-rK-gur" secondAttribute="leading" id="KVb-Yn-1mU"/>
+                        <constraint firstItem="eUc-do-Qov" firstAttribute="top" secondItem="nbv-qP-nMO" secondAttribute="bottom" constant="12" id="NNx-iI-6cH"/>
+                        <constraint firstItem="Jlk-Se-O3A" firstAttribute="top" secondItem="Wwl-GT-m6K" secondAttribute="bottom" constant="18" id="NZ3-ra-wsn"/>
+                        <constraint firstItem="Xqe-LM-a6o" firstAttribute="top" secondItem="95t-rK-gur" secondAttribute="top" constant="218" id="OD9-HY-6Nl"/>
+                        <constraint firstItem="Wwl-GT-m6K" firstAttribute="top" secondItem="oku-QT-LXT" secondAttribute="bottom" constant="18" id="QUF-l0-rk6"/>
+                        <constraint firstItem="HNH-wl-IcW" firstAttribute="leading" secondItem="95t-rK-gur" secondAttribute="leading" constant="84" id="VJf-w0-xzT"/>
+                        <constraint firstAttribute="trailing" secondItem="eUc-do-Qov" secondAttribute="trailing" id="bPn-A4-S9U"/>
+                        <constraint firstAttribute="trailing" secondItem="oku-QT-LXT" secondAttribute="trailing" constant="58" id="eZP-IF-WAa"/>
+                        <constraint firstItem="HNH-wl-IcW" firstAttribute="top" secondItem="95t-rK-gur" secondAttribute="top" constant="204" id="fw1-Zy-TXb"/>
+                        <constraint firstItem="oku-QT-LXT" firstAttribute="leading" secondItem="95t-rK-gur" secondAttribute="leading" constant="58" id="lvw-Nu-ZpP"/>
+                        <constraint firstItem="Wwl-GT-m6K" firstAttribute="leading" secondItem="95t-rK-gur" secondAttribute="leading" constant="58" id="vsr-vs-YXw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="95t-rK-gur" secondAttribute="trailing" id="1cK-1W-epd"/>
+                <constraint firstItem="6p5-4E-5Ps" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4JW-qk-cer"/>
+                <constraint firstItem="95t-rK-gur" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="gJk-9p-Rhd"/>
+                <constraint firstItem="95t-rK-gur" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hiY-FL-2Eh"/>
+                <constraint firstItem="95t-rK-gur" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="knI-Je-FWN"/>
+                <constraint firstAttribute="bottom" secondItem="6p5-4E-5Ps" secondAttribute="bottom" id="mC6-pb-lMX"/>
+                <constraint firstItem="6p5-4E-5Ps" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nqB-Xs-1si"/>
+                <constraint firstAttribute="trailing" secondItem="95t-rK-gur" secondAttribute="trailing" id="z9H-lw-bsR"/>
+            </constraints>
+            <connections>
+                <outlet property="registrBackButton" destination="eUc-do-Qov" id="Fcz-Lt-mSQ"/>
+                <outlet property="registrConfirmationButton" destination="nbv-qP-nMO" id="a8N-Gm-XyJ"/>
+                <outlet property="registrIcon" destination="HNH-wl-IcW" id="dHV-Pf-WNQ"/>
+                <outlet property="registrLoginTextField" destination="oku-QT-LXT" id="6ul-uv-XEC"/>
+                <outlet property="registrPasswordTextField" destination="Wwl-GT-m6K" id="bmk-40-FCR"/>
+                <outlet property="registrRepeatPasswordTextField" destination="Jlk-Se-O3A" id="fCr-Pa-KIF"/>
+                <outlet property="registrationLabel" destination="Xqe-LM-a6o" id="k4S-ej-bCb"/>
+            </connections>
+            <point key="canvasLocation" x="23" y="0.0"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="RegistrationIcon" width="56" height="56"/>
+        <image name="background" width="390" height="844"/>
+        <namedColor name="Lilac50">
+            <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="VelvetBlue">
+            <color red="0.32941176470588235" green="0.50588235294117645" blue="0.70588235294117652" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

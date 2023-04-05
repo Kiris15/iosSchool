@@ -25,7 +25,7 @@ class AuthViewImp: UIView, AuthView {
   @IBOutlet private weak var registrationButton: CustomButton!
 
   func update(with data: AuthViewData) {
-    helloLabel.text = data.loginTextFieldPlaceholder
+    loginTextField.text = data.loginTextFieldPlaceholder
 
     helloView.layer.cornerRadius = 15
     helloView.layer.masksToBounds = true
@@ -50,7 +50,6 @@ class AuthViewImp: UIView, AuthView {
     // MARK: Actions
 
   @IBAction func loginButtonDidTap(sender: UIButton) {
-
 
   }
 

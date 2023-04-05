@@ -13,6 +13,7 @@
 		C40F2BFC29D1C58C004CF07D /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2BFB29D1C58C004CF07D /* NetworkConstants.swift */; };
 		C40F2BFE29D1CC2E004CF07D /* AuthApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2BFD29D1CC2E004CF07D /* AuthApiClient.swift */; };
 		C40F2C0029D1D3A9004CF07D /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2BFF29D1D3A9004CF07D /* ApiError.swift */; };
+		C44C364629DD84A500E2299B /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44C364529DD84A500E2299B /* RegistrationViewImp.xib */; };
 		C46D609F29BF4B9C009247EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D609E29BF4B9C009247EE /* AppDelegate.swift */; };
 		C46D60A129BF4B9C009247EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60A029BF4B9C009247EE /* SceneDelegate.swift */; };
 		C46D60A329BF4B9C009247EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60A229BF4B9C009247EE /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		C40F2BFB29D1C58C004CF07D /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		C40F2BFD29D1CC2E004CF07D /* AuthApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiClient.swift; sourceTree = "<group>"; };
 		C40F2BFF29D1D3A9004CF07D /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		C44C364529DD84A500E2299B /* RegistrationViewImp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		C46D609B29BF4B9C009247EE /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46D609E29BF4B9C009247EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C46D60A029BF4B9C009247EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = ApiClient;
 			sourceTree = "<group>";
 		};
+		C44C364029DD845000E2299B /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C44C364529DD84A500E2299B /* RegistrationViewImp.xib */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		C46D609229BF4B9C009247EE = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +152,7 @@
 		C46D609D29BF4B9C009247EE /* iosShcool */ = {
 			isa = PBXGroup;
 			children = (
-        C475DA5229CB487900F8F263 /* Registration */,
+				C475DA5229CB487900F8F263 /* Registration */,
 				C4A7882C29D718AB002714FD /* Common */,
 				C40F2BF829D1C4EC004CF07D /* ApiClient */,
 				C40F2BF229D1BE9D004CF07D /* Responses */,
@@ -188,9 +198,10 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-C475DA5229CB487900F8F263 /* Registration */ = {
+		C475DA5229CB487900F8F263 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				C44C364029DD845000E2299B /* SubViews */,
 				C475DA5529CB495800F8F263 /* RegistrationDataProvider.swift */,
 				C475DA5329CB48F600F8F263 /* RegistrationViewController.swift */,
 				C475DA5729CB497400F8F263 /* RegistrationAssembly.swift */,
@@ -199,8 +210,8 @@ C475DA5229CB487900F8F263 /* Registration */ = {
 				C475DA5D29CB49C800F8F263 /* RegistrationViewData.swift */,
 			);
 			path = Registration;
-      sourceTree = "<group>";
-   };
+			sourceTree = "<group>";
+		};
 		C4A7882929D7075E002714FD /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +288,7 @@ C475DA5229CB487900F8F263 /* Registration */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44C364629DD84A500E2299B /* RegistrationViewImp.xib in Resources */,
 				C46D60AB29BF4B9F009247EE /* LaunchScreen.storyboard in Resources */,
 				C46D60A829BF4B9F009247EE /* Assets.xcassets in Resources */,
 				C4A7882B29D70790002714FD /* AuthViewImp.xib in Resources */,
@@ -317,9 +329,9 @@ C475DA5229CB487900F8F263 /* Registration */ = {
 				C475DA5629CB495800F8F263 /* RegistrationDataProvider.swift in Sources */,
 				C475DA5C29CB49B500F8F263 /* RegistrationView.swift in Sources */,
 				C475DA4129C8992A00F8F263 /* AuthAssembly.swift in Sources */,
-        C475DA5A29CB499800F8F263 /* RegistrationCoordinator.swift in Sources */,
+				C475DA5A29CB499800F8F263 /* RegistrationCoordinator.swift in Sources */,
 				C475DA5429CB48F600F8F263 /* RegistrationViewController.swift in Sources */,
-        C40F2BFC29D1C58C004CF07D /* NetworkConstants.swift in Sources */,
+				C40F2BFC29D1C58C004CF07D /* NetworkConstants.swift in Sources */,
 				C47873AE29C4A63400C5ABB7 /* Assembly.swift in Sources */,
 				C475DA5029C8A19F00F8F263 /* SplashCoordinator.swift in Sources */,
 				C40F2C0029D1D3A9004CF07D /* ApiError.swift in Sources */,

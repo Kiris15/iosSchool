@@ -24,7 +24,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
   }
 
   private func startAuth() {
-    let coordinator = assembly.authCootdinator()
+    let coordinator = assembly.authCoordinator()
     setRoot(viewController: coordinator.make())
   }
 
