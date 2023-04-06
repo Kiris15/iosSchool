@@ -26,8 +26,6 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      //view.backgroundColor = .red
-
       rootView.update(with: RegistrationViewData())
       rootView.backToAuthorization = backToAuth
     }

@@ -25,7 +25,8 @@ class AuthViewImp: UIView, AuthView {
   @IBOutlet private weak var registrationButton: CustomButton!
 
   func update(with data: AuthViewData) {
-    loginTextField.text = data.loginTextFieldPlaceholder
+    loginTextField.placeholder = data.loginTextFieldPlaceholder
+    passwordTextField.placeholder = data.passwordTextFieldPlaceholder
 
     helloView.layer.cornerRadius = 15
     helloView.layer.masksToBounds = true

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RegistrationView: UIView {
-  var backToAuthorization: (() -> Void)? {get set}
+  var backToAuthorization: (() -> Void)? { get set }
 
   func update(with date: RegistrationViewData)
 }
@@ -26,9 +26,9 @@ class RegistrationViewImp: UIView, RegistrationView {
   @IBOutlet private weak var registrBackButton: CustomButton!
 
   func update(with date: RegistrationViewData) {
-    registrLoginTextField.text = date.registrLoginTextFieldPlaceholder
-    registrPasswordTextField.text = date.registrPasswordTextFieldPlaceholder
-    registrRepeatPasswordTextField.text = date.regRepeatPasswordTextFieldPlaceholder
+    registrLoginTextField.placeholder = date.registrLoginTextFieldPlaceholder
+    registrPasswordTextField.placeholder = date.registrPasswordTextFieldPlaceholder
+    registrRepeatPasswordTextField.placeholder = date.regRepeatPasswordTextFieldPlaceholder
 
     registrLoginTextField.backgroundColor = .white.withAlphaComponent(0.6)
     registrLoginTextField.layer.cornerRadius = 15
@@ -50,25 +50,23 @@ class RegistrationViewImp: UIView, RegistrationView {
   // MARK: Actions
 
 @IBAction func registrConfirmationButton(sender: UIButton) {
-
 }
 
 @IBAction func registrBackButton(sender: UIButton) {
   backToAuthorization?()
-
 }
 
 // MARK: - Private methods
 
   private func makeButton(button: CustomButton) {
     button.normalColor = UIColor(named: "VelvetBlue") ?? .white
-     button.highlightColor = .white
+    button.highlightColor = .white
 
-      button.layer.cornerRadius = 10
-      button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
-      button.layer.borderWidth = 1
-      button.layer.shadowOpacity = 0.25
-      button.layer.shadowOffset = CGSize(width: 0, height: 4)
-      button.layer.shadowRadius = 4
+    button.layer.cornerRadius = 10
+    button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
+    button.layer.borderWidth = 1
+    button.layer.shadowOpacity = 0.25
+    button.layer.shadowOffset = CGSize(width: 0, height: 4)
+    button.layer.shadowRadius = 4
   }
 }

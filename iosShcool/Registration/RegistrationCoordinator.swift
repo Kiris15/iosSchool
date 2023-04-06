@@ -17,9 +17,6 @@ class RegistrationCoordinator: BaseCoordinator<RegistrationCoordinator.Context> 
     let controller = assembly.registrationVC()
 
     controller.backToAuth = { [weak controller] in
-      let coordinator = self.assembly.authCoordinator()
-      let authVC = coordinator.make()
-      authVC.modalPresentationStyle = .fullScreen
       controller?.dismiss(animated: true)
     }
     return controller

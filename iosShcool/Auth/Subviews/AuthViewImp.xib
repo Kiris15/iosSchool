@@ -33,7 +33,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизуйтесь, чтобы получить доступ к полному функционалу приложения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjT-Ry-g1O">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизуйтесь, чтобы получить доступ к полному функционалу приложения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjT-Ry-g1O" userLabel="Авторизуйтесь, чтобы получить доступ к полному функционалу приложения">
                                             <rect key="frame" x="0.0" y="38.333333333333343" width="267" height="86"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,7 +76,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="lTI-kU-b48">
-                            <rect key="frame" x="58" y="483.33333333333326" width="277" height="92"/>
+                            <rect key="frame" x="58" y="477.33333333333326" width="277" height="98"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PR2-iR-tUM">
                                     <rect key="frame" x="0.0" y="0.0" width="277" height="40"/>
@@ -87,7 +87,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ekz-GY-1SI">
-                                    <rect key="frame" x="0.0" y="58.000000000000057" width="277" height="34"/>
+                                    <rect key="frame" x="0.0" y="58.000000000000057" width="277" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="2Ki-5E-gUI"/>
                                     </constraints>
@@ -132,7 +132,7 @@
                 <outlet property="passwordTextField" destination="Ekz-GY-1SI" id="E3F-yS-5sz"/>
                 <outlet property="registrationButton" destination="qfW-TN-t8s" id="oeM-Rj-vx6"/>
             </connections>
-            <point key="canvasLocation" x="138" y="-16"/>
+            <point key="canvasLocation" x="136.64122137404578" y="-16.197183098591552"/>
         </view>
     </objects>
     <resources>
