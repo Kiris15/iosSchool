@@ -8,14 +8,21 @@
 import UIKit
 
 protocol AuthView: UIView {
-  var registrationAction: (() -> Void)? {get set}
+  var registrationAction: (() -> Void)? { get set }
+  var delegate: AuthViewDelegate? { get set }
 
   func update(with data: AuthViewData)
+}
+
+protocol AuthViewDelegate: AnyObject {
+  func loginButtonDidTap(login: String, password: String)
 }
 
 class AuthViewImp: UIView, AuthView {
 
   var registrationAction: (() -> Void)?
+
+  weak var delegate: AuthViewDelegate?
 
   @IBOutlet private weak var scrollView: UIScrollView!
   @IBOutlet private weak var helloView: UIView!
@@ -45,10 +52,12 @@ class AuthViewImp: UIView, AuthView {
     loginTextField.backgroundColor = .white.withAlphaComponent(0.6)
     loginTextField.layer.cornerRadius = 15
     loginTextField.layer.masksToBounds = true
+    loginTextField.delegate = self
 
     passwordTextField.backgroundColor = .white.withAlphaComponent(0.6)
     passwordTextField.layer.cornerRadius = 15
     passwordTextField.layer.masksToBounds = true
+    passwordTextField.delegate = self
 
     makeButton(button: loginButton)
     makeButton(button: registrationButton)
@@ -72,6 +81,7 @@ class AuthViewImp: UIView, AuthView {
 
   @IBAction func loginButtonDidTap(sender: UIButton) {
     endEditing(true)
+    delegate?.loginButtonDidTap(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
   }
 
   @IBAction func registrationButtonDidTap(sender: UIButton) {
@@ -115,4 +125,17 @@ class AuthViewImp: UIView, AuthView {
           button.layer.shadowOffset = CGSize(width: 0, height: 4)
           button.layer.shadowRadius = 4
       }
+}
+
+// MARK - UITextFieldDelegate
+
+extension AuthViewImp: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if textField == loginTextField {
+      passwordTextField.becomeFirstResponder()
+    } else {
+      passwordTextField.resignFirstResponder()
+    }
+    return true
+  }
 }

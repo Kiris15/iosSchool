@@ -5,7 +5,7 @@
 //  Created by Savely on 17.03.2023.
 //
 
-import Foundation
+import UIKit
 
 class Assembly {
 
@@ -19,5 +19,15 @@ class Assembly {
 
   func appCoordinator() -> AppCoordinator {
     AppCoordinator(assembly: self, context: CoordinatorContext())
+  }
+
+  func rootTabBarControlller() -> UITabBarController {
+    TabBarController()
+  }
+
+  func rootNavigationController() -> UINavigationController {
+    let controller = BaseNavigationController()
+    controller.modalPresentationStyle = .fullScreen
+    return controller
   }
 }

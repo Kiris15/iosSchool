@@ -13,7 +13,7 @@ class RegistrationCoordinator: BaseCoordinator<RegistrationCoordinator.Context> 
   }
 
   override func make() -> UIViewController {
-    let controller = assembly.authVC()
+    let controller = assembly.authVC(onLoginSuccess: {})
     return controller
   }
 }

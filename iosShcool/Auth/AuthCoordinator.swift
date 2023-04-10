@@ -12,10 +12,11 @@ import UIKit
 class AuthCoordinator: BaseCoordinator<AuthCoordinator.Context> {
 
   struct Context {
+    let onLoginSuccess: (() -> Void)?
   }
 
   override func make() -> UIViewController {
-    let controller = assembly.authVC()
+    let controller = assembly.authVC(onLoginSuccess: context.onLoginSuccess)
     controller.onOpenRegistration = { [weak controller] in
       // let coordinator = self.assembly.regCoordinator
       // let registrationVC = coordinator.make()
