@@ -8,7 +8,6 @@
 import Foundation
 
 protocol RegistrationAssembly {
-
   func registrationCoordinator() -> RegistrationCoordinator
   func registrationVC() -> RegistrationViewController
   func registrationDataProvider() -> RegistrationDataProvider

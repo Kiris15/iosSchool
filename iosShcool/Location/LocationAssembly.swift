@@ -8,7 +8,6 @@
 import Foundation
 
 protocol LocationAssembly {
-
   func locationCoordinator() -> LocationCoordinator
   func locationVC() -> LocationViewController
   func locationDataProvider() -> LocationDataProvider

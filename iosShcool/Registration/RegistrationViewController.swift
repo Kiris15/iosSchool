@@ -26,7 +26,7 @@ class RegistrationViewController: UIViewController {
 
       view.backgroundColor = .red
 
-      dataProvider.registration(username: "ann", password: "1111") { [weak self] resut in
+      dataProvider.registration(username: "kiriss", password: "123456") { [weak self] resut in
         switch resut {
         case .success(let success):
           print("success")

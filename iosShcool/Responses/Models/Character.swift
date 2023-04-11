@@ -30,7 +30,7 @@ struct Character: Decodable {
     self.name = try container.decode(String.self, forKey: .name)
     self.status = try container.decode(String.self, forKey: .status)
     self.species = try container.decode(String.self, forKey: .species)
-    self.type = (try? container.decode(String.self, forKey: .type)) ?? "no type"
+    self.type = try container.decode(String.self, forKey: .type)
     self.gender = try container.decode(String.self, forKey: .gender)
   }
 }

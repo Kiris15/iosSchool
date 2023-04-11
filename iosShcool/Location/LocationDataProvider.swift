@@ -8,13 +8,11 @@
 import Foundation
 
 protocol LocationDataProvider {
-  func location(
-    comletion: @escaping (Result<TokenResponce, ApiError>) -> Void
-  )
+  func location(comletion: @escaping (Result<Location, ApiError>) -> Void)
 }
 
 class LocationDataProviderImp: LocationDataProvider {
-  func location(comletion: @escaping (Result<TokenResponce, ApiError>) -> Void) {
+  func location(comletion: @escaping (Result<Location, ApiError>) -> Void) {
     apiClient.location() { result in
       switch result {
       case .success(let data):

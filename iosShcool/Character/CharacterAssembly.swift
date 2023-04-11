@@ -8,7 +8,6 @@
 import Foundation
 
 protocol CharacterAssembly {
-
   func characterCoordinator() -> CharacterCoordinator
   func characterVC() -> CharacterViewController
   func characterDataProvider() -> CharacterDataProvider
