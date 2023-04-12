@@ -20,4 +20,17 @@ class LocationViewController: UIViewController {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    dataProvider.location() { [weak self] resut in
+      switch resut {
+      case .success(let success):
+        print(success)
+      case .failure(let failure):
+        print(failure.rawValue)
+      }
+    }
+  }
 }
