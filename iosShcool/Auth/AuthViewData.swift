@@ -10,8 +10,10 @@ import Foundation
 struct AuthViewData {
 
   let loginTextFieldPlaceholder: String
+  let passwordTextFieldPlaceholder: String
 
   init() {
-    loginTextFieldPlaceholder = "Авторизуйтесь"
+    loginTextFieldPlaceholder = "Логин"
+    passwordTextFieldPlaceholder = "Пароль"
   }
 }

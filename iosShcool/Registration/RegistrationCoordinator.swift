@@ -13,7 +13,11 @@ class RegistrationCoordinator: BaseCoordinator<RegistrationCoordinator.Context> 
   }
 
   override func make() -> UIViewController {
-    let controller = assembly.authVC(onLoginSuccess: {})
+    let controller = assembly.registrationVC()
+
+    controller.backToAuth = { [weak controller] in
+      controller?.dismiss(animated: true)
+    }
     return controller
   }
 }

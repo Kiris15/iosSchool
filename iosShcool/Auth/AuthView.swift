@@ -41,6 +41,8 @@ class AuthViewImp: UIView, AuthView {
     addGestureRecognizer(recognizer)
 
     helloLabel.text = data.loginTextFieldPlaceholder
+    loginTextField.placeholder = data.loginTextFieldPlaceholder
+    passwordTextField.placeholder = data.passwordTextFieldPlaceholder
 
     helloView.layer.cornerRadius = 15
     helloView.layer.masksToBounds = true
