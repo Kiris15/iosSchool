@@ -12,13 +12,6 @@ struct Info: Decodable {
   let pages: Int
   let next: String?
   let prev: String?
-
-  enum CodingKeys: String, CodingKey {
-    case count
-    case pages
-    case next
-    case prev
-  }
 }
 
 struct Location: Decodable {
