@@ -21,13 +21,4 @@ struct Location: Decodable {
     case residents
     case dim = "dimention"
   }
-
-  init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: CodingKeys.self)
-    self.identifier = try container.decode(Int.self, forKey: .identifier)
-    self.name = try container.decode(String.self, forKey: .name)
-    self.type = (try? container.decode(String.self, forKey: .type)) ?? "no type"
-    self.residents = try container.decode([String].self, forKey: .residents)
-    self.dim = try container.decode(String.self, forKey: .dim)
-  }
 }

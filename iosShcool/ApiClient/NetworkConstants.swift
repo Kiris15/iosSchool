@@ -17,6 +17,6 @@ struct NetworkConstants {
   struct URLStrings {
     static let locationURL = "https://rickandmortyapi.com/api/location"
     static let nanoPost = "https://nanopost.evolitist.com/api/"
-    static let characterURL = "https://rickandmortyapi.com/api/character/352"
+    static let characterURL = "https://rickandmortyapi.com/api/character/"
   }
 }

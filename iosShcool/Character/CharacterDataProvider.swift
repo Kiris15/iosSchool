@@ -8,12 +8,18 @@
 import Foundation
 
 protocol CharacterDataProvider {
-  func character(comletion: @escaping (Result<Character, ApiError>) -> Void)
+  func character(
+    identifier: Int,
+    comletion: @escaping (Result<Character, ApiError>) -> Void
+  )
 }
 
 class CharacterDataProviderImp: CharacterDataProvider {
-  func character(comletion: @escaping (Result<Character, ApiError>) -> Void) {
-    apiClient.character() { result in
+  func character(
+    identifier: Int,
+    comletion: @escaping (Result<Character, ApiError>) -> Void
+  ) {
+    apiClient.character(identifier: identifier) { result in
       switch result {
       case .success(let data):
         comletion(.success(data))
