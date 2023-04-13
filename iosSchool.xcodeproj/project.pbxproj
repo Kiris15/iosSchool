@@ -28,6 +28,8 @@
 		C44C367429E80A3E00E2299B /* CabinetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C367129E80A3E00E2299B /* CabinetViewController.swift */; };
 		C44C367D29E81BBC00E2299B /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44C367C29E81BBC00E2299B /* AuthViewImp.xib */; };
 		C44C368029E81BD200E2299B /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44C367F29E81BD200E2299B /* RegistrationViewImp.xib */; };
+		C44C368329E81D3600E2299B /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44C368229E81D3600E2299B /* SplashViewImp.xib */; };
+		C44C368529E822D500E2299B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C368429E822D500E2299B /* SplashView.swift */; };
 		C46D609F29BF4B9C009247EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D609E29BF4B9C009247EE /* AppDelegate.swift */; };
 		C46D60A129BF4B9C009247EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60A029BF4B9C009247EE /* SceneDelegate.swift */; };
 		C46D60A329BF4B9C009247EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60A229BF4B9C009247EE /* ViewController.swift */; };
@@ -88,6 +90,8 @@
 		C44C367129E80A3E00E2299B /* CabinetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetViewController.swift; sourceTree = "<group>"; };
 		C44C367C29E81BBC00E2299B /* AuthViewImp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
 		C44C367F29E81BD200E2299B /* RegistrationViewImp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
+		C44C368229E81D3600E2299B /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
+		C44C368429E822D500E2299B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C46D609B29BF4B9C009247EE /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46D609E29BF4B9C009247EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C46D60A029BF4B9C009247EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +214,14 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		C44C368129E81CFD00E2299B /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C44C368229E81D3600E2299B /* SplashViewImp.xib */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		C46D609229BF4B9C009247EE = {
 			isa = PBXGroup;
 			children = (
@@ -270,10 +282,12 @@
 		C475DA4829C89E5700F8F263 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				C44C368129E81CFD00E2299B /* SubViews */,
 				C475DA4929C89E8100F8F263 /* SplashViewController.swift */,
 				C475DA4B29C89F1B00F8F263 /* SplashDataProvider.swift */,
 				C475DA4D29C89F5A00F8F263 /* SplashAssembly.swift */,
 				C475DA4F29C8A19F00F8F263 /* SplashCoordinator.swift */,
+				C44C368429E822D500E2299B /* SplashView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -379,6 +393,7 @@
 				C44C368029E81BD200E2299B /* RegistrationViewImp.xib in Resources */,
 				C46D60AB29BF4B9F009247EE /* LaunchScreen.storyboard in Resources */,
 				C46D60A829BF4B9F009247EE /* Assets.xcassets in Resources */,
+				C44C368329E81D3600E2299B /* SplashViewImp.xib in Resources */,
 				C44C367D29E81BBC00E2299B /* AuthViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +448,7 @@
 				C4A7883529DA918A002714FD /* LocationDataProvider.swift in Sources */,
 				C4A7883D29DA91E3002714FD /* LocationCoordinator.swift in Sources */,
 				C475DA4C29C89F1B00F8F263 /* SplashDataProvider.swift in Sources */,
+				C44C368529E822D500E2299B /* SplashView.swift in Sources */,
 				C475DA4529C89C5400F8F263 /* AuthView.swift in Sources */,
 				C445E77429D5B1CB00B55141 /* RegistrationApiClient.swift in Sources */,
 				C475DA4E29C89F5A00F8F263 /* SplashAssembly.swift in Sources */,
