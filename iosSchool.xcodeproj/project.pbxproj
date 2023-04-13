@@ -34,7 +34,6 @@
 		C46D60A129BF4B9C009247EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60A029BF4B9C009247EE /* SceneDelegate.swift */; };
 		C46D60A329BF4B9C009247EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60A229BF4B9C009247EE /* ViewController.swift */; };
 		C46D60A829BF4B9F009247EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C46D60A729BF4B9F009247EE /* Assets.xcassets */; };
-		C46D60AB29BF4B9F009247EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46D60A929BF4B9F009247EE /* LaunchScreen.storyboard */; };
 		C46D60B329BF58B0009247EE /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60B229BF58B0009247EE /* ColorGenerator.swift */; };
 		C475DA3A29C8918E00F8F263 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA3929C8918E00F8F263 /* AppCoordinator.swift */; };
 		C475DA3D29C897B800F8F263 /* AuthDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA3C29C897B800F8F263 /* AuthDataProvider.swift */; };
@@ -97,7 +96,6 @@
 		C46D60A029BF4B9C009247EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C46D60A229BF4B9C009247EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C46D60A729BF4B9F009247EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C46D60AA29BF4B9F009247EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C46D60AC29BF4B9F009247EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C46D60B229BF58B0009247EE /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
 		C475DA3929C8918E00F8F263 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 				C46D60A029BF4B9C009247EE /* SceneDelegate.swift */,
 				C46D60A229BF4B9C009247EE /* ViewController.swift */,
 				C46D60A729BF4B9F009247EE /* Assets.xcassets */,
-				C46D60A929BF4B9F009247EE /* LaunchScreen.storyboard */,
 				C46D60AC29BF4B9F009247EE /* Info.plist */,
 				C46D60B229BF58B0009247EE /* ColorGenerator.swift */,
 				C47873AB29C456EA00C5ABB7 /* TeestGame.swift */,
@@ -391,7 +388,6 @@
 			files = (
 				C44C366729E809F300E2299B /* BaseViewController.xib in Resources */,
 				C44C368029E81BD200E2299B /* RegistrationViewImp.xib in Resources */,
-				C46D60AB29BF4B9F009247EE /* LaunchScreen.storyboard in Resources */,
 				C46D60A829BF4B9F009247EE /* Assets.xcassets in Resources */,
 				C44C368329E81D3600E2299B /* SplashViewImp.xib in Resources */,
 				C44C367D29E81BBC00E2299B /* AuthViewImp.xib in Resources */,
@@ -484,17 +480,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		C46D60A929BF4B9F009247EE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C46D60AA29BF4B9F009247EE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C46D60AD29BF4B9F009247EE /* Debug */ = {
