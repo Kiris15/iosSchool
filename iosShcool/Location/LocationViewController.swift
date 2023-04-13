@@ -8,7 +8,6 @@
 import UIKit
 
 class LocationViewController: UIViewController {
-
   private let dataProvider: LocationDataProvider
 
   init(dataProvider: LocationDataProvider) {

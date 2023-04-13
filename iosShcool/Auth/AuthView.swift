@@ -128,7 +128,7 @@ class AuthViewImp: UIView, AuthView {
   }
 }
 
-// MARK - UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 
 extension AuthViewImp: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {

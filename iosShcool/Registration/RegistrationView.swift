@@ -16,7 +16,11 @@ protocol RegistrationView: UIView {
 }
 
 protocol RegistrViewDelegate: AnyObject {
-  func registrConfirmButtonDidTap(login: String, password: String, repeatPassword: String)
+  func registrConfirmButtonDidTap(
+    login: String,
+    password: String,
+    repeatPassword: String
+  )
 }
 
 class RegistrationViewImp: UIView, RegistrationView {
@@ -49,14 +53,17 @@ class RegistrationViewImp: UIView, RegistrationView {
     registrLoginTextField.backgroundColor = .white.withAlphaComponent(0.6)
     registrLoginTextField.layer.cornerRadius = 15
     registrLoginTextField.layer.masksToBounds = true
+    registrLoginTextField.delegate = self
 
     registrPasswordTextField.backgroundColor = .white.withAlphaComponent(0.6)
     registrPasswordTextField.layer.cornerRadius = 15
     registrPasswordTextField.layer.masksToBounds = true
+    registrPasswordTextField.delegate = self
 
     registrRepeatPasswordTextField.backgroundColor = .white.withAlphaComponent(0.6)
     registrRepeatPasswordTextField.layer.cornerRadius = 15
     registrRepeatPasswordTextField.layer.masksToBounds = true
+    registrRepeatPasswordTextField.delegate = self
 
     makeButton(button: registrConfirmationButton)
     makeButton(button: registrBackButton)
@@ -78,14 +85,19 @@ class RegistrationViewImp: UIView, RegistrationView {
 
   // MARK: Actions
 
-@IBAction func registrConfirmButtonDidTap(sender: UIButton) {
-  endEditing(true)
-}
+  @IBAction func registrConfirmButtonDidTap(sender: UIButton) {
+    endEditing(true)
+    delegate?.registrConfirmButtonDidTap(
+      login: registrLoginTextField.text ?? "",
+      password: registrPasswordTextField.text ?? "",
+      repeatPassword: registrRepeatPasswordTextField.text ?? ""
+    )
+  }
 
-@IBAction func registrBackButtonDidTap(sender: UIButton) {
-  endEditing(true)
-  backToAuthorization?()
-}
+  @IBAction func registrBackButtonDidTap(sender: UIButton) {
+    endEditing(true)
+    backToAuthorization?()
+  }
 
   @objc
   private func closeKeyboard() {
@@ -110,7 +122,7 @@ class RegistrationViewImp: UIView, RegistrationView {
     scrollView.contentInset = .zero
   }
 
-// MARK: - Private methods
+  // MARK: - Private methods
 
   private func makeButton(button: CustomButton) {
     button.normalColor = UIColor(named: "VelvetBlue") ?? .white
@@ -125,13 +137,16 @@ class RegistrationViewImp: UIView, RegistrationView {
   }
 }
 
-// MARK - UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 
 extension RegistrationViewImp: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if textField == registrLoginTextField {
       registrPasswordTextField.becomeFirstResponder()
-    } else { registrPasswordTextField.resignFirstResponder()
+    } else if textField == registrPasswordTextField {
+      registrRepeatPasswordTextField.becomeFirstResponder()
+    } else {
+      registrRepeatPasswordTextField.resignFirstResponder()
     }
     return true
   }

@@ -8,7 +8,6 @@
 import UIKit
 
 class CharacterViewController: UIViewController {
-
   private let dataProvider: CharacterDataProvider
 
   init(dataProvider: CharacterDataProvider) {

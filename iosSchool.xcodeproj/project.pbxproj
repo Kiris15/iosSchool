@@ -26,6 +26,8 @@
 		C44C367229E80A3E00E2299B /* CabinetAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C366F29E80A3E00E2299B /* CabinetAssembly.swift */; };
 		C44C367329E80A3E00E2299B /* CabinetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C367029E80A3E00E2299B /* CabinetCoordinator.swift */; };
 		C44C367429E80A3E00E2299B /* CabinetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C367129E80A3E00E2299B /* CabinetViewController.swift */; };
+		C44C367729E80BC300E2299B /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44C367629E80BC300E2299B /* RegistrationViewImp.xib */; };
+		C44C367A29E80C0C00E2299B /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44C367929E80C0C00E2299B /* AuthViewImp.xib */; };
 		C46D609F29BF4B9C009247EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D609E29BF4B9C009247EE /* AppDelegate.swift */; };
 		C46D60A129BF4B9C009247EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60A029BF4B9C009247EE /* SceneDelegate.swift */; };
 		C46D60A329BF4B9C009247EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60A229BF4B9C009247EE /* ViewController.swift */; };
@@ -84,6 +86,8 @@
 		C44C366F29E80A3E00E2299B /* CabinetAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetAssembly.swift; sourceTree = "<group>"; };
 		C44C367029E80A3E00E2299B /* CabinetCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetCoordinator.swift; sourceTree = "<group>"; };
 		C44C367129E80A3E00E2299B /* CabinetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetViewController.swift; sourceTree = "<group>"; };
+		C44C367629E80BC300E2299B /* RegistrationViewImp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
+		C44C367929E80C0C00E2299B /* AuthViewImp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
 		C46D609B29BF4B9C009247EE /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46D609E29BF4B9C009247EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C46D60A029BF4B9C009247EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,8 +174,8 @@
 		C44C365F29E809F300E2299B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				C44C366029E809F300E2299B /* BaseViewController.swift */,
 				C44C366129E809F300E2299B /* BaseViewController.xib */,
+				C44C366029E809F300E2299B /* BaseViewController.swift */,
 				C44C366229E809F300E2299B /* RootTab.swift */,
 				C44C366329E809F300E2299B /* BaseNavigationController.swift */,
 				C44C366429E809F300E2299B /* BaseCoordinator.swift */,
@@ -188,6 +192,22 @@
 				C44C367129E80A3E00E2299B /* CabinetViewController.swift */,
 			);
 			path = Cabinet;
+			sourceTree = "<group>";
+		};
+		C44C367529E80BC300E2299B /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C44C367629E80BC300E2299B /* RegistrationViewImp.xib */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		C44C367829E80C0C00E2299B /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				C44C367929E80C0C00E2299B /* AuthViewImp.xib */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		C46D609229BF4B9C009247EE = {
@@ -236,6 +256,7 @@
 		C475DA3B29C8979500F8F263 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				C44C367829E80C0C00E2299B /* Subviews */,
 				C475DA3C29C897B800F8F263 /* AuthDataProvider.swift */,
 				C475DA3E29C8984000F8F263 /* AuthViewController.swift */,
 				C475DA4029C8992A00F8F263 /* AuthAssembly.swift */,
@@ -260,6 +281,7 @@
 		C475DA5229CB487900F8F263 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				C44C367529E80BC300E2299B /* SubViews */,
 				C475DA5529CB495800F8F263 /* RegistrationDataProvider.swift */,
 				C475DA5329CB48F600F8F263 /* RegistrationViewController.swift */,
 				C475DA5729CB497400F8F263 /* RegistrationAssembly.swift */,
@@ -353,9 +375,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44C367729E80BC300E2299B /* RegistrationViewImp.xib in Resources */,
 				C44C366729E809F300E2299B /* BaseViewController.xib in Resources */,
 				C46D60AB29BF4B9F009247EE /* LaunchScreen.storyboard in Resources */,
 				C46D60A829BF4B9F009247EE /* Assets.xcassets in Resources */,
+				C44C367A29E80C0C00E2299B /* AuthViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

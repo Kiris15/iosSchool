@@ -23,29 +23,30 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     fatalError("init(coder:) has not been implemented")
   }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-      view.backgroundColor = .red
-
-      dataProvider.registration(username: "kiriss", password: "123456") { [weak self] resut in
-        switch resut {
-        case .success(let success):
-          print("success")
-        case .failure(let failure):
-          print(failure.rawValue)
-        }
-      }
-      rootView.update(with: RegistrationViewData())
-      rootView.backToAuthorization = backToAuth
-      rootView.delegate = self
-    }
+    rootView.update(with: RegistrationViewData())
+    rootView.backToAuthorization = backToAuth
+    rootView.delegate = self
+  }
 }
 
 // MARK: - RegistrViewDelegate
 
 extension RegistrationViewController: RegistrViewDelegate {
   func registrConfirmButtonDidTap(login: String, password: String, repeatPassword: String) {
-
+    dataProvider.registration(
+      login: "kiriss",
+      password: "123456",
+      repeatPassword: "123456"
+    ) { [weak self] resut in
+      switch resut {
+      case .success(let success):
+        print(success)
+      case .failure(let failure):
+        print(failure.rawValue)
+      }
+    }
   }
 }

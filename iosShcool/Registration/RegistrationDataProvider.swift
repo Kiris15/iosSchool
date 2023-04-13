@@ -18,16 +18,21 @@ protocol RegistrationDataProvider {
 
 class RegistrationDataProviderImp: RegistrationDataProvider {
   func registration(
-    username: String,
+    login: String,
     password: String,
+    repeatPassword: String,
     comletion: @escaping (Result<TokenResponce, ApiError>) -> Void
   ) {
-    apiClient.registration(username: username, password: password) { result in
-      switch result {
-      case .success(let data):
-        comletion(.success(data))
-      case .failure(let error):
-        comletion(.failure(error))
+    if password != repeatPassword {
+      print("Пароли не совпадают")
+    } else {
+      apiClient.registration(username: login, password: password) { result in
+        switch result {
+        case .success(let data):
+          comletion(.success(data))
+        case .failure(let error):
+          comletion(.failure(error))
+        }
       }
     }
   }
