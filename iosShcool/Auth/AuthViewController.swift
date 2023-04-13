@@ -28,8 +28,6 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-     // view.backgroundColor = .red
-
       rootView.update(with: AuthViewData())
       rootView.registrationAction = onOpenRegistration
       rootView.delegate = self
@@ -45,7 +43,7 @@ extension AuthViewController: AuthViewDelegate {
       self?.onLoginSuccess?()
       switch resut {
       case .success(let success):
-        print("success")
+        print(success)
         self?.onLoginSuccess?()
       case .failure(let failure):
         print(failure.rawValue)

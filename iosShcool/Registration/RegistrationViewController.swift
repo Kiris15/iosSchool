@@ -29,7 +29,7 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
       dataProvider.registration(username: "kiriss", password: "123456") { [weak self] resut in
         switch resut {
         case .success(let success):
-          print("success")
+          print(success)
         case .failure(let failure):
           print(failure.rawValue)
         }

@@ -40,7 +40,6 @@ class AuthViewImp: UIView, AuthView {
     let recognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
     addGestureRecognizer(recognizer)
 
-    helloLabel.text = data.loginTextFieldPlaceholder
     loginTextField.placeholder = data.loginTextFieldPlaceholder
     passwordTextField.placeholder = data.passwordTextFieldPlaceholder
 
@@ -129,7 +128,7 @@ class AuthViewImp: UIView, AuthView {
       }
 }
 
-// MARK - UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 
 extension AuthViewImp: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
