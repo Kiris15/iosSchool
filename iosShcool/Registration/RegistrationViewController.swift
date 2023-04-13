@@ -34,18 +34,18 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
 // MARK: - RegistrViewDelegate
 
-extension RegistrationViewController: RegistrViewDelegate {
+extension RegistrationViewController: RegistrationViewDelegate {
   func registrConfirmButtonDidTap(login: String, password: String, repeatPassword: String) {
     dataProvider.registration(
-      login: "kiriss",
-      password: "123456",
-      repeatPassword: "123456"
+      login: login,
+      password: password,
+      repeatPassword: repeatPassword
     ) { [weak self] resut in
       switch resut {
       case .success(let success):
         print(success)
       case .failure(let failure):
-        print(failure.rawValue)
+        self?.showAlert(message: failure.rawValue)
       }
     }
   }

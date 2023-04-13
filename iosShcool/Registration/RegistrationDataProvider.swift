@@ -23,16 +23,16 @@ class RegistrationDataProviderImp: RegistrationDataProvider {
     repeatPassword: String,
     comletion: @escaping (Result<TokenResponce, ApiError>) -> Void
   ) {
-    if password != repeatPassword {
-      print("Пароли не совпадают")
-    } else {
-      apiClient.registration(username: login, password: password) { result in
-        switch result {
-        case .success(let data):
-          comletion(.success(data))
-        case .failure(let error):
-          comletion(.failure(error))
-        }
+    guard password == repeatPassword else {
+      comletion(.failure(ApiError.passwordEqual))
+      return
+    }
+    apiClient.registration(username: login, password: password) { result in
+      switch result {
+      case .success(let data):
+        comletion(.success(data))
+      case .failure(let error):
+        comletion(.failure(error))
       }
     }
   }

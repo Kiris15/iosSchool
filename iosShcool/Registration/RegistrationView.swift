@@ -10,12 +10,12 @@ import UIKit
 protocol RegistrationView: UIView {
 
   var backToAuthorization: (() -> Void)? { get set }
-  var delegate: RegistrViewDelegate? { get set }
+  var delegate: RegistrationViewDelegate? { get set }
 
   func update(with date: RegistrationViewData)
 }
 
-protocol RegistrViewDelegate: AnyObject {
+protocol RegistrationViewDelegate: AnyObject {
   func registrConfirmButtonDidTap(
     login: String,
     password: String,
@@ -27,7 +27,7 @@ class RegistrationViewImp: UIView, RegistrationView {
 
   var backToAuthorization: (() -> Void)?
 
-  weak var delegate: RegistrViewDelegate?
+  weak var delegate: RegistrationViewDelegate?
 
   @IBOutlet private weak var scrollView: UIScrollView!
   @IBOutlet private weak var registrationLabel: UILabel!
