@@ -26,8 +26,6 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      view.backgroundColor = .red
-
       dataProvider.registration(username: "kiriss", password: "123456") { [weak self] resut in
         switch resut {
         case .success(let success):
