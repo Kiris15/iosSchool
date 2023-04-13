@@ -7,7 +7,9 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
+
+  var backToAuth: (() -> Void)?
 
   private let dataProvider: RegistrationDataProvider
 
@@ -34,5 +36,7 @@ class RegistrationViewController: UIViewController {
           print(failure.rawValue)
         }
       }
+      rootView.update(with: RegistrationViewData())
+      rootView.backToAuthorization = backToAuth
     }
 }

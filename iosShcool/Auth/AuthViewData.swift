@@ -7,4 +7,13 @@
 
 import Foundation
 
-struct AuthViewData {}
+struct AuthViewData {
+
+  let loginTextFieldPlaceholder: String
+  let passwordTextFieldPlaceholder: String
+
+  init() {
+    loginTextFieldPlaceholder = "Логин"
+    passwordTextFieldPlaceholder = "Пароль"
+  }
+}

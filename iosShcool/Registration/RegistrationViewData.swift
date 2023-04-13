@@ -7,4 +7,17 @@
 
 import Foundation
 
-struct RegistrationViewData {}
+
+struct RegistrationViewData {
+
+  let registrLoginTextFieldPlaceholder: String
+  let registrPasswordTextFieldPlaceholder: String
+  let regRepeatPasswordTextFieldPlaceholder: String
+
+  init() {
+    registrLoginTextFieldPlaceholder = "Введите логин"
+    registrPasswordTextFieldPlaceholder = "Введите пароль"
+    regRepeatPasswordTextFieldPlaceholder = "Повторите пароль"
+    }
+}
+
