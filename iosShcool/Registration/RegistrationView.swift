@@ -10,14 +10,22 @@ import UIKit
 protocol RegistrationView: UIView {
 
   var backToAuthorization: (() -> Void)? { get set }
+  var delegate: RegistrViewDelegate? { get set }
 
   func update(with date: RegistrationViewData)
+}
+
+protocol RegistrViewDelegate: AnyObject {
+  func registrConfirmButtonDidTap(login: String, password: String, repeatPassword: String)
 }
 
 class RegistrationViewImp: UIView, RegistrationView {
 
   var backToAuthorization: (() -> Void)?
 
+  weak var delegate: RegistrViewDelegate?
+
+  @IBOutlet private weak var scrollView: UIScrollView!
   @IBOutlet private weak var registrationLabel: UILabel!
   @IBOutlet private weak var registrIcon: UIImageView!
   @IBOutlet private weak var registrLoginTextField: UITextField!
@@ -26,7 +34,14 @@ class RegistrationViewImp: UIView, RegistrationView {
   @IBOutlet private weak var registrConfirmationButton: CustomButton!
   @IBOutlet private weak var registrBackButton: CustomButton!
 
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+
   func update(with date: RegistrationViewData) {
+    let recognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
+    addGestureRecognizer(recognizer)
+
     registrLoginTextField.placeholder = date.registrLoginTextFieldPlaceholder
     registrPasswordTextField.placeholder = date.registrPasswordTextFieldPlaceholder
     registrRepeatPasswordTextField.placeholder = date.regRepeatPasswordTextFieldPlaceholder
@@ -46,16 +61,54 @@ class RegistrationViewImp: UIView, RegistrationView {
     makeButton(button: registrConfirmationButton)
     makeButton(button: registrBackButton)
 
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(keyboardWillShow),
+      name: UIResponder.keyboardWillShowNotification,
+      object: nil
+    )
+
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(keyboardWillHide),
+      name: UIResponder.keyboardWillHideNotification,
+      object: nil
+    )
   }
 
   // MARK: Actions
 
-@IBAction func registrConfirmationButton(sender: UIButton) {
+@IBAction func registrConfirmButtonDidTap(sender: UIButton) {
+  endEditing(true)
 }
 
-@IBAction func registrBackButton(sender: UIButton) {
+@IBAction func registrBackButtonDidTap(sender: UIButton) {
+  endEditing(true)
   backToAuthorization?()
 }
+
+  @objc
+  private func closeKeyboard() {
+    endEditing(true)
+  }
+
+  @objc
+  private func keyboardWillShow(notification: Notification) {
+    guard let userInfo = notification.userInfo else {
+      return
+    }
+    guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+      return
+    }
+    let keyboardHeight = keyboardFrame.cgRectValue.height
+    scrollView.contentInset.bottom = keyboardHeight + 15
+    scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeight
+  }
+
+  @objc
+  private func keyboardWillHide(notification: Notification) {
+    scrollView.contentInset = .zero
+  }
 
 // MARK: - Private methods
 
@@ -69,5 +122,17 @@ class RegistrationViewImp: UIView, RegistrationView {
     button.layer.shadowOpacity = 0.25
     button.layer.shadowOffset = CGSize(width: 0, height: 4)
     button.layer.shadowRadius = 4
+  }
+}
+
+// MARK - UITextFieldDelegate
+
+extension RegistrationViewImp: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if textField == registrLoginTextField {
+      registrPasswordTextField.becomeFirstResponder()
+    } else { registrPasswordTextField.resignFirstResponder()
+    }
+    return true
   }
 }

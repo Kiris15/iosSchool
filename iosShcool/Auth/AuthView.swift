@@ -40,7 +40,6 @@ class AuthViewImp: UIView, AuthView {
     let recognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
     addGestureRecognizer(recognizer)
 
-    helloLabel.text = data.loginTextFieldPlaceholder
     loginTextField.placeholder = data.loginTextFieldPlaceholder
     passwordTextField.placeholder = data.passwordTextFieldPlaceholder
 
@@ -79,7 +78,7 @@ class AuthViewImp: UIView, AuthView {
     )
   }
 
-    // MARK: Actions
+  // MARK: Actions
 
   @IBAction func loginButtonDidTap(sender: UIButton) {
     endEditing(true)
@@ -98,16 +97,16 @@ class AuthViewImp: UIView, AuthView {
 
   @objc
   private func keyboardWillShow(notification: Notification) {
-  guard let userInfo = notification.userInfo else {
-    return
+    guard let userInfo = notification.userInfo else {
+      return
+    }
+    guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+      return
+    }
+    let keyboardHeight = keyboardFrame.cgRectValue.height
+    scrollView.contentInset.bottom = keyboardHeight + 15
+    scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeight
   }
-  guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
-    return
-  }
-  let keyboardHeight = keyboardFrame.cgRectValue.height
-  scrollView.contentInset.bottom = keyboardHeight + 15
-  scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeight
-}
 
   @objc
   private func keyboardWillHide(notification: Notification) {
@@ -116,17 +115,17 @@ class AuthViewImp: UIView, AuthView {
 
   // MARK: - Private methods
 
-      private func makeButton(button: CustomButton) {
-        button.normalColor = UIColor(named: "VelvetBlue") ?? .white
-         button.highlightColor = .white
+  private func makeButton(button: CustomButton) {
+    button.normalColor = UIColor(named: "VelvetBlue") ?? .white
+    button.highlightColor = .white
 
-          button.layer.cornerRadius = 10
-          button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
-          button.layer.borderWidth = 1
-          button.layer.shadowOpacity = 0.25
-          button.layer.shadowOffset = CGSize(width: 0, height: 4)
-          button.layer.shadowRadius = 4
-      }
+    button.layer.cornerRadius = 10
+    button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
+    button.layer.borderWidth = 1
+    button.layer.shadowOpacity = 0.25
+    button.layer.shadowOffset = CGSize(width: 0, height: 4)
+    button.layer.shadowRadius = 4
+  }
 }
 
 // MARK - UITextFieldDelegate

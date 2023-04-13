@@ -38,5 +38,14 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
       }
       rootView.update(with: RegistrationViewData())
       rootView.backToAuthorization = backToAuth
+      rootView.delegate = self
     }
+}
+
+// MARK: - RegistrViewDelegate
+
+extension RegistrationViewController: RegistrViewDelegate {
+  func registrConfirmButtonDidTap(login: String, password: String, repeatPassword: String) {
+
+  }
 }

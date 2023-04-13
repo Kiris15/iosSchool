@@ -9,8 +9,9 @@ import Foundation
 
 protocol RegistrationDataProvider {
   func registration(
-    username: String,
+    login: String,
     password: String,
+    repeatPassword: String,
     comletion: @escaping (Result<TokenResponce, ApiError>) -> Void
   )
 }
