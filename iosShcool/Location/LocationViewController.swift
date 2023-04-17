@@ -27,7 +27,23 @@ class LocationViewController<View: LocationsView>: BaseViewController<View> {
     setupBar()
     rootView.makeView()
     rootView.selectLocation =  selectLocation
+    refresh()
+  }
 
+  private func setupBar() {
+    title = "Выбор планеты"
+    navigationController?.navigationBar.titleTextAttributes = [
+      .foregroundColor: UIColor(named: "DarkBlue") ?? .black,
+      .font: UIFont.systemFont(ofSize: 18)
+    ]
+    navigationItem.rightBarButtonItem = UIBarButtonItem(
+      barButtonSystemItem: .refresh,
+      target: self,
+      action: #selector(reload)
+    )
+  }
+
+  private func refresh() {
     dataProvider.location() { [weak self] resut in
       switch resut {
       case .success(let data):
@@ -37,18 +53,8 @@ class LocationViewController<View: LocationsView>: BaseViewController<View> {
       }
     }
   }
-  private func setupBar() {
-          title = "Выбор планеты"
-          navigationController?.navigationBar.titleTextAttributes = [
-              .foregroundColor: UIColor(named: "DarkBlue") ?? .black,
-              .font: UIFont.systemFont(ofSize: 18)
-          ]
-          navigationItem.rightBarButtonItem = UIBarButtonItem(
-              barButtonSystemItem: .refresh,
-              target: self,
-              action: #selector(reload)
-          )
-      }
-  @objc private func reload() {}
-}
 
+  @objc private func reload() {
+    refresh()
+  }
+}
