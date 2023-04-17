@@ -7,13 +7,10 @@
 
 import UIKit
 
-<<<<<<< HEAD
-class LocationViewController: UIViewController {
-=======
 class LocationViewController<View: LocationsView>: BaseViewController<View> {
 
   var selectLocation: ((LocationCellData) -> Void)?
->>>>>>> develop
+
   private let dataProvider: LocationDataProvider
 
   init(dataProvider: LocationDataProvider) {
@@ -55,4 +52,3 @@ class LocationViewController<View: LocationsView>: BaseViewController<View> {
       }
   @objc private func reload() {}
 }
-
