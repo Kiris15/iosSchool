@@ -8,5 +8,4 @@
 import UIKit
 
 class SplashViewImp: UIView {
-  @IBOutlet private weak var splashImage: UIImageView!
 }

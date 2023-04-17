@@ -41,9 +41,6 @@
                 <constraint firstAttribute="bottom" secondItem="1C1-wv-sfA" secondAttribute="bottom" id="aEl-sc-uTu"/>
                 <constraint firstItem="1C1-wv-sfA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nrq-a0-bNx"/>
             </constraints>
-            <connections>
-                <outlet property="splashImage" destination="wrH-N0-Olx" id="1ud-1A-rzV"/>
-            </connections>
             <point key="canvasLocation" x="50" y="-1"/>
         </view>
     </objects>
