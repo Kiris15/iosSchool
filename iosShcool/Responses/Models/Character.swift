@@ -14,6 +14,8 @@ struct Character: Decodable {
   let species: String
   let type: String
   let gender: String
+  let image: String
+  let url: String
 
   enum CodingKeys: String, CodingKey {
     case identifier = "id"
@@ -22,5 +24,7 @@ struct Character: Decodable {
     case species
     case type
     case gender
+    case image
+    case url
   }
 }
