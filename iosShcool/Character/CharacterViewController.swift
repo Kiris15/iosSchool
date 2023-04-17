@@ -23,6 +23,7 @@ class CharacterViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    view.backgroundColor = .white
     dataProvider.character(identifier: 8) { [weak self] resut in
       switch resut {
       case .success(let success):
