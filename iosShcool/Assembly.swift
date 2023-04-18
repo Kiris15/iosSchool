@@ -13,6 +13,8 @@ class Assembly {
     ApiClient()
   }
 
+  lazy var imageService: ImageService = ImageServiceImp(apiClient: apiClient)
+
   func colorGenerator (alpha: Double) -> ColorGenerator {
     ColorGenerator(alpha: alpha)
   }
