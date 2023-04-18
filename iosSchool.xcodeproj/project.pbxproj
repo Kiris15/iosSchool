@@ -13,6 +13,9 @@
 		C40F2BFC29D1C58C004CF07D /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2BFB29D1C58C004CF07D /* NetworkConstants.swift */; };
 		C40F2BFE29D1CC2E004CF07D /* AuthApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2BFD29D1CC2E004CF07D /* AuthApiClient.swift */; };
 		C40F2C0029D1D3A9004CF07D /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2BFF29D1D3A9004CF07D /* ApiError.swift */; };
+		C42DD95029EE9BB90045D509 /* CabinetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD94F29EE9BB90045D509 /* CabinetDataProvider.swift */; };
+		C42DD95229EE9BD00045D509 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD95129EE9BD00045D509 /* CabinetView.swift */; };
+		C42DD95429EE9BDD0045D509 /* CabinetViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD95329EE9BDD0045D509 /* CabinetViewData.swift */; };
 		C445E77429D5B1CB00B55141 /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */; };
 		C445E77629D5BCAF00B55141 /* LocationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77529D5BCAF00B55141 /* LocationApiClient.swift */; };
 		C445E77829D5C5C600B55141 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77729D5C5C600B55141 /* Character.swift */; };
@@ -78,6 +81,9 @@
 		C40F2BFB29D1C58C004CF07D /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		C40F2BFD29D1CC2E004CF07D /* AuthApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiClient.swift; sourceTree = "<group>"; };
 		C40F2BFF29D1D3A9004CF07D /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		C42DD94F29EE9BB90045D509 /* CabinetDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetDataProvider.swift; sourceTree = "<group>"; };
+		C42DD95129EE9BD00045D509 /* CabinetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
+		C42DD95329EE9BDD0045D509 /* CabinetViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetViewData.swift; sourceTree = "<group>"; };
 		C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		C445E77529D5BCAF00B55141 /* LocationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApiClient.swift; sourceTree = "<group>"; };
 		C445E77729D5C5C600B55141 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -181,6 +187,37 @@
 			path = ApiClient;
 			sourceTree = "<group>";
 		};
+		C42DD94E29EE9A6E0045D509 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C42DD95729EE9E6A0045D509 /* TexFieldCell */,
+				C42DD95629EE9E5A0045D509 /* LabelCell */,
+				C42DD95529EE9E4A0045D509 /* ImageCell */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		C42DD95529EE9E4A0045D509 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		C42DD95629EE9E5A0045D509 /* LabelCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LabelCell;
+			sourceTree = "<group>";
+		};
+		C42DD95729EE9E6A0045D509 /* TexFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TexFieldCell;
+			sourceTree = "<group>";
+		};
 		C44C365F29E809F300E2299B /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,9 +234,13 @@
 		C44C366E29E80A3E00E2299B /* Cabinet */ = {
 			isa = PBXGroup;
 			children = (
+				C42DD94E29EE9A6E0045D509 /* SubViews */,
 				C44C366F29E80A3E00E2299B /* CabinetAssembly.swift */,
 				C44C367029E80A3E00E2299B /* CabinetCoordinator.swift */,
 				C44C367129E80A3E00E2299B /* CabinetViewController.swift */,
+				C42DD94F29EE9BB90045D509 /* CabinetDataProvider.swift */,
+				C42DD95129EE9BD00045D509 /* CabinetView.swift */,
+				C42DD95329EE9BDD0045D509 /* CabinetViewData.swift */,
 			);
 			path = Cabinet;
 			sourceTree = "<group>";
@@ -447,6 +488,7 @@
 				C44C366929E809F300E2299B /* BaseNavigationController.swift in Sources */,
 				C4A7883729DA919E002714FD /* LocationViewController.swift in Sources */,
 				C46D60A329BF4B9C009247EE /* ViewController.swift in Sources */,
+				C42DD95029EE9BB90045D509 /* CabinetDataProvider.swift in Sources */,
 				C44C368A29E980D200E2299B /* LocationView.swift in Sources */,
 				C475DA5629CB495800F8F263 /* RegistrationDataProvider.swift in Sources */,
 				C4A7884829DA9D61002714FD /* CharacterAssembly.swift in Sources */,
@@ -462,6 +504,8 @@
 				C40F2BFC29D1C58C004CF07D /* NetworkConstants.swift in Sources */,
 				C47873AE29C4A63400C5ABB7 /* Assembly.swift in Sources */,
 				C475DA5029C8A19F00F8F263 /* SplashCoordinator.swift in Sources */,
+				C42DD95229EE9BD00045D509 /* CabinetView.swift in Sources */,
+				C42DD95429EE9BDD0045D509 /* CabinetViewData.swift in Sources */,
 				C44C366629E809F300E2299B /* BaseViewController.swift in Sources */,
 				C40F2C0029D1D3A9004CF07D /* ApiError.swift in Sources */,
 				C44C367329E80A3E00E2299B /* CabinetCoordinator.swift in Sources */,

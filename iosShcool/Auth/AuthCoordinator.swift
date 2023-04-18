@@ -19,7 +19,7 @@ class AuthCoordinator: BaseCoordinator<AuthCoordinator.Context> {
     let controller = assembly.authVC(onLoginSuccess: context.onLoginSuccess)
 
     controller.onOpenRegistration = { [weak controller] in
-      let coordinator = self.assembly.registrationCoordinator()
+      let coordinator = self.assembly.registrationCoordinator(onLoginSuccess: self.context.onLoginSuccess)
       let registrationVC = coordinator.make()
       registrationVC.modalPresentationStyle = .fullScreen
       controller?.present(registrationVC, animated: true)

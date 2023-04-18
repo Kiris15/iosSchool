@@ -16,26 +16,60 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUB-Bk-3Zt">
-                        <rect key="frame" x="22" y="38" width="276" height="6"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cFX-mo-81w" userLabel="Name Type Labels">
+                        <rect key="frame" x="22" y="38" width="45" height="46"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUB-Bk-3Zt">
+                                <rect key="frame" x="0.0" y="0.0" width="45" height="21.666666666666668"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrT-9r-Xac">
+                                <rect key="frame" x="0.0" y="26.666666666666671" width="45" height="19.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Gx7-OG-CvU" userLabel="Population Labels">
+                        <rect key="frame" x="227.66666666666666" y="56" width="70.333333333333343" height="18"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNk-iC-sim">
+                                <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector" translatesAutoresizingMaskIntoConstraints="NO" id="I21-lI-V1Q">
+                                <rect key="frame" x="55.333333333333343" y="0.0" width="15" height="18"/>
+                            </imageView>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="xUB-Bk-3Zt" secondAttribute="bottom" id="C4R-dC-XPw"/>
-                    <constraint firstItem="xUB-Bk-3Zt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="38" id="NM5-uy-Tbe"/>
-                    <constraint firstAttribute="trailing" secondItem="xUB-Bk-3Zt" secondAttribute="trailing" constant="22" id="Qzj-m3-zHR"/>
-                    <constraint firstItem="xUB-Bk-3Zt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="ki9-qn-k5e"/>
+                    <constraint firstItem="Gx7-OG-CvU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="56" id="B35-Mf-hnM"/>
+                    <constraint firstItem="cFX-mo-81w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="LKe-wb-EmF"/>
+                    <constraint firstAttribute="bottom" secondItem="Gx7-OG-CvU" secondAttribute="bottom" constant="12" id="MbN-ME-ngy"/>
+                    <constraint firstAttribute="trailing" secondItem="Gx7-OG-CvU" secondAttribute="trailing" constant="22" id="YI6-1l-3Fp"/>
+                    <constraint firstItem="Gx7-OG-CvU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cFX-mo-81w" secondAttribute="trailing" constant="15" id="oR5-IE-OsW"/>
+                    <constraint firstAttribute="bottom" secondItem="cFX-mo-81w" secondAttribute="bottom" constant="1" id="rBt-1g-Xyt"/>
+                    <constraint firstItem="cFX-mo-81w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="38" id="tZg-Xv-2rY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="imageVector" destination="I21-lI-V1Q" id="QkW-Ic-yMC"/>
                 <outlet property="nameLabel" destination="xUB-Bk-3Zt" id="v16-he-U60"/>
+                <outlet property="populationLabel" destination="jNk-iC-sim" id="z7h-5l-hDr"/>
+                <outlet property="typeLabel" destination="MrT-9r-Xac" id="7RN-fW-LQA"/>
             </connections>
             <point key="canvasLocation" x="50" y="-1"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Vector" width="15" height="17"/>
+    </resources>
 </document>
