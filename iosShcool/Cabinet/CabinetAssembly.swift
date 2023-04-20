@@ -9,7 +9,7 @@ import UIKit
 
 protocol CabinetAssembly {
     func cabinetCoodrinator() -> CabinetCoordinator
-    func cabinetVC() -> CabinetViewController
+  func cabinetVC() -> CabinetViewController<CabinetViewImp>
 }
 
 extension Assembly: CabinetAssembly {
@@ -18,7 +18,7 @@ extension Assembly: CabinetAssembly {
         CabinetCoordinator(assembly: self, context: .init())
     }
 
-    func cabinetVC() -> CabinetViewController {
+  func cabinetVC() -> CabinetViewController<CabinetViewImp> {
         .init()
     }
 }

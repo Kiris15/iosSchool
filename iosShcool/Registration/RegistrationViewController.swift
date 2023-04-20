@@ -12,7 +12,6 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
   var backToAuth: (() -> Void)?
   var onLoginSuccess: (() -> Void)?
 
-
   private let dataProvider: RegistrationDataProvider
 
   init(dataProvider: RegistrationDataProvider, onLoginSuccess: (() -> Void)?) {
@@ -44,9 +43,11 @@ extension RegistrationViewController: RegistrationViewDelegate {
       password: password,
       repeatPassword: repeatPassword
     ) { [weak self] resut in
+      self?.onLoginSuccess?()
       switch resut {
       case .success(let success):
         print(success)
+        self?.onLoginSuccess?()
       case .failure(let failure):
         self?.showAlert(message: failure.rawValue)
       }

@@ -14,6 +14,17 @@
 		C40F2BFE29D1CC2E004CF07D /* AuthApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2BFD29D1CC2E004CF07D /* AuthApiClient.swift */; };
 		C40F2C0029D1D3A9004CF07D /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2BFF29D1D3A9004CF07D /* ApiError.swift */; };
 		C42DD94D29ED85E90045D509 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD94C29ED85E90045D509 /* ImageService.swift */; };
+		C42DD95D29EEB8BF0045D509 /* CabinetViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD95C29EEB8BF0045D509 /* CabinetViewData.swift */; };
+		C42DD95F29EEB8D00045D509 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD95E29EEB8D00045D509 /* CabinetView.swift */; };
+		C42DD96429EEBAC80045D509 /* CabinetImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD96229EEBAC80045D509 /* CabinetImageCell.swift */; };
+		C42DD96529EEBAC80045D509 /* CabinetImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD96329EEBAC80045D509 /* CabinetImageCell.xib */; };
+		C42DD96829F1A4970045D509 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD96629F1A4970045D509 /* TextFieldCell.swift */; };
+		C42DD96929F1A4970045D509 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD96729F1A4970045D509 /* TextFieldCell.xib */; };
+		C42DD96B29F1A7580045D509 /* TextFieldCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD96A29F1A7580045D509 /* TextFieldCellData.swift */; };
+		C42DD97029F1AAD60045D509 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD96E29F1AAD60045D509 /* LabelCell.swift */; };
+		C42DD97129F1AAD60045D509 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD96F29F1AAD60045D509 /* LabelCell.xib */; };
+		C42DD97E29F1BBD60045D509 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD97C29F1BBD60045D509 /* EmptyCell.swift */; };
+		C42DD97F29F1BBD60045D509 /* EmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD97D29F1BBD60045D509 /* EmptyCell.xib */; };
 		C445E77429D5B1CB00B55141 /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */; };
 		C445E77629D5BCAF00B55141 /* LocationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77529D5BCAF00B55141 /* LocationApiClient.swift */; };
 		C445E77829D5C5C600B55141 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77729D5C5C600B55141 /* Character.swift */; };
@@ -80,6 +91,17 @@
 		C40F2BFD29D1CC2E004CF07D /* AuthApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiClient.swift; sourceTree = "<group>"; };
 		C40F2BFF29D1D3A9004CF07D /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		C42DD94C29ED85E90045D509 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		C42DD95C29EEB8BF0045D509 /* CabinetViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CabinetViewData.swift; path = iosShcool/Cabinet/CabinetViewData.swift; sourceTree = SOURCE_ROOT; };
+		C42DD95E29EEB8D00045D509 /* CabinetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
+		C42DD96229EEBAC80045D509 /* CabinetImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetImageCell.swift; sourceTree = "<group>"; };
+		C42DD96329EEBAC80045D509 /* CabinetImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CabinetImageCell.xib; sourceTree = "<group>"; };
+		C42DD96629F1A4970045D509 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		C42DD96729F1A4970045D509 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		C42DD96A29F1A7580045D509 /* TextFieldCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellData.swift; sourceTree = "<group>"; };
+		C42DD96E29F1AAD60045D509 /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		C42DD96F29F1AAD60045D509 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
+		C42DD97C29F1BBD60045D509 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
+		C42DD97D29F1BBD60045D509 /* EmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCell.xib; sourceTree = "<group>"; };
 		C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		C445E77529D5BCAF00B55141 /* LocationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApiClient.swift; sourceTree = "<group>"; };
 		C445E77729D5C5C600B55141 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -191,6 +213,54 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		C42DD95829EEB8AD0045D509 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C42DD97B29F1BB770045D509 /* EmptyCell */,
+				C42DD95929EEB8AD0045D509 /* ImageCell */,
+				C42DD95A29EEB8AD0045D509 /* TexFieldCell */,
+				C42DD95B29EEB8AD0045D509 /* LabelCell */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		C42DD95929EEB8AD0045D509 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				C42DD96229EEBAC80045D509 /* CabinetImageCell.swift */,
+				C42DD96329EEBAC80045D509 /* CabinetImageCell.xib */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		C42DD95A29EEB8AD0045D509 /* TexFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				C42DD96629F1A4970045D509 /* TextFieldCell.swift */,
+				C42DD96729F1A4970045D509 /* TextFieldCell.xib */,
+				C42DD96A29F1A7580045D509 /* TextFieldCellData.swift */,
+			);
+			path = TexFieldCell;
+			sourceTree = "<group>";
+		};
+		C42DD95B29EEB8AD0045D509 /* LabelCell */ = {
+			isa = PBXGroup;
+			children = (
+				C42DD96E29F1AAD60045D509 /* LabelCell.swift */,
+				C42DD96F29F1AAD60045D509 /* LabelCell.xib */,
+			);
+			path = LabelCell;
+			sourceTree = "<group>";
+		};
+		C42DD97B29F1BB770045D509 /* EmptyCell */ = {
+			isa = PBXGroup;
+			children = (
+				C42DD97C29F1BBD60045D509 /* EmptyCell.swift */,
+				C42DD97D29F1BBD60045D509 /* EmptyCell.xib */,
+			);
+			path = EmptyCell;
+			sourceTree = "<group>";
+		};
 		C44C365F29E809F300E2299B /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,9 +277,12 @@
 		C44C366E29E80A3E00E2299B /* Cabinet */ = {
 			isa = PBXGroup;
 			children = (
+				C42DD95829EEB8AD0045D509 /* SubViews */,
+				C44C367129E80A3E00E2299B /* CabinetViewController.swift */,
 				C44C366F29E80A3E00E2299B /* CabinetAssembly.swift */,
 				C44C367029E80A3E00E2299B /* CabinetCoordinator.swift */,
-				C44C367129E80A3E00E2299B /* CabinetViewController.swift */,
+				C42DD95E29EEB8D00045D509 /* CabinetView.swift */,
+				C42DD95C29EEB8BF0045D509 /* CabinetViewData.swift */,
 			);
 			path = Cabinet;
 			sourceTree = "<group>";
@@ -417,12 +490,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C42DD96529EEBAC80045D509 /* CabinetImageCell.xib in Resources */,
+				C42DD97F29F1BBD60045D509 /* EmptyCell.xib in Resources */,
 				C44C368F29E98ADC00E2299B /* LocationCell.xib in Resources */,
 				C44C366729E809F300E2299B /* BaseViewController.xib in Resources */,
 				C44C368029E81BD200E2299B /* RegistrationViewImp.xib in Resources */,
 				C46D60AB29BF4B9F009247EE /* LaunchScreen.storyboard in Resources */,
 				C46D60A829BF4B9F009247EE /* Assets.xcassets in Resources */,
+				C42DD97129F1AAD60045D509 /* LabelCell.xib in Resources */,
 				C44C367D29E81BBC00E2299B /* AuthViewImp.xib in Resources */,
+				C42DD96929F1A4970045D509 /* TextFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +542,7 @@
 				C475DA5C29CB49B500F8F263 /* RegistrationView.swift in Sources */,
 				C4A7884E29DA9F52002714FD /* CharacterApiClient.swift in Sources */,
 				C44C369129E98B2300E2299B /* LocationCellData.swift in Sources */,
+				C42DD97029F1AAD60045D509 /* LabelCell.swift in Sources */,
 				C475DA4129C8992A00F8F263 /* AuthAssembly.swift in Sources */,
 				C445E77629D5BCAF00B55141 /* LocationApiClient.swift in Sources */,
 				C475DA5A29CB499800F8F263 /* RegistrationCoordinator.swift in Sources */,
@@ -472,6 +550,7 @@
 				C44C369429E98E8100E2299B /* NSObject+ClassName.swift in Sources */,
 				C44C367429E80A3E00E2299B /* CabinetViewController.swift in Sources */,
 				C40F2BFC29D1C58C004CF07D /* NetworkConstants.swift in Sources */,
+				C42DD96829F1A4970045D509 /* TextFieldCell.swift in Sources */,
 				C47873AE29C4A63400C5ABB7 /* Assembly.swift in Sources */,
 				C475DA5029C8A19F00F8F263 /* SplashCoordinator.swift in Sources */,
 				C44C366629E809F300E2299B /* BaseViewController.swift in Sources */,
@@ -481,6 +560,7 @@
 				C4A7883D29DA91E3002714FD /* LocationCoordinator.swift in Sources */,
 				C475DA4C29C89F1B00F8F263 /* SplashDataProvider.swift in Sources */,
 				C475DA4529C89C5400F8F263 /* AuthView.swift in Sources */,
+				C42DD95F29EEB8D00045D509 /* CabinetView.swift in Sources */,
 				C445E77429D5B1CB00B55141 /* RegistrationApiClient.swift in Sources */,
 				C44C368E29E98ADC00E2299B /* LocationCell.swift in Sources */,
 				C475DA4E29C89F5A00F8F263 /* SplashAssembly.swift in Sources */,
@@ -490,10 +570,12 @@
 				C4A7884129DA9215002714FD /* LocationViewData.swift in Sources */,
 				C475DA5E29CB49C800F8F263 /* RegistrationViewData.swift in Sources */,
 				C46D609F29BF4B9C009247EE /* AppDelegate.swift in Sources */,
+				C42DD95D29EEB8BF0045D509 /* CabinetViewData.swift in Sources */,
 				C40F2BFE29D1CC2E004CF07D /* AuthApiClient.swift in Sources */,
 				C40F2BF729D1C303004CF07D /* TokenResponce.swift in Sources */,
 				C4A7884A29DA9D7C002714FD /* CharacterCoordinator.swift in Sources */,
 				C475DA3A29C8918E00F8F263 /* AppCoordinator.swift in Sources */,
+				C42DD96429EEBAC80045D509 /* CabinetImageCell.swift in Sources */,
 				C44C367229E80A3E00E2299B /* CabinetAssembly.swift in Sources */,
 				C475DA4729C89CCB00F8F263 /* AuthViewData.swift in Sources */,
 				C44C366B29E809F300E2299B /* TabBarController.swift in Sources */,
@@ -507,9 +589,11 @@
 				C40F2BF529D1BFC0004CF07D /* Location.swift in Sources */,
 				C4A7883929DA91B0002714FD /* LocationAssembly.swift in Sources */,
 				C47873AC29C456EA00C5ABB7 /* TeestGame.swift in Sources */,
+				C42DD97E29F1BBD60045D509 /* EmptyCell.swift in Sources */,
 				C46D60A129BF4B9C009247EE /* SceneDelegate.swift in Sources */,
 				C4A7884629DA9D50002714FD /* CharacterViewController.swift in Sources */,
 				C475DA4329C89A3C00F8F263 /* AuthCoordinator.swift in Sources */,
+				C42DD96B29F1A7580045D509 /* TextFieldCellData.swift in Sources */,
 				C475DA3D29C897B800F8F263 /* AuthDataProvider.swift in Sources */,
 				C475DA5829CB497400F8F263 /* RegistrationAssembly.swift in Sources */,
 			);
