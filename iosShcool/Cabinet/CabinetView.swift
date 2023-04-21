@@ -9,9 +9,16 @@ import UIKit
 
 protocol CabinetView: UIView {
   func makeView()
+  var delegate: CabinetViewDelegate? { get set }
+}
+
+protocol CabinetViewDelegate: AnyObject {
+  func escapeButtonDidTap()
 }
 
 class CabinetViewImp: UIView, CabinetView {
+
+  weak var delegate: CabinetViewDelegate?
 
   private var imageView = UIImageView()
   private var tabelView = UITableView()
@@ -28,22 +35,16 @@ class CabinetViewImp: UIView, CabinetView {
     addSubview(escapeButton)
 
     backgroundColor = .white
-    imageView.image = UIImage(named: "CabinetBackground")
-    imageView.contentMode = .top
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-    imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-    imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
 
     tabelView.backgroundColor = .clear
     tabelView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
-    tabelView.backgroundColor = UIColor(named: "Lilac50")
     tabelView.translatesAutoresizingMaskIntoConstraints = false
     tabelView.topAnchor.constraint(equalTo: topAnchor, constant: 246).isActive = true
     tabelView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     tabelView.bottomAnchor.constraint(equalTo: escapeButton.topAnchor, constant: 122).isActive = true
     tabelView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+    tabelView.backgroundColor = UIColor(named: "Lilac50")
+    tabelView.separatorStyle = .none
     tabelView.delegate = self
     tabelView.dataSource = self
     tabelView.allowsFocus = false
@@ -57,14 +58,8 @@ class CabinetViewImp: UIView, CabinetView {
     let emptyNib = UINib(nibName: EmptyCell.className, bundle: nil)
     tabelView.register(emptyNib, forCellReuseIdentifier: EmptyCell.className)
 
-    escapeButton.translatesAutoresizingMaskIntoConstraints = false
-    escapeButton.backgroundColor = UIColor(named: "VelvetBlue")
-    escapeButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-    escapeButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-    escapeButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
-    escapeButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-    escapeButton.setTitle("Выйти", for: .normal)
-    escapeButton.addTarget(self, action: #selector(escapeButtonDidTap), for: .touchUpInside)
+    makeImage(image: imageView)
+    makeButton(button: escapeButton)
 
     let recognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
     addGestureRecognizer(recognizer)
@@ -84,8 +79,40 @@ class CabinetViewImp: UIView, CabinetView {
     )
   }
 
+  private func makeImage(image: UIImageView) {
+    image.image = UIImage(named: "CabinetBackground")
+    image.contentMode = .top
+    image.translatesAutoresizingMaskIntoConstraints = false
+    image.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+    image.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+    image.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    image.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+  }
+
+  private func makeButton(button: CustomButton) {
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.backgroundColor = UIColor(named: "VelvetBlue")
+    button.normalColor = UIColor(named: "VelvetBlue") ?? .white
+    button.highlightColor = .white
+
+    button.layer.cornerRadius = 10
+    button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
+    button.layer.borderWidth = 1
+    button.layer.shadowOpacity = 0.25
+    button.layer.shadowOffset = CGSize(width: 0, height: 4)
+    button.layer.shadowRadius = 4
+    button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    button.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+    button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+    button.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+    button.setTitle("Выйти", for: .normal)
+    button.addTarget(self, action: #selector(escapeButtonDidTap), for: .touchUpInside)
+  }
+
+  // MARK: ObjFunctions
   @objc func escapeButtonDidTap(sender: UIButton) {
     endEditing(true)
+    delegate?.escapeButtonDidTap()
     print("разлогин")
   }
 
@@ -114,8 +141,12 @@ class CabinetViewImp: UIView, CabinetView {
 
 }
 
+// MARK: Extensions
 extension CabinetViewImp: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
 
+  }
 }
 
 extension CabinetViewImp: UITableViewDataSource {
@@ -124,6 +155,7 @@ extension CabinetViewImp: UITableViewDataSource {
     return 4
   }
 
+  // MARK: TabelViewSet
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if indexPath.row == 0 {
       let cell = tableView.dequeueReusableCell(withIdentifier: CabinetImageCell.className, for: indexPath)
@@ -134,11 +166,18 @@ extension CabinetViewImp: UITableViewDataSource {
       return cell
     }
     if indexPath.row == 2 {
-      let cell = tableView.dequeueReusableCell(withIdentifier: EmptyCell.className, for: indexPath)
+      let cell = tableView.dequeueReusableCell(
+        withIdentifier: EmptyCell.className,
+        for: indexPath
+      )
       return cell
     }
     if indexPath.row == 3 {
-    if let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldCell.className, for: indexPath) as? TextFieldCell {
+    if let cell = tableView.dequeueReusableCell(
+      withIdentifier: TextFieldCell.className,
+      for: indexPath
+    ) as? TextFieldCell {
+      cell.update()
         return cell
       }
     }

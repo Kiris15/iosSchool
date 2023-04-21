@@ -20,7 +20,6 @@
 		C42DD96529EEBAC80045D509 /* CabinetImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD96329EEBAC80045D509 /* CabinetImageCell.xib */; };
 		C42DD96829F1A4970045D509 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD96629F1A4970045D509 /* TextFieldCell.swift */; };
 		C42DD96929F1A4970045D509 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD96729F1A4970045D509 /* TextFieldCell.xib */; };
-		C42DD96B29F1A7580045D509 /* TextFieldCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD96A29F1A7580045D509 /* TextFieldCellData.swift */; };
 		C42DD97029F1AAD60045D509 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD96E29F1AAD60045D509 /* LabelCell.swift */; };
 		C42DD97129F1AAD60045D509 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD96F29F1AAD60045D509 /* LabelCell.xib */; };
 		C42DD97E29F1BBD60045D509 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD97C29F1BBD60045D509 /* EmptyCell.swift */; };
@@ -97,7 +96,6 @@
 		C42DD96329EEBAC80045D509 /* CabinetImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CabinetImageCell.xib; sourceTree = "<group>"; };
 		C42DD96629F1A4970045D509 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		C42DD96729F1A4970045D509 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
-		C42DD96A29F1A7580045D509 /* TextFieldCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellData.swift; sourceTree = "<group>"; };
 		C42DD96E29F1AAD60045D509 /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		C42DD96F29F1AAD60045D509 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		C42DD97C29F1BBD60045D509 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 			children = (
 				C42DD96629F1A4970045D509 /* TextFieldCell.swift */,
 				C42DD96729F1A4970045D509 /* TextFieldCell.xib */,
-				C42DD96A29F1A7580045D509 /* TextFieldCellData.swift */,
 			);
 			path = TexFieldCell;
 			sourceTree = "<group>";
@@ -593,7 +590,6 @@
 				C46D60A129BF4B9C009247EE /* SceneDelegate.swift in Sources */,
 				C4A7884629DA9D50002714FD /* CharacterViewController.swift in Sources */,
 				C475DA4329C89A3C00F8F263 /* AuthCoordinator.swift in Sources */,
-				C42DD96B29F1A7580045D509 /* TextFieldCellData.swift in Sources */,
 				C475DA3D29C897B800F8F263 /* AuthDataProvider.swift in Sources */,
 				C475DA5829CB497400F8F263 /* RegistrationAssembly.swift in Sources */,
 			);

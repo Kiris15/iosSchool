@@ -1,5 +1,5 @@
 //
-//  TextFieldell.swift
+//  TextFieldСell.swift
 //  iosSchool
 //
 //  Created by Savely on 20.04.2023.
@@ -9,22 +9,26 @@ import UIKit
 
 class TextFieldCell: UITableViewCell {
 
-  var viewModel: TextFieldCellData? {
-    didSet {
-      update(viewModel)
-
-    }
-  }
-
   @IBOutlet private weak var dateTextField: UITextField!
   @IBOutlet private weak var profileColorTextField: UITextField!
 
-  private func update(_ viewModel: TextFieldCellData?) {
+  func update() {
+    dateTextField.backgroundColor = .white.withAlphaComponent(0.6)
+    dateTextField.layer.cornerRadius = 15
+    dateTextField.layer.masksToBounds = true
+    dateTextField.delegate = self
 
-    dateTextField.placeholder = viewModel?.dateTextFieldPlaceholder
-    profileColorTextField.placeholder = viewModel?.profileColorTextFieldPlaceholder
+    profileColorTextField.backgroundColor = .white.withAlphaComponent(0.6)
+    profileColorTextField.layer.cornerRadius = 15
+    profileColorTextField.layer.masksToBounds = true
+    profileColorTextField.delegate = self
+
+    dateTextField.delegate = self
+    profileColorTextField.delegate = self
+    dateTextField.placeholder = "Дата регистрации"
+    profileColorTextField.placeholder = "Цвет профиля"
+
   }
-
 }
 
 extension TextFieldCell: UITextFieldDelegate {

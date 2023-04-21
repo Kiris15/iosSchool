@@ -17,14 +17,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин пользователя" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8v-gR-cGW">
-                        <rect key="frame" x="84" y="0.0" width="150" height="44"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="84" y="26" width="150" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="t8v-gR-cGW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FTd-Bp-l7H"/>
+                    <constraint firstItem="t8v-gR-cGW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="46w-9U-RTd"/>
                     <constraint firstAttribute="trailing" secondItem="t8v-gR-cGW" secondAttribute="trailing" constant="86" id="N8x-nh-h9F"/>
                     <constraint firstItem="t8v-gR-cGW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="84" id="dtY-UF-3Cn"/>
                     <constraint firstAttribute="bottom" secondItem="t8v-gR-cGW" secondAttribute="bottom" id="kOJ-yf-GOw"/>
