@@ -5,6 +5,8 @@
 //  Created by Savely on 03.04.2023.
 //
 
-import Foundation
+import UIKit
 
-struct CharacterViewData {}
+struct CharacterViewData {
+  let cells: [CharacterCellData]
+}

@@ -16,6 +16,10 @@
 		C42DD94D29ED85E90045D509 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD94C29ED85E90045D509 /* ImageService.swift */; };
 		C42DD98229F267C60045D509 /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD98129F267C60045D509 /* SplashViewImp.xib */; };
 		C42DD98429F267E10045D509 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD98329F267E00045D509 /* SplashView.swift */; };
+		C42DD98629F2BA3C0045D509 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD98529F2BA3C0045D509 /* CharacterView.swift */; };
+		C42DD98A29F2BC620045D509 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD98829F2BC620045D509 /* CharacterCell.swift */; };
+		C42DD98B29F2BC620045D509 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD98929F2BC620045D509 /* CharacterCell.xib */; };
+		C42DD98D29F2BDF90045D509 /* CharacterCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD98C29F2BDF90045D509 /* CharacterCellData.swift */; };
 		C445E77429D5B1CB00B55141 /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */; };
 		C445E77629D5BCAF00B55141 /* LocationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77529D5BCAF00B55141 /* LocationApiClient.swift */; };
 		C445E77829D5C5C600B55141 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77729D5C5C600B55141 /* Character.swift */; };
@@ -83,6 +87,10 @@
 		C42DD94C29ED85E90045D509 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		C42DD98129F267C60045D509 /* SplashViewImp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
 		C42DD98329F267E00045D509 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		C42DD98529F2BA3C0045D509 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		C42DD98829F2BC620045D509 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		C42DD98929F2BC620045D509 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
+		C42DD98C29F2BDF90045D509 /* CharacterCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellData.swift; sourceTree = "<group>"; };
 		C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		C445E77529D5BCAF00B55141 /* LocationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApiClient.swift; sourceTree = "<group>"; };
 		C445E77729D5C5C600B55141 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -199,6 +207,16 @@
 				C42DD98129F267C60045D509 /* SplashViewImp.xib */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		C42DD98729F2BC320045D509 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				C42DD98829F2BC620045D509 /* CharacterCell.swift */,
+				C42DD98929F2BC620045D509 /* CharacterCell.xib */,
+				C42DD98C29F2BDF90045D509 /* CharacterCellData.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		C44C365F29E809F300E2299B /* Common */ = {
@@ -360,10 +378,12 @@
 		C4A7884229DA9D18002714FD /* Character */ = {
 			isa = PBXGroup;
 			children = (
+				C42DD98729F2BC320045D509 /* Subviews */,
 				C4A7884329DA9D3B002714FD /* CharacterDataProvider.swift */,
 				C4A7884529DA9D50002714FD /* CharacterViewController.swift */,
 				C4A7884729DA9D61002714FD /* CharacterAssembly.swift */,
 				C4A7884929DA9D7C002714FD /* CharacterCoordinator.swift */,
+				C42DD98529F2BA3C0045D509 /* CharacterView.swift */,
 				C4A7884B29DA9DAD002714FD /* CharacterViewData.swift */,
 			);
 			path = Character;
@@ -428,6 +448,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C42DD98B29F2BC620045D509 /* CharacterCell.xib in Resources */,
 				C44C368F29E98ADC00E2299B /* LocationCell.xib in Resources */,
 				C44C366729E809F300E2299B /* BaseViewController.xib in Resources */,
 				C44C368029E81BD200E2299B /* RegistrationViewImp.xib in Resources */,
@@ -471,6 +492,7 @@
 				C46D60A329BF4B9C009247EE /* ViewController.swift in Sources */,
 				C44C368A29E980D200E2299B /* LocationView.swift in Sources */,
 				C475DA5629CB495800F8F263 /* RegistrationDataProvider.swift in Sources */,
+				C42DD98D29F2BDF90045D509 /* CharacterCellData.swift in Sources */,
 				C42DD94D29ED85E90045D509 /* ImageService.swift in Sources */,
 				C4A7884829DA9D61002714FD /* CharacterAssembly.swift in Sources */,
 				C475DA5C29CB49B500F8F263 /* RegistrationView.swift in Sources */,
@@ -481,6 +503,7 @@
 				C475DA5A29CB499800F8F263 /* RegistrationCoordinator.swift in Sources */,
 				C475DA5429CB48F600F8F263 /* RegistrationViewController.swift in Sources */,
 				C44C369429E98E8100E2299B /* NSObject+ClassName.swift in Sources */,
+				C42DD98A29F2BC620045D509 /* CharacterCell.swift in Sources */,
 				C44C367429E80A3E00E2299B /* CabinetViewController.swift in Sources */,
 				C40F2BFC29D1C58C004CF07D /* NetworkConstants.swift in Sources */,
 				C47873AE29C4A63400C5ABB7 /* Assembly.swift in Sources */,
@@ -520,6 +543,7 @@
 				C47873AC29C456EA00C5ABB7 /* TeestGame.swift in Sources */,
 				C46D60A129BF4B9C009247EE /* SceneDelegate.swift in Sources */,
 				C4A7884629DA9D50002714FD /* CharacterViewController.swift in Sources */,
+				C42DD98629F2BA3C0045D509 /* CharacterView.swift in Sources */,
 				C475DA4329C89A3C00F8F263 /* AuthCoordinator.swift in Sources */,
 				C42DD98429F267E10045D509 /* SplashView.swift in Sources */,
 				C475DA3D29C897B800F8F263 /* AuthDataProvider.swift in Sources */,
