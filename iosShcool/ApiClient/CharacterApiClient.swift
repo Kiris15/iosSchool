@@ -12,6 +12,10 @@ protocol CharacterApiClient {
     identifier: Int,
     onRequestComplited: @escaping (Result<Character, ApiError>) -> Void
   )
+  func singleCharacter(
+          url: String,
+          completion: @escaping (Result<Character, ApiError>) -> Void
+      )
 }
 
 extension ApiClient: CharacterApiClient {
@@ -22,4 +26,11 @@ extension ApiClient: CharacterApiClient {
     let url = NetworkConstants.URLStrings.characterURL + "\(identifier)"
     performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestComplited)
   }
+
+  func singleCharacter(
+          url: String,
+          completion onRequestCompleted: @escaping (Result<Character, ApiError>) -> Void
+      ) {
+          performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
+      }
 }

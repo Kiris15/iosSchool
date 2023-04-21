@@ -39,11 +39,11 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 
 extension AuthViewController: AuthViewDelegate {
   func loginButtonDidTap(login: String, password: String) {
-    dataProvider.authorization(username: "ann", password: "1111") { [weak self] resut in
+    dataProvider.authorization(username: "kiriss", password: "123456") { [weak self] resut in
       self?.onLoginSuccess?()
       switch resut {
       case .success(let success):
-        print("success")
+        print(success)
         self?.onLoginSuccess?()
       case .failure(let failure):
         print(failure.rawValue)

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct RegistrationViewData {
 
   let registrLoginTextFieldPlaceholder: String
@@ -20,4 +19,3 @@ struct RegistrationViewData {
     regRepeatPasswordTextFieldPlaceholder = "Повторите пароль"
     }
 }
-

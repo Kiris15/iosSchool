@@ -10,6 +10,7 @@ import Foundation
 enum ApiError: Error {
   case dataParsing
   case serverError
+  case passwordEqual
   case `dafault`(Data?)
 
   var rawValue: String {
@@ -18,6 +19,8 @@ enum ApiError: Error {
       return "Ошибка парсинга"
     case .serverError:
       return "Ошибка получения данных"
+    case .passwordEqual:
+      return "Пароли не совпадают"
     case let .dafault(error):
       if let error {
         return String(decoding: error, as: UTF8.self)

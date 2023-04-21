@@ -35,7 +35,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
   private func setTabVC() {
     let tabVC = assembly.rootTabBarControlller()
-    let locationCoord = assembly.splashCoordinator(onSuccess: nil)
+    let locationCoord = assembly.locationCoordinator()
     let cabinetCoordinator = assembly.cabinetCoodrinator()
 
     let locationVC = locationCoord.make()

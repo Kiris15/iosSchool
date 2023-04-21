@@ -9,19 +9,25 @@ import Foundation
 
 protocol RegistrationDataProvider {
   func registration(
-    username: String,
+    login: String,
     password: String,
+    repeatPassword: String,
     comletion: @escaping (Result<TokenResponce, ApiError>) -> Void
   )
 }
 
 class RegistrationDataProviderImp: RegistrationDataProvider {
   func registration(
-    username: String,
+    login: String,
     password: String,
+    repeatPassword: String,
     comletion: @escaping (Result<TokenResponce, ApiError>) -> Void
   ) {
-    apiClient.registration(username: username, password: password) { result in
+    guard password == repeatPassword else {
+      comletion(.failure(ApiError.passwordEqual))
+      return
+    }
+    apiClient.registration(username: login, password: password) { result in
       switch result {
       case .success(let data):
         comletion(.success(data))

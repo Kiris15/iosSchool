@@ -37,4 +37,14 @@ class BaseViewController<View: UIView>: UIViewController, CoreViewController {
     override func loadView() {
         view = rootView
     }
+
+  func showAlert(message: String) {
+    let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+      alert.dismiss(animated: true)
+    }))
+    DispatchQueue.main.async {
+      self.present(alert, animated: true)
+    }
+  }
 }
