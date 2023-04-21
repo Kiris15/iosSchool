@@ -35,17 +35,18 @@ class CharacterViewController: UIViewController {
 
     view.backgroundColor = .white
 
-    dataProvider.character(identifier: 8) { [weak self] resut in
-      switch resut {
-      case .success(let success):
-        print(success)
-      case .failure(let failure):
-        print(failure.rawValue)
-      }
-    }
+//    dataProvider.character(identifier: 8) { [weak self] resut in
+//      switch resut {
+//      case .success(let success):
+//        print(success)
+//      case .failure(let failure):
+//        print(failure.rawValue)
+//      }
+//    }
 
     charactersUrlsList.forEach { url in
       requestCharacter(url: url) { [weak self] character in
+        print(character)
         self?.imageService.getImage(url: character.image) { [weak self] image in
           print(image?.size ?? 0)
         }
