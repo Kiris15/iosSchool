@@ -73,7 +73,7 @@ class CharacterViewImp: UIView, CharacterView {
   }
 }
 
-//MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 
 extension CharacterViewImp: UICollectionViewDataSource {
   func collectionView(
@@ -87,13 +87,16 @@ extension CharacterViewImp: UICollectionViewDataSource {
     _ collectionView: UICollectionView,
     cellForItemAt indexPath: IndexPath
   ) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCell.className, for: indexPath) as? CharacterCell else {
-
+    guard let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: CharacterCell.className,
+      for: indexPath
+    ) as? CharacterCell else {
       return UICollectionViewCell()
     }
     guard data.count > indexPath.row else {
       return cell
     }
+    cell.backgroundColor = UIColor(named: "CharacterCellBackground")
     cell.viewModel = data[indexPath.row]
     return cell
   }
