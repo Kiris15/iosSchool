@@ -10,4 +10,5 @@ import UIKit
 class CabinetImageCell: UITableViewCell {
 
   @IBOutlet private weak var imageViewCabinet: UIImageView!
+  @IBOutlet private weak var backgroundImage: UIImageView!
 }

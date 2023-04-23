@@ -18,12 +18,12 @@
 		C42DD95F29EEB8D00045D509 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD95E29EEB8D00045D509 /* CabinetView.swift */; };
 		C42DD96429EEBAC80045D509 /* CabinetImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD96229EEBAC80045D509 /* CabinetImageCell.swift */; };
 		C42DD96529EEBAC80045D509 /* CabinetImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD96329EEBAC80045D509 /* CabinetImageCell.xib */; };
-		C42DD96829F1A4970045D509 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD96629F1A4970045D509 /* TextFieldCell.swift */; };
-		C42DD96929F1A4970045D509 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD96729F1A4970045D509 /* TextFieldCell.xib */; };
 		C42DD97029F1AAD60045D509 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD96E29F1AAD60045D509 /* LabelCell.swift */; };
 		C42DD97129F1AAD60045D509 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD96F29F1AAD60045D509 /* LabelCell.xib */; };
 		C42DD97E29F1BBD60045D509 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD97C29F1BBD60045D509 /* EmptyCell.swift */; };
 		C42DD97F29F1BBD60045D509 /* EmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD97D29F1BBD60045D509 /* EmptyCell.xib */; };
+		C42DD99129F530AB0045D509 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD98F29F530AB0045D509 /* TextCell.swift */; };
+		C42DD99229F530AB0045D509 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD99029F530AB0045D509 /* TextCell.xib */; };
 		C445E77429D5B1CB00B55141 /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */; };
 		C445E77629D5BCAF00B55141 /* LocationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77529D5BCAF00B55141 /* LocationApiClient.swift */; };
 		C445E77829D5C5C600B55141 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77729D5C5C600B55141 /* Character.swift */; };
@@ -94,12 +94,12 @@
 		C42DD95E29EEB8D00045D509 /* CabinetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
 		C42DD96229EEBAC80045D509 /* CabinetImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetImageCell.swift; sourceTree = "<group>"; };
 		C42DD96329EEBAC80045D509 /* CabinetImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CabinetImageCell.xib; sourceTree = "<group>"; };
-		C42DD96629F1A4970045D509 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
-		C42DD96729F1A4970045D509 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		C42DD96E29F1AAD60045D509 /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		C42DD96F29F1AAD60045D509 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		C42DD97C29F1BBD60045D509 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		C42DD97D29F1BBD60045D509 /* EmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCell.xib; sourceTree = "<group>"; };
+		C42DD98F29F530AB0045D509 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		C42DD99029F530AB0045D509 /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		C445E77529D5BCAF00B55141 /* LocationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApiClient.swift; sourceTree = "<group>"; };
 		C445E77729D5C5C600B55141 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -214,9 +214,9 @@
 		C42DD95829EEB8AD0045D509 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				C42DD98E29F52F6A0045D509 /* TextCell */,
 				C42DD97B29F1BB770045D509 /* EmptyCell */,
 				C42DD95929EEB8AD0045D509 /* ImageCell */,
-				C42DD95A29EEB8AD0045D509 /* TexFieldCell */,
 				C42DD95B29EEB8AD0045D509 /* LabelCell */,
 			);
 			path = SubViews;
@@ -229,15 +229,6 @@
 				C42DD96329EEBAC80045D509 /* CabinetImageCell.xib */,
 			);
 			path = ImageCell;
-			sourceTree = "<group>";
-		};
-		C42DD95A29EEB8AD0045D509 /* TexFieldCell */ = {
-			isa = PBXGroup;
-			children = (
-				C42DD96629F1A4970045D509 /* TextFieldCell.swift */,
-				C42DD96729F1A4970045D509 /* TextFieldCell.xib */,
-			);
-			path = TexFieldCell;
 			sourceTree = "<group>";
 		};
 		C42DD95B29EEB8AD0045D509 /* LabelCell */ = {
@@ -256,6 +247,15 @@
 				C42DD97D29F1BBD60045D509 /* EmptyCell.xib */,
 			);
 			path = EmptyCell;
+			sourceTree = "<group>";
+		};
+		C42DD98E29F52F6A0045D509 /* TextCell */ = {
+			isa = PBXGroup;
+			children = (
+				C42DD98F29F530AB0045D509 /* TextCell.swift */,
+				C42DD99029F530AB0045D509 /* TextCell.xib */,
+			);
+			path = TextCell;
 			sourceTree = "<group>";
 		};
 		C44C365F29E809F300E2299B /* Common */ = {
@@ -492,11 +492,11 @@
 				C44C368F29E98ADC00E2299B /* LocationCell.xib in Resources */,
 				C44C366729E809F300E2299B /* BaseViewController.xib in Resources */,
 				C44C368029E81BD200E2299B /* RegistrationViewImp.xib in Resources */,
+				C42DD99229F530AB0045D509 /* TextCell.xib in Resources */,
 				C46D60AB29BF4B9F009247EE /* LaunchScreen.storyboard in Resources */,
 				C46D60A829BF4B9F009247EE /* Assets.xcassets in Resources */,
 				C42DD97129F1AAD60045D509 /* LabelCell.xib in Resources */,
 				C44C367D29E81BBC00E2299B /* AuthViewImp.xib in Resources */,
-				C42DD96929F1A4970045D509 /* TextFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,11 +543,11 @@
 				C475DA4129C8992A00F8F263 /* AuthAssembly.swift in Sources */,
 				C445E77629D5BCAF00B55141 /* LocationApiClient.swift in Sources */,
 				C475DA5A29CB499800F8F263 /* RegistrationCoordinator.swift in Sources */,
+				C42DD99129F530AB0045D509 /* TextCell.swift in Sources */,
 				C475DA5429CB48F600F8F263 /* RegistrationViewController.swift in Sources */,
 				C44C369429E98E8100E2299B /* NSObject+ClassName.swift in Sources */,
 				C44C367429E80A3E00E2299B /* CabinetViewController.swift in Sources */,
 				C40F2BFC29D1C58C004CF07D /* NetworkConstants.swift in Sources */,
-				C42DD96829F1A4970045D509 /* TextFieldCell.swift in Sources */,
 				C47873AE29C4A63400C5ABB7 /* Assembly.swift in Sources */,
 				C475DA5029C8A19F00F8F263 /* SplashCoordinator.swift in Sources */,
 				C44C366629E809F300E2299B /* BaseViewController.swift in Sources */,

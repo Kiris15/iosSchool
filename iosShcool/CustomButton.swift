@@ -11,13 +11,17 @@ class CustomButton: UIButton {
 
   override var isHighlighted: Bool {
     didSet {
-      tintColor = isHighlighted ? .black : .white
-      backgroundColor = isHighlighted ? highlightColor : normalColor
+      self.tintColor = self.isHighlighted ? .black : .white
+      self.backgroundColor = self.isHighlighted ? self.highlightColor : self.normalColor
     }
   }
 
   @IBInspectable
   var highlightColor: UIColor = .white
   @IBInspectable
-  var normalColor: UIColor = .white
+  var normalColor: UIColor = .white {
+    didSet {
+      backgroundColor = normalColor
+    }
+  }
 }

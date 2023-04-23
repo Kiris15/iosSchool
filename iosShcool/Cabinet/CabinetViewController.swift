@@ -38,7 +38,7 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
   }
 }
 
-// MARK: CabinetViewDelegate
+// MARK: - CabinetViewDelegate
 
 extension CabinetViewController: CabinetViewDelegate {
   func escapeButtonDidTap() {

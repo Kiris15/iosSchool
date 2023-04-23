@@ -20,26 +20,20 @@ class CabinetViewImp: UIView, CabinetView {
 
   weak var delegate: CabinetViewDelegate?
 
-  private var imageView = UIImageView()
   private var tabelView = UITableView()
-  private let escapeButton = CustomButton()
-
-  deinit {
-    Foundation.NotificationCenter.default.removeObserver(self)
-  }
+  private let escapeButton = CustomButton(configuration: .plain())
 
   func makeView() {
 
-    addSubview(imageView)
     addSubview(tabelView)
     addSubview(escapeButton)
 
     backgroundColor = .white
 
     tabelView.backgroundColor = .clear
-    tabelView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
+    tabelView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
     tabelView.translatesAutoresizingMaskIntoConstraints = false
-    tabelView.topAnchor.constraint(equalTo: topAnchor, constant: 246).isActive = true
+    tabelView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
     tabelView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     tabelView.bottomAnchor.constraint(equalTo: escapeButton.topAnchor, constant: 122).isActive = true
     tabelView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
@@ -53,47 +47,17 @@ class CabinetViewImp: UIView, CabinetView {
     tabelView.register(imageNib, forCellReuseIdentifier: CabinetImageCell.className)
     let labelNib = UINib(nibName: LabelCell.className, bundle: nil)
     tabelView.register(labelNib, forCellReuseIdentifier: LabelCell.className)
-    let texFieldNib = UINib(nibName: TextFieldCell.className, bundle: nil)
-    tabelView.register(texFieldNib, forCellReuseIdentifier: TextFieldCell.className)
+    let textNib = UINib(nibName: TextCell.className, bundle: nil)
+    tabelView.register(textNib, forCellReuseIdentifier: TextCell.className)
     let emptyNib = UINib(nibName: EmptyCell.className, bundle: nil)
     tabelView.register(emptyNib, forCellReuseIdentifier: EmptyCell.className)
 
-    makeImage(image: imageView)
     makeButton(button: escapeButton)
-
-    let recognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
-    addGestureRecognizer(recognizer)
-
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(keyboardWillShow),
-      name: UIResponder.keyboardWillShowNotification,
-      object: nil
-    )
-
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(keyboardWillHide),
-      name: UIResponder.keyboardWillHideNotification,
-      object: nil
-    )
-  }
-
-  private func makeImage(image: UIImageView) {
-    image.image = UIImage(named: "CabinetBackground")
-    image.contentMode = .top
-    image.translatesAutoresizingMaskIntoConstraints = false
-    image.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-    image.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-    image.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    image.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
   }
 
   private func makeButton(button: CustomButton) {
     button.translatesAutoresizingMaskIntoConstraints = false
-    button.backgroundColor = UIColor(named: "VelvetBlue")
     button.normalColor = UIColor(named: "VelvetBlue") ?? .white
-    button.highlightColor = .white
 
     button.layer.cornerRadius = 10
     button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
@@ -107,41 +71,16 @@ class CabinetViewImp: UIView, CabinetView {
     button.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     button.setTitle("Выйти", for: .normal)
     button.addTarget(self, action: #selector(escapeButtonDidTap), for: .touchUpInside)
+    button.tintColor = .white
   }
 
-  // MARK: ObjFunctions
+  // MARK: - ObjFunctions
   @objc func escapeButtonDidTap(sender: UIButton) {
-    endEditing(true)
     delegate?.escapeButtonDidTap()
-    print("разлогин")
   }
-
-  @objc
-  private func closeKeyboard() {
-    endEditing(true)
-  }
-
-  @objc
-  private func keyboardWillShow(notification: Notification) {
-    guard let userInfo = notification.userInfo else {
-      return
-    }
-    guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
-      return
-    }
-    let keyboardHeight = keyboardFrame.cgRectValue.height
-    tabelView.contentInset.bottom = keyboardHeight + 15
-    tabelView.verticalScrollIndicatorInsets.bottom = keyboardHeight
-  }
-
-  @objc
-  private func keyboardWillHide(notification: Notification) {
-    tabelView.contentInset = .zero
-  }
-
 }
 
-// MARK: Extensions
+// MARK: - Extensions
 extension CabinetViewImp: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
@@ -150,12 +89,11 @@ extension CabinetViewImp: UITableViewDelegate {
 }
 
 extension CabinetViewImp: UITableViewDataSource {
-
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 4
+    return 5
   }
 
-  // MARK: TabelViewSet
+  // MARK: - TabelViewSet
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if indexPath.row == 0 {
       let cell = tableView.dequeueReusableCell(withIdentifier: CabinetImageCell.className, for: indexPath)
@@ -174,10 +112,19 @@ extension CabinetViewImp: UITableViewDataSource {
     }
     if indexPath.row == 3 {
     if let cell = tableView.dequeueReusableCell(
-      withIdentifier: TextFieldCell.className,
+      withIdentifier: TextCell.className,
       for: indexPath
-    ) as? TextFieldCell {
-      cell.update()
+    ) as? TextCell {
+      cell.update(isCircleHiden: true, textLabel: "Дата регистрации")
+        return cell
+      }
+    }
+    if indexPath.row == 4 {
+    if let cell = tableView.dequeueReusableCell(
+      withIdentifier: TextCell.className,
+      for: indexPath
+    ) as? TextCell {
+      cell.update(isCircleHiden: false, textLabel: "Цвет профиля")
         return cell
       }
     }
