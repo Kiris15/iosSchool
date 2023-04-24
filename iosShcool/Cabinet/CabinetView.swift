@@ -33,7 +33,7 @@ class CabinetViewImp: UIView, CabinetView {
     tabelView.backgroundColor = .clear
     tabelView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
     tabelView.translatesAutoresizingMaskIntoConstraints = false
-    tabelView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+    tabelView.topAnchor.constraint(equalTo: topAnchor).isActive = true
     tabelView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     tabelView.bottomAnchor.constraint(equalTo: escapeButton.topAnchor, constant: 122).isActive = true
     tabelView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
@@ -43,6 +43,7 @@ class CabinetViewImp: UIView, CabinetView {
     tabelView.dataSource = self
     tabelView.allowsFocus = false
     tabelView.allowsSelection = false
+    tabelView.contentInsetAdjustmentBehavior = .never
     let imageNib = UINib(nibName: CabinetImageCell.className, bundle: nil)
     tabelView.register(imageNib, forCellReuseIdentifier: CabinetImageCell.className)
     let labelNib = UINib(nibName: LabelCell.className, bundle: nil)
