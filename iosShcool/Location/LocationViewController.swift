@@ -63,6 +63,7 @@ class LocationViewController<View: LocationsView>: BaseViewController<View> {
     page = 1
     cellVM = []
     pagesLimited = false
+    rootView.update(data: .init(cells: cellVM))
 
     HUD.show(.progress)
     loadPage(page)
