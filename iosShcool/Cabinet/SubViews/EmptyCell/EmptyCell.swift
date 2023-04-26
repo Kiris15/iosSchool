@@ -9,4 +9,10 @@ import UIKit
 
 class EmptyCell: UITableViewCell {
 
+  @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+
+  func update(heightView: CGFloat) {
+    heightConstraint.constant = heightView
+
+  }
 }
