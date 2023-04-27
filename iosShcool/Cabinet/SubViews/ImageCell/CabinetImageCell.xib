@@ -16,13 +16,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="447" height="441"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WME-rs-Rex">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CabinetBackground" translatesAutoresizingMaskIntoConstraints="NO" id="WME-rs-Rex">
                         <rect key="frame" x="0.0" y="0.0" width="447" height="300"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="300" id="TCE-RL-WrX"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fAi-k4-QUn">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegistrationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fAi-k4-QUn">
                         <rect key="frame" x="168.66666666666666" y="245" width="109.99999999999997" height="110"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="110" id="Pmc-C8-2yC"/>
@@ -49,4 +49,8 @@
             <point key="canvasLocation" x="119.84732824427481" y="-21.47887323943662"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="CabinetBackground" width="390" height="300"/>
+        <image name="RegistrationIcon" width="56" height="56"/>
+    </resources>
 </document>

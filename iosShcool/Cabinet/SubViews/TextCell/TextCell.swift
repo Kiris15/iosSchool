@@ -15,6 +15,16 @@ class TextCell: UITableViewCell {
     }
   }
 
+  override func awakeFromNib() {
+    super.awakeFromNib()
+
+    textCellLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+    registrationDateLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+    commonView.backgroundColor = .white.withAlphaComponent(0.6)
+    commonView.layer.cornerRadius = 15
+    commonView.layer.masksToBounds = true
+  }
+
   @IBOutlet private var commonView: UIView!
   @IBOutlet private var textCellLabel: UILabel!
   @IBOutlet private var rightStackView: UIStackView!
@@ -22,11 +32,6 @@ class TextCell: UITableViewCell {
   @IBOutlet private var cabinetColorImage: UIImageView!
 
   private func update(_ viewModel: TextCellData?) {
-    textCellLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-    registrationDateLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-    commonView.backgroundColor = .white.withAlphaComponent(0.6)
-    commonView.layer.cornerRadius = 15
-    commonView.layer.masksToBounds = true
 
     guard let viewModel = viewModel else {
       return

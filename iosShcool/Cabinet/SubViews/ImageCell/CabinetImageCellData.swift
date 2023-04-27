@@ -8,11 +8,11 @@
 import UIKit
 
 struct CabinetImageCellData {
-  let profileImage: UIImage?
-  let backgroundCabinetImage: UIImage?
+  let profileImage: UIImage
+  let backgroundCabinetImage: UIImage
 
-  init() {
-    self.profileImage = profileImage
-    self.backgroundCabinetImage = UIImage(named: "CabinetBackground")
+  init(image: UIImage) {
+    self.profileImage = image
+    self.backgroundCabinetImage = image
   }
 }

@@ -109,14 +109,20 @@ extension CabinetViewImp: UITableViewDataSource {
   }
 
   // MARK: - TabelViewSet
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  func tableView(
+    _ tableView: UITableView,
+    cellForRowAt indexPath: IndexPath
+  ) -> UITableViewCell {
     switch indexPath.row {
     case 0:
       let cell = tableView.dequeueReusableCell(withIdentifier: CabinetImageCell.className, for: indexPath)
       return cell
     case  1:
-      let cell = tableView.dequeueReusableCell(withIdentifier: LabelCell.className, for: indexPath)
-      return cell
+      let cell = tableView.dequeueReusableCell(
+        withIdentifier: LabelCell.className,
+        for: indexPath
+      )
+        return cell
     case 2:
       if let cell = tableView.dequeueReusableCell(
         withIdentifier: EmptyCell.className,
