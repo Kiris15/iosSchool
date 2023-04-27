@@ -21,6 +21,8 @@ class CabinetViewImp: UIView, CabinetView {
 
   weak var delegate: CabinetViewDelegate?
 
+  private var cabinetData = CabinetViewData()
+
   private var backgroundView = UIView()
   private var tabelView = UITableView()
   private let escapeButton = CustomButton(configuration: .plain())
@@ -132,7 +134,11 @@ extension CabinetViewImp: UITableViewDataSource {
         withIdentifier: TextCell.className,
         for: indexPath
       ) as? TextCell {
-        cell.update(isCircleHiden: true, textLabel: "Дата регистрации")
+        let viewModel = TextCellData(
+          isCircleHiden: true,
+          labelText: cabinetData.registrationDateText
+        )
+        cell.viewModel = viewModel
         return cell
       }
     case 4:
@@ -140,7 +146,11 @@ extension CabinetViewImp: UITableViewDataSource {
         withIdentifier: TextCell.className,
         for: indexPath
       ) as? TextCell {
-        cell.update(isCircleHiden: false, textLabel: "Цвет профиля")
+        let viewModel = TextCellData(
+          isCircleHiden: false,
+          labelText: cabinetData.profileColorText
+        )
+        cell.viewModel = viewModel
         return cell
       }
     default:

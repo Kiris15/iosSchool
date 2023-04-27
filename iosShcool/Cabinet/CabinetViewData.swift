@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct CabinetViewData {
+  let registrationDateText: String
+  let profileColorText: String
+  let loginLabelText: String
+
+  init() {
+    self.registrationDateText = "Дата регистрации"
+    self.profileColorText = "Цвет профиля"
+    self.loginLabelText = 
+  }
+}

@@ -24,6 +24,10 @@
 		C42DD97F29F1BBD60045D509 /* EmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD97D29F1BBD60045D509 /* EmptyCell.xib */; };
 		C42DD99129F530AB0045D509 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD98F29F530AB0045D509 /* TextCell.swift */; };
 		C42DD99229F530AB0045D509 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD99029F530AB0045D509 /* TextCell.xib */; };
+		C42DD9A129F9A69E0045D509 /* LabelCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD9A029F9A69E0045D509 /* LabelCellData.swift */; };
+		C42DD9A329F9A92F0045D509 /* TextCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD9A229F9A92F0045D509 /* TextCellData.swift */; };
+		C42DD9A529F9B14E0045D509 /* CabinetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD9A429F9B14E0045D509 /* CabinetDataProvider.swift */; };
+		C42DD9A729FA72630045D509 /* CabinetImageCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD9A629FA72630045D509 /* CabinetImageCellData.swift */; };
 		C445E77429D5B1CB00B55141 /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */; };
 		C445E77629D5BCAF00B55141 /* LocationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77529D5BCAF00B55141 /* LocationApiClient.swift */; };
 		C445E77829D5C5C600B55141 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E77729D5C5C600B55141 /* Character.swift */; };
@@ -100,6 +104,10 @@
 		C42DD97D29F1BBD60045D509 /* EmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCell.xib; sourceTree = "<group>"; };
 		C42DD98F29F530AB0045D509 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		C42DD99029F530AB0045D509 /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
+		C42DD9A029F9A69E0045D509 /* LabelCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCellData.swift; sourceTree = "<group>"; };
+		C42DD9A229F9A92F0045D509 /* TextCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCellData.swift; sourceTree = "<group>"; };
+		C42DD9A429F9B14E0045D509 /* CabinetDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetDataProvider.swift; sourceTree = "<group>"; };
+		C42DD9A629FA72630045D509 /* CabinetImageCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetImageCellData.swift; sourceTree = "<group>"; };
 		C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		C445E77529D5BCAF00B55141 /* LocationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApiClient.swift; sourceTree = "<group>"; };
 		C445E77729D5C5C600B55141 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -227,6 +235,7 @@
 			children = (
 				C42DD96229EEBAC80045D509 /* CabinetImageCell.swift */,
 				C42DD96329EEBAC80045D509 /* CabinetImageCell.xib */,
+				C42DD9A629FA72630045D509 /* CabinetImageCellData.swift */,
 			);
 			path = ImageCell;
 			sourceTree = "<group>";
@@ -236,6 +245,7 @@
 			children = (
 				C42DD96E29F1AAD60045D509 /* LabelCell.swift */,
 				C42DD96F29F1AAD60045D509 /* LabelCell.xib */,
+				C42DD9A029F9A69E0045D509 /* LabelCellData.swift */,
 			);
 			path = LabelCell;
 			sourceTree = "<group>";
@@ -254,6 +264,7 @@
 			children = (
 				C42DD98F29F530AB0045D509 /* TextCell.swift */,
 				C42DD99029F530AB0045D509 /* TextCell.xib */,
+				C42DD9A229F9A92F0045D509 /* TextCellData.swift */,
 			);
 			path = TextCell;
 			sourceTree = "<group>";
@@ -275,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				C42DD95829EEB8AD0045D509 /* SubViews */,
+				C42DD9A429F9B14E0045D509 /* CabinetDataProvider.swift */,
 				C44C367129E80A3E00E2299B /* CabinetViewController.swift */,
 				C44C366F29E80A3E00E2299B /* CabinetAssembly.swift */,
 				C44C367029E80A3E00E2299B /* CabinetCoordinator.swift */,
@@ -534,9 +546,12 @@
 				C46D60A329BF4B9C009247EE /* ViewController.swift in Sources */,
 				C44C368A29E980D200E2299B /* LocationView.swift in Sources */,
 				C475DA5629CB495800F8F263 /* RegistrationDataProvider.swift in Sources */,
+				C42DD9A329F9A92F0045D509 /* TextCellData.swift in Sources */,
 				C42DD94D29ED85E90045D509 /* ImageService.swift in Sources */,
 				C4A7884829DA9D61002714FD /* CharacterAssembly.swift in Sources */,
+				C42DD9A729FA72630045D509 /* CabinetImageCellData.swift in Sources */,
 				C475DA5C29CB49B500F8F263 /* RegistrationView.swift in Sources */,
+				C42DD9A129F9A69E0045D509 /* LabelCellData.swift in Sources */,
 				C4A7884E29DA9F52002714FD /* CharacterApiClient.swift in Sources */,
 				C44C369129E98B2300E2299B /* LocationCellData.swift in Sources */,
 				C42DD97029F1AAD60045D509 /* LabelCell.swift in Sources */,
@@ -572,6 +587,7 @@
 				C40F2BF729D1C303004CF07D /* TokenResponce.swift in Sources */,
 				C4A7884A29DA9D7C002714FD /* CharacterCoordinator.swift in Sources */,
 				C475DA3A29C8918E00F8F263 /* AppCoordinator.swift in Sources */,
+				C42DD9A529F9B14E0045D509 /* CabinetDataProvider.swift in Sources */,
 				C42DD96429EEBAC80045D509 /* CabinetImageCell.swift in Sources */,
 				C44C367229E80A3E00E2299B /* CabinetAssembly.swift in Sources */,
 				C475DA4729C89CCB00F8F263 /* AuthViewData.swift in Sources */,

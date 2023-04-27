@@ -9,6 +9,20 @@ import UIKit
 
 class CabinetImageCell: UITableViewCell {
 
-  @IBOutlet private weak var imageViewCabinet: UIImageView!
-  @IBOutlet private weak var backgroundImage: UIImageView!
+  var viewModel: CabinetImageCellData? {
+    didSet {
+      update(viewModel)
+    }
+  }
+
+    @IBOutlet private weak var imageViewCabinet: UIImageView!
+    @IBOutlet private weak var backgroundImage: UIImageView!
+
+    private func update(_ viewModel: CabinetImageCellData?) {
+      guard let viewModel = viewModel else {
+        return
+      }
+      imageViewCabinet.image = viewModel.profileImage
+      backgroundImage.image = viewModel.backgroundCabinetImage
+    }
 }

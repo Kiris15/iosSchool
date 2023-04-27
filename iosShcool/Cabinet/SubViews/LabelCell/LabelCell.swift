@@ -9,5 +9,18 @@ import UIKit
 
 class LabelCell: UITableViewCell {
 
+  var viewModel: LabelCellData? {
+    didSet {
+      update(viewModel)
+    }
+  }
+
   @IBOutlet private weak var loginLabel: UILabel!
+
+  private func update(_ viewModel: LabelCellData?) {
+    guard let viewModel = viewModel else {
+      return
+    }
+    loginLabel.text = viewModel.loginLabel
+  }
 }
