@@ -23,32 +23,47 @@
                             <constraint firstAttribute="height" constant="125" id="xaR-ea-Uto"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txh-Th-Lai">
-                        <rect key="frame" x="27" y="132" width="146" height="48"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="d6m-32-xbC"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HJI-gP-t1g">
+                        <rect key="frame" x="1" y="132" width="198" height="48"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txh-Th-Lai">
+                                <rect key="frame" x="0.0" y="0.0" width="198" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="gvl-ek-WTu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amn-fe-vaN">
+                                <rect key="frame" x="0.0" y="28" width="198" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="MRn-Y4-TgV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Txh-Th-Lai" firstAttribute="top" secondItem="Ein-a2-31V" secondAttribute="bottom" constant="1" id="88V-4p-rUm"/>
-                <constraint firstAttribute="trailing" secondItem="Txh-Th-Lai" secondAttribute="trailing" constant="27" id="EnS-OE-9x2"/>
+                <constraint firstItem="HJI-gP-t1g" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="CSt-Z6-v5x"/>
                 <constraint firstItem="Ein-a2-31V" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JZS-qZ-zQd"/>
                 <constraint firstAttribute="trailing" secondItem="Ein-a2-31V" secondAttribute="trailing" id="UiQ-U2-qeH"/>
                 <constraint firstItem="Ein-a2-31V" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="V2H-4Y-gsm"/>
-                <constraint firstItem="Txh-Th-Lai" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="27" id="azc-Al-PEY"/>
-                <constraint firstAttribute="bottom" secondItem="Txh-Th-Lai" secondAttribute="bottom" constant="6" id="mDN-bf-6GU"/>
+                <constraint firstAttribute="trailing" secondItem="HJI-gP-t1g" secondAttribute="trailing" constant="1" id="Zo6-pV-kh0"/>
+                <constraint firstAttribute="bottom" secondItem="HJI-gP-t1g" secondAttribute="bottom" constant="6" id="kRg-hX-SlM"/>
+                <constraint firstItem="HJI-gP-t1g" firstAttribute="top" secondItem="Ein-a2-31V" secondAttribute="bottom" constant="1" id="zp5-Nn-oHh"/>
             </constraints>
             <size key="customSize" width="200" height="186"/>
             <connections>
                 <outlet property="imageView" destination="Ein-a2-31V" id="KkU-J9-OZH"/>
                 <outlet property="nameLabel" destination="Txh-Th-Lai" id="GWQ-Tl-WZP"/>
+                <outlet property="typeLabel" destination="amn-fe-vaN" id="nz2-2F-dZb"/>
             </connections>
             <point key="canvasLocation" x="175.57251908396947" y="46.478873239436624"/>
         </collectionViewCell>

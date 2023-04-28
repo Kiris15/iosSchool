@@ -17,14 +17,21 @@ class CharacterCell: UICollectionViewCell {
 
   @IBOutlet private weak var imageView: UIImageView!
   @IBOutlet private weak var nameLabel: UILabel!
+  @IBOutlet private weak var typeLabel: UILabel!
 
   private func update(viewModel: CharacterCellData?) {
     guard let viewModel else {
       return
     }
     layer.cornerRadius = 15
-    //contentView.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
     imageView.image = viewModel.isLoading ? UIImage(named: "CharacterPlaseholder") : viewModel.image
     nameLabel.text = viewModel.name
+    guard let type = viewModel.type else {
+      return
+    }
+    guard let gender = viewModel.gender else {
+      return
+    }
+    typeLabel.text = "\(type) \(gender)"
   }
 }
