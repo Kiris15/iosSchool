@@ -15,6 +15,12 @@ class TextCell: UITableViewCell {
     }
   }
 
+  @IBOutlet private var commonView: UIView!
+  @IBOutlet private var textCellLabel: UILabel!
+  @IBOutlet private var rightStackView: UIStackView!
+  @IBOutlet private var registrationDateLabel: UILabel!
+  @IBOutlet private var cabinetColorImage: UIImageView!
+
   override func awakeFromNib() {
     super.awakeFromNib()
 
@@ -24,12 +30,6 @@ class TextCell: UITableViewCell {
     commonView.layer.cornerRadius = 15
     commonView.layer.masksToBounds = true
   }
-
-  @IBOutlet private var commonView: UIView!
-  @IBOutlet private var textCellLabel: UILabel!
-  @IBOutlet private var rightStackView: UIStackView!
-  @IBOutlet private var registrationDateLabel: UILabel!
-  @IBOutlet private var cabinetColorImage: UIImageView!
 
   private func update(_ viewModel: TextCellData?) {
     guard let viewModel = viewModel else {

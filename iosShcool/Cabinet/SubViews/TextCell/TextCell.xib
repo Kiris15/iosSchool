@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1l-No-acP">
                         <rect key="frame" x="32" y="0.0" width="256" height="40.333333333333336"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnC-uY-525">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnC-uY-525">
                                 <rect key="frame" x="15.999999999999996" y="9.9999999999999982" width="39.666666666666657" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -55,6 +55,7 @@
                             <constraint firstItem="HnC-uY-525" firstAttribute="top" secondItem="R1l-No-acP" secondAttribute="top" constant="10" id="N7s-2c-RCL"/>
                             <constraint firstItem="HnC-uY-525" firstAttribute="leading" secondItem="R1l-No-acP" secondAttribute="leading" constant="16" id="ZzW-lM-IL8"/>
                             <constraint firstItem="1jr-9b-dzE" firstAttribute="top" secondItem="R1l-No-acP" secondAttribute="top" constant="10" id="gkP-YJ-72f"/>
+                            <constraint firstItem="1jr-9b-dzE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HnC-uY-525" secondAttribute="trailing" constant="15" id="sEb-XL-wen"/>
                         </constraints>
                     </view>
                 </subviews>
