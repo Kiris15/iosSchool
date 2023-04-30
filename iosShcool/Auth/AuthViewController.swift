@@ -35,7 +35,6 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
       rootView.update(with: AuthViewData())
       rootView.registrationAction = onOpenRegistration
       rootView.delegate = self
-
     }
 }
 
@@ -53,6 +52,7 @@ extension AuthViewController: AuthViewDelegate {
       case .success(let token):
         self?.storageManager.saveToken(token: token)
         self?.onLoginSuccess?()
+        UserDefaults.standard.set(Date(), forKey: "lastEntranceDate")
       case .failure:
         DispatchQueue.main.async {
           SPIndicator.present(title: "Ошибка авторизации", preset: .error, haptic: .error)

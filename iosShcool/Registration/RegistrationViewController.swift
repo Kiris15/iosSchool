@@ -48,6 +48,7 @@ extension RegistrationViewController: RegistrationViewDelegate {
       case .success(let success):
         print(success)
         self?.onLoginSuccess?()
+        UserDefaults.standard.set(Date(), forKey: "lastEntranceDate")
       case .failure(let failure):
         self?.showAlert(message: failure.rawValue)
       }

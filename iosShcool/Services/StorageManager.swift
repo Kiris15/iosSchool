@@ -13,12 +13,16 @@ protocol StorageManager {
   func saveToken(token: TokenResponce?)
   func getToken() -> TokenResponce?
   func removeToken()
+
+  func saveUsername(username: Profile?)
+  func getUsername() -> Profile?
+  func removeUsername()
 }
 
 class StorageManagerImp: StorageManager {
 
   private let keychain = Keychain(service: Constants.serviceId)
-  
+
   func cleanKeychainIfNeeded() {
     guard !notFirstLaunch() else {
       return
@@ -27,6 +31,9 @@ class StorageManagerImp: StorageManager {
 
     do {
       try keychain.removeAll()
+      if let appDomain = Bundle.main.bundleIdentifier {
+      UserDefaults.standard.removePersistentDomain(forName: appDomain)
+       }
     } catch {
       print(error as Any)
     }
@@ -66,6 +73,38 @@ class StorageManagerImp: StorageManager {
       print(error as Any)
     }
   }
+  // MARK: - SaveUsername
+
+  func saveUsername(username: Profile?) {
+    guard let username else {
+      return
+    }
+    do {
+      try keychain.set(username.username, key: StorageManagerKey.username.rawValue)
+    } catch {
+      print(error as Any)
+    }
+  }
+
+  func getUsername() -> Profile? {
+    do {
+      guard let username = try keychain.get(StorageManagerKey.username.rawValue) else {
+        return nil
+      }
+      return Profile(username: username)
+    } catch {
+      print(error as Any)
+    }
+    return nil
+  }
+
+  func removeUsername() {
+    do {
+      try keychain.remove(StorageManagerKey.username.rawValue)
+    } catch {
+      print(error as Any)
+    }
+  }
 }
 
 private extension StorageManagerImp {
@@ -74,6 +113,7 @@ private extension StorageManagerImp {
     case notFirstLaunch
     case token
     case userId
+    case username
   }
 
   struct Constants {

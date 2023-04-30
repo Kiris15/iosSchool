@@ -27,6 +27,8 @@
 		C426AD4429FEA0990020F4F7 /* CabinetViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD4329FEA0990020F4F7 /* CabinetViewData.swift */; };
 		C426AD4629FEA0B10020F4F7 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD4529FEA0B10020F4F7 /* CabinetView.swift */; };
 		C426AD4829FEA0C60020F4F7 /* CabinetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD4729FEA0C60020F4F7 /* CabinetDataProvider.swift */; };
+		C426AD4C29FEB5690020F4F7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD4B29FEB5690020F4F7 /* Profile.swift */; };
+		C426AD4E29FEB8830020F4F7 /* ProfileApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD4D29FEB8830020F4F7 /* ProfileApiClient.swift */; };
 		C42DD94D29ED85E90045D509 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD94C29ED85E90045D509 /* ImageService.swift */; };
 		C42DD98229F267C60045D509 /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42DD98129F267C60045D509 /* SplashViewImp.xib */; };
 		C42DD98429F267E10045D509 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD98329F267E00045D509 /* SplashView.swift */; };
@@ -116,6 +118,8 @@
 		C426AD4329FEA0990020F4F7 /* CabinetViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CabinetViewData.swift; path = iosShcool/Cabinet/CabinetViewData.swift; sourceTree = SOURCE_ROOT; };
 		C426AD4529FEA0B10020F4F7 /* CabinetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
 		C426AD4729FEA0C60020F4F7 /* CabinetDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetDataProvider.swift; sourceTree = "<group>"; };
+		C426AD4B29FEB5690020F4F7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		C426AD4D29FEB8830020F4F7 /* ProfileApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileApiClient.swift; sourceTree = "<group>"; };
 		C42DD94C29ED85E90045D509 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		C42DD98129F267C60045D509 /* SplashViewImp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
 		C42DD98329F267E00045D509 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				C40F2BF429D1BFC0004CF07D /* Location.swift */,
 				C40F2BF629D1C303004CF07D /* TokenResponce.swift */,
 				C445E77729D5C5C600B55141 /* Character.swift */,
+				C426AD4B29FEB5690020F4F7 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				C445E77329D5B1CB00B55141 /* RegistrationApiClient.swift */,
 				C445E77529D5BCAF00B55141 /* LocationApiClient.swift */,
 				C4A7884D29DA9F52002714FD /* CharacterApiClient.swift */,
+				C426AD4D29FEB8830020F4F7 /* ProfileApiClient.swift */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
@@ -243,8 +249,8 @@
 		C426AD2929FEA0830020F4F7 /* TextCell */ = {
 			isa = PBXGroup;
 			children = (
-				C426AD2A29FEA0830020F4F7 /* TextCell.xib */,
 				C426AD2B29FEA0830020F4F7 /* TextCell.swift */,
+				C426AD2A29FEA0830020F4F7 /* TextCell.xib */,
 				C426AD2C29FEA0830020F4F7 /* TextCellData.swift */,
 			);
 			path = TextCell;
@@ -254,8 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				C426AD2E29FEA0830020F4F7 /* CabinetImageCell.swift */,
-				C426AD2F29FEA0830020F4F7 /* CabinetImageCellData.swift */,
 				C426AD3029FEA0830020F4F7 /* CabinetImageCell.xib */,
+				C426AD2F29FEA0830020F4F7 /* CabinetImageCellData.swift */,
 			);
 			path = ImageCell;
 			sourceTree = "<group>";
@@ -272,9 +278,9 @@
 		C426AD3429FEA0830020F4F7 /* LabelCell */ = {
 			isa = PBXGroup;
 			children = (
+				C426AD3729FEA0830020F4F7 /* LabelCell.swift */,
 				C426AD3529FEA0830020F4F7 /* LabelCell.xib */,
 				C426AD3629FEA0830020F4F7 /* LabelCellData.swift */,
-				C426AD3729FEA0830020F4F7 /* LabelCell.swift */,
 			);
 			path = LabelCell;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				C445E77429D5B1CB00B55141 /* RegistrationApiClient.swift in Sources */,
 				C44C368E29E98ADC00E2299B /* LocationCell.swift in Sources */,
 				C475DA4E29C89F5A00F8F263 /* SplashAssembly.swift in Sources */,
+				C426AD4E29FEB8830020F4F7 /* ProfileApiClient.swift in Sources */,
 				C426AD3929FEA0830020F4F7 /* TextCell.swift in Sources */,
 				C475DA3F29C8984000F8F263 /* AuthViewController.swift in Sources */,
 				C46D60B329BF58B0009247EE /* ColorGenerator.swift in Sources */,
@@ -650,6 +657,7 @@
 				C426AD4129FEA0830020F4F7 /* LabelCellData.swift in Sources */,
 				C44C366829E809F300E2299B /* RootTab.swift in Sources */,
 				C445E77829D5C5C600B55141 /* Character.swift in Sources */,
+				C426AD4C29FEB5690020F4F7 /* Profile.swift in Sources */,
 				C44C366D29E80A1400E2299B /* CustomButton.swift in Sources */,
 				C40F2BFA29D1C51B004CF07D /* ApiClient.swift in Sources */,
 				C40F2BF529D1BFC0004CF07D /* Location.swift in Sources */,
