@@ -35,7 +35,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amn-fe-vaN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amn-fe-vaN">
                                 <rect key="frame" x="0.0" y="28" width="198" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="MRn-Y4-TgV"/>
@@ -46,12 +46,18 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="jNR-k2-exf">
+                        <rect key="frame" x="81.666666666666671" y="74.666666666666671" width="37" height="37"/>
+                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="jNR-k2-exf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Bg9-j9-ekk"/>
                 <constraint firstItem="HJI-gP-t1g" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="CSt-Z6-v5x"/>
+                <constraint firstItem="jNR-k2-exf" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="J3e-eE-PfT"/>
                 <constraint firstItem="Ein-a2-31V" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JZS-qZ-zQd"/>
                 <constraint firstAttribute="trailing" secondItem="Ein-a2-31V" secondAttribute="trailing" id="UiQ-U2-qeH"/>
                 <constraint firstItem="Ein-a2-31V" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="V2H-4Y-gsm"/>
@@ -63,6 +69,7 @@
             <connections>
                 <outlet property="imageView" destination="Ein-a2-31V" id="KkU-J9-OZH"/>
                 <outlet property="nameLabel" destination="Txh-Th-Lai" id="GWQ-Tl-WZP"/>
+                <outlet property="systemHud" destination="jNR-k2-exf" id="dbe-GO-C7k"/>
                 <outlet property="typeLabel" destination="amn-fe-vaN" id="nz2-2F-dZb"/>
             </connections>
             <point key="canvasLocation" x="175.57251908396947" y="46.478873239436624"/>

@@ -19,7 +19,7 @@ class ImageServiceImp: ImageService {
   private var imageDict: [String: UIImage] = [:]
 
   private let apiClient: ApiClient
-  //  private let updateQueue = DispatchQueue(label: "ImageServiceQueu")
+  private let updateQueue = DispatchQueue(label: "ImageServiceQueu")
 
   init(apiClient: ApiClient) {
     self.apiClient = apiClient
@@ -32,18 +32,21 @@ class ImageServiceImp: ImageService {
     if let image = imageDict[url] {
       completion(image)
     }
-    //    updateQueue.async {
-    self.apiClient.requestImageData(url: url) { data in
-      guard let data = data else {
-        return
-      }
-      let image = UIImage(data: data)
+    DispatchQueue.global().async {
+      self.apiClient.requestImageData(url: url) { data in
+        guard let data = data else {
+          return
+        }
+        let image = UIImage(data: data)
 
-      self.imageDict[url] = image
-      if self.imageDict.count > 50 {
-        let _: () = self.imageDict.removeAll()
+        self.updateQueue.async {
+          if self.imageDict.count > 50 {
+            self.imageDict.removeAll()
+          }
+          self.imageDict[url] = image
+        }
+        completion(image)
       }
-      completion(image)
     }
   }
 }

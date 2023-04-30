@@ -18,6 +18,7 @@ class CharacterCell: UICollectionViewCell {
   @IBOutlet private weak var imageView: UIImageView!
   @IBOutlet private weak var nameLabel: UILabel!
   @IBOutlet private weak var typeLabel: UILabel!
+  @IBOutlet private weak var systemHud: UIActivityIndicatorView!
 
   private func update(viewModel: CharacterCellData?) {
     guard let viewModel else {
@@ -25,13 +26,8 @@ class CharacterCell: UICollectionViewCell {
     }
     layer.cornerRadius = 15
     imageView.image = viewModel.isLoading ? UIImage(named: "CharacterPlaseholder") : viewModel.image
+    systemHud.isHidden = !viewModel.isLoading
     nameLabel.text = viewModel.name
-    guard let type = viewModel.type else {
-      return
-    }
-    guard let gender = viewModel.gender else {
-      return
-    }
-    typeLabel.text = "\(type) \(gender)"
+    typeLabel.text = viewModel.typeGender
   }
 }

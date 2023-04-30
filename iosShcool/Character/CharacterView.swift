@@ -20,9 +20,19 @@ class CharacterViewImp: UIView, CharacterView {
   private lazy var collectionView: UICollectionView = {
     UICollectionView(frame: .zero, collectionViewLayout: layout())
   }()
+  private let backgroundColorView: UIView = UIView(frame: .zero)
 
   func makeViews() {
-    collectionView.backgroundColor = .clear
+
+    backgroundColorView.backgroundColor = .white
+    addSubview(backgroundColorView)
+    backgroundColorView.translatesAutoresizingMaskIntoConstraints = false
+    backgroundColorView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+    backgroundColorView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+    backgroundColorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    backgroundColorView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+
+    collectionView.backgroundColor = UIColor(named: "Lilac80")
     collectionView.dataSource = self
 
     let nib = UINib(nibName: CharacterCell.className, bundle: nil)
@@ -50,7 +60,6 @@ class CharacterViewImp: UIView, CharacterView {
       return
     }
     cell.viewModel = data
-
   }
 
   // MARK: - Private methods
