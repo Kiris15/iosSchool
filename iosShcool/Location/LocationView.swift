@@ -11,11 +11,14 @@ protocol LocationsView: UIView {
   func makeView()
   func update(data: LocationViewData)
   var selectLocation: ((LocationCellData) -> Void)? { get set }
+
+  var willDisplayCell: ((IndexPath) -> Void)? { get set }
 }
 
 class LocationsViewImp: UIView, LocationsView {
 
   var selectLocation: ((LocationCellData) -> Void)?
+  var willDisplayCell: ((IndexPath) -> Void)?
 
   private var locationData: LocationViewData?
 
@@ -81,4 +84,8 @@ extension LocationsViewImp: UITableViewDelegate {
     }
     selectLocation?(locationData.cellVM[indexPath.row])
   }
+  func tableView(_ tabelView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    willDisplayCell?(indexPath)
+  }
+
 }

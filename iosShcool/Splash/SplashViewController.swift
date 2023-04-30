@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+class SplashViewController<View: SplashViewImp>: BaseViewController<View>  {
 
     private let dataProvider: SplashDataProvider
     private let onSuccess: (() -> Void)?
@@ -26,7 +26,7 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .green
+
     }
 
   override func viewDidAppear(_ animated: Bool) {
