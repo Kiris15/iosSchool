@@ -32,13 +32,11 @@ class TextCell: UITableViewCell {
   @IBOutlet private var cabinetColorImage: UIImageView!
 
   private func update(_ viewModel: TextCellData?) {
-
     guard let viewModel = viewModel else {
       return
     }
     registrationDateLabel.isHidden = !viewModel.isCircleHiden
     cabinetColorImage.isHidden = viewModel.isCircleHiden
     textCellLabel.text = viewModel.labelText
-
   }
 }

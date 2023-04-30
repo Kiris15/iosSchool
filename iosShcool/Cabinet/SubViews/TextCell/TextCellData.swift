@@ -14,6 +14,5 @@ struct TextCellData {
   init(isCircleHiden: Bool, labelText: String) {
     self.isCircleHiden = isCircleHiden
     self.labelText = labelText
-
   }
 }

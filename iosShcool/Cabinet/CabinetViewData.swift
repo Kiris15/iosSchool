@@ -10,9 +10,13 @@ import UIKit
 struct CabinetViewData {
   let registrationDateText: String
   let profileColorText: String
+  let dateOfRegistration: Date
+  let colorOfCabinet: UIColor
 
-  init() {
+  init(date: Date, color: UIColor) {
     self.registrationDateText = "Дата регистрации"
     self.profileColorText = "Цвет профиля"
+    self.dateOfRegistration = date
+    self.colorOfCabinet = color
   }
 }

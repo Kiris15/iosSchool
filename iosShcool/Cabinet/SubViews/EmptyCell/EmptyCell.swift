@@ -13,6 +13,5 @@ class EmptyCell: UITableViewCell {
 
   func update(heightView: CGFloat) {
     heightConstraint.constant = heightView
-
   }
 }

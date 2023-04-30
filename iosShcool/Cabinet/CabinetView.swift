@@ -21,9 +21,9 @@ class CabinetViewImp: UIView, CabinetView {
 
   weak var delegate: CabinetViewDelegate?
 
-  private var cabinetData = CabinetViewData()
+  private let cabinetData = CabinetViewData(date: Date(), color: UIColor())
 
-  private var backgroundView = UIView()
+  private let backgroundView = UIView()
   private var tabelView = UITableView()
   private let escapeButton = CustomButton(configuration: .plain())
 
@@ -31,7 +31,6 @@ class CabinetViewImp: UIView, CabinetView {
 
     backgroundColor = .white
 
-    backgroundView.backgroundColor = .clear
     backgroundView.backgroundColor = UIColor(named: "Lilac80")
     backgroundView.translatesAutoresizingMaskIntoConstraints = false
     addSubview(backgroundView)
@@ -43,7 +42,6 @@ class CabinetViewImp: UIView, CabinetView {
     tabelView.backgroundColor = .clear
     tabelView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
     tabelView.translatesAutoresizingMaskIntoConstraints = false
-//    tabelView.backgroundColor = UIColor(named: "Lilac50")
     tabelView.separatorStyle = .none
     tabelView.delegate = self
     tabelView.dataSource = self
@@ -60,11 +58,9 @@ class CabinetViewImp: UIView, CabinetView {
     let emptyNib = UINib(nibName: EmptyCell.className, bundle: nil)
     tabelView.register(emptyNib, forCellReuseIdentifier: EmptyCell.className)
     addSubview(tabelView)
-    addSubview(escapeButton)
 
     tabelView.topAnchor.constraint(equalTo: topAnchor).isActive = true
     tabelView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-    tabelView.bottomAnchor.constraint(equalTo: escapeButton.topAnchor).isActive = true
     tabelView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
 
     makeButton(button: escapeButton)
@@ -82,8 +78,10 @@ class CabinetViewImp: UIView, CabinetView {
     button.layer.shadowOpacity = 0.25
     button.layer.shadowOffset = CGSize(width: 0, height: 4)
     button.layer.shadowRadius = 4
+    addSubview(escapeButton)
 
     button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    button.topAnchor.constraint(equalTo: tabelView.bottomAnchor).isActive = true
     button.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
     button.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
@@ -118,11 +116,14 @@ extension CabinetViewImp: UITableViewDataSource {
       let cell = tableView.dequeueReusableCell(withIdentifier: CabinetImageCell.className, for: indexPath)
       return cell
     case  1:
-      let cell = tableView.dequeueReusableCell(
+      if let cell = tableView.dequeueReusableCell(
         withIdentifier: LabelCell.className,
         for: indexPath
-      )
+      ) as? LabelCell {
+        let viewModel = LabelCellData(login: "kiriss")
+        cell.viewModel = viewModel
         return cell
+      }
     case 2:
       if let cell = tableView.dequeueReusableCell(
         withIdentifier: EmptyCell.className,
