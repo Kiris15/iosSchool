@@ -32,6 +32,9 @@ class ImageServiceImp: ImageService {
     if let image = imageDict[url] {
       completion(image)
     }
+    if self.imageDict.count > 50 {
+      self.imageDict.removeAll()
+    }
     DispatchQueue.global().async {
       self.apiClient.requestImageData(url: url) { data in
         guard let data = data else {
@@ -40,9 +43,6 @@ class ImageServiceImp: ImageService {
         let image = UIImage(data: data)
 
         self.updateQueue.async {
-          if self.imageDict.count > 50 {
-            self.imageDict.removeAll()
-          }
           self.imageDict[url] = image
         }
         completion(image)

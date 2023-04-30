@@ -34,6 +34,7 @@ class CharacterViewImp: UIView, CharacterView {
 
     collectionView.backgroundColor = UIColor(named: "Lilac80")
     collectionView.dataSource = self
+    collectionView.contentInset = UIEdgeInsets(top: 59, left: 0, bottom: 77, right: 0)
 
     let nib = UINib(nibName: CharacterCell.className, bundle: nil)
     collectionView.register(nib, forCellWithReuseIdentifier: CharacterCell.className)
@@ -70,7 +71,7 @@ class CharacterViewImp: UIView, CharacterView {
 
   private func provider() -> UICollectionViewCompositionalLayoutSectionProvider {
     { _, _ in
-      let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .estimated(167))
+      let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(167))
       let item = NSCollectionLayoutItem(layoutSize: itemSize)
       let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(167))
       let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
