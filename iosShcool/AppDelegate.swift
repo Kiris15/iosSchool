@@ -19,5 +19,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        assembly.storageManager.cleanKeychainIfNeeded()
           return true
       }
-
 }

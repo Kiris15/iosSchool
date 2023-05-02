@@ -11,13 +11,13 @@ import PKHUD
 
 class AuthViewController<View: AuthView>: BaseViewController<View> {
 
-  var onLoginSuccess: (() -> Void)?
+  var onLoginSuccess: ((String) -> Void)?
   var onOpenRegistration: (() -> Void)?
 
   private let dataProvider: AuthDataProvider
   private let storageManager: StorageManager
 
-  init(dataProvider: AuthDataProvider, storageManager: StorageManager, onLoginSuccess: (() -> Void)?) {
+  init(dataProvider: AuthDataProvider, storageManager: StorageManager, onLoginSuccess: ((String) -> Void)?) {
     self.dataProvider = dataProvider
     self.onLoginSuccess = onLoginSuccess
     self.storageManager = storageManager
@@ -47,12 +47,11 @@ extension AuthViewController: AuthViewDelegate {
       DispatchQueue.main.async {
         HUD.hide()
       }
-     self?.onLoginSuccess?()
+//     self?.onLoginSuccess?()
       switch resut {
       case .success(let token):
         self?.storageManager.saveToken(token: token)
-        self?.onLoginSuccess?()
-        UserDefaults.standard.set(Date(), forKey: "lastEntranceDate")
+        self?.onLoginSuccess?(token.userId)
       case .failure:
         DispatchQueue.main.async {
           SPIndicator.present(title: "Ошибка авторизации", preset: .error, haptic: .error)

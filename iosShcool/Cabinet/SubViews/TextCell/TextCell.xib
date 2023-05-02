@@ -26,19 +26,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jr-9b-dzE">
-                                <rect key="frame" x="176" y="9.9999999999999982" width="70" height="20.333333333333329"/>
+                                <rect key="frame" x="180.33333333333334" y="9.9999999999999982" width="65.666666666666657" height="20.333333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".. .. ...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqr-E7-FL3">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="20.333333333333332"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="pbA-ee-0gv"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CabinetColor" translatesAutoresizingMaskIntoConstraints="NO" id="6pV-lb-YmI">
-                                        <rect key="frame" x="50" y="0.0" width="20" height="20.333333333333332"/>
+                                        <rect key="frame" x="45.666666666666657" y="0.0" width="20" height="20.333333333333332"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="4h9-yG-P6N"/>
                                             <constraint firstAttribute="height" constant="20" id="GZn-XW-jBP"/>

@@ -15,8 +15,11 @@ protocol StorageManager {
   func removeToken()
 
   func saveUsername(username: Profile?)
-  func getUsername() -> Profile?
+  func getUsername() -> String
   func removeUsername()
+
+  func saveDate()
+  func getDate() -> String
 }
 
 class StorageManagerImp: StorageManager {
@@ -31,13 +34,12 @@ class StorageManagerImp: StorageManager {
 
     do {
       try keychain.removeAll()
-      if let appDomain = Bundle.main.bundleIdentifier {
-      UserDefaults.standard.removePersistentDomain(forName: appDomain)
-       }
     } catch {
       print(error as Any)
     }
   }
+
+  // MARK: - Token
   func saveToken(token: TokenResponce?) {
     guard let token else {
       return
@@ -73,7 +75,7 @@ class StorageManagerImp: StorageManager {
       print(error as Any)
     }
   }
-  // MARK: - SaveUsername
+  // MARK: - Username
 
   func saveUsername(username: Profile?) {
     guard let username else {
@@ -86,16 +88,16 @@ class StorageManagerImp: StorageManager {
     }
   }
 
-  func getUsername() -> Profile? {
+  func getUsername() -> String {
     do {
       guard let username = try keychain.get(StorageManagerKey.username.rawValue) else {
-        return nil
+        return "Логин пользователя"
       }
-      return Profile(username: username)
+      return username
     } catch {
       print(error as Any)
     }
-    return nil
+    return "Логин пользователя"
   }
 
   func removeUsername() {
@@ -105,8 +107,22 @@ class StorageManagerImp: StorageManager {
       print(error as Any)
     }
   }
+
+  // MARK: - Date in userdefaults
+  func saveDate() {
+    let date = Date()
+    let format = DateFormatter()
+    format.dateFormat = "dd.MM.yyyy"
+    let currentDate = format.string(from: date)
+    UserDefaults.standard.set(currentDate, forKey: "DateOfEntrance")
+  }
+
+  func getDate() -> String {
+    return UserDefaults.standard.string(forKey: "DateOfEntrance") ?? ".. .. ...."
+  }
 }
 
+// MARK: - Extensions
 private extension StorageManagerImp {
 
   enum StorageManagerKey: String {

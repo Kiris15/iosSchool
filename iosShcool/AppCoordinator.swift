@@ -28,12 +28,22 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
       setTabVC()
       return
     }
-    let coordinator = assembly.authCoordinator { [weak self] in
+    let coordinator = assembly.authCoordinator(onLoginSuccess:  { [weak self] userId in
+      self?.assembly.apiClient.getProfile(profileId: userId) { result in
+        switch result {
+        case let .success(profile):
+          self?.assembly.storageManager.saveUsername(username: profile)
+
+        case let .failure(error):
+          print(error.localizedDescription)
+        }
+      }
+      self?.assembly.storageManager.saveDate()
 
       DispatchQueue.main.async {
         self?.setTabVC()
       }
-    }
+    })
     setRoot(viewController: coordinator.make())
   }
 

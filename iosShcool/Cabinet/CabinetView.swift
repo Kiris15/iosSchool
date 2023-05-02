@@ -120,7 +120,8 @@ extension CabinetViewImp: UITableViewDataSource {
         withIdentifier: LabelCell.className,
         for: indexPath
       ) as? LabelCell {
-        let viewModel = LabelCellData(login: "kiriss")
+        let storageManager = StorageManagerImp()
+        let viewModel = LabelCellData(login: storageManager.getUsername())
         cell.viewModel = viewModel
         return cell
       }

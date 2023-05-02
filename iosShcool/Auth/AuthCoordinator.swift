@@ -12,7 +12,7 @@ import UIKit
 class AuthCoordinator: BaseCoordinator<AuthCoordinator.Context> {
 
   struct Context {
-    let onLoginSuccess: (() -> Void)?
+    let onLoginSuccess: ((String) -> Void)?
   }
 
   override func make() -> UIViewController {
