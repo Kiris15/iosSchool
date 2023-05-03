@@ -9,6 +9,7 @@ import UIKit
 
 protocol CabinetView: UIView {
   var delegate: CabinetViewDelegate? { get set }
+  var cabinetData: CabinetViewData? { get set }
 
   func makeView()
 }
@@ -21,7 +22,7 @@ class CabinetViewImp: UIView, CabinetView {
 
   weak var delegate: CabinetViewDelegate?
 
-  private let cabinetData = CabinetViewData(date: Date(), color: UIColor())
+  var cabinetData: CabinetViewData?
 
   private let backgroundView = UIView()
   private var tabelView = UITableView()
@@ -111,6 +112,9 @@ extension CabinetViewImp: UITableViewDataSource {
     _ tableView: UITableView,
     cellForRowAt indexPath: IndexPath
   ) -> UITableViewCell {
+    guard let cabinetData = cabinetData else {
+      return UITableViewCell()
+    }
     switch indexPath.row {
     case 0:
       let cell = tableView.dequeueReusableCell(withIdentifier: CabinetImageCell.className, for: indexPath)
@@ -120,8 +124,7 @@ extension CabinetViewImp: UITableViewDataSource {
         withIdentifier: LabelCell.className,
         for: indexPath
       ) as? LabelCell {
-        let storageManager = StorageManagerImp()
-        let viewModel = LabelCellData(login: storageManager.getUsername())
+        let viewModel = LabelCellData(login: cabinetData.userName)
         cell.viewModel = viewModel
         return cell
       }
@@ -144,7 +147,8 @@ extension CabinetViewImp: UITableViewDataSource {
       ) as? TextCell {
         let viewModel = TextCellData(
           isCircleHiden: true,
-          labelText: cabinetData.registrationDateText
+          labelText: cabinetData.registrationDateText,
+          entranceDate: cabinetData.dateOfLastEntrance
         )
         cell.viewModel = viewModel
         return cell
@@ -156,7 +160,8 @@ extension CabinetViewImp: UITableViewDataSource {
       ) as? TextCell {
         let viewModel = TextCellData(
           isCircleHiden: false,
-          labelText: cabinetData.profileColorText
+          labelText: cabinetData.profileColorText,
+          entranceDate: ""
         )
         cell.viewModel = viewModel
         return cell

@@ -47,7 +47,6 @@ extension AuthViewController: AuthViewDelegate {
       DispatchQueue.main.async {
         HUD.hide()
       }
-//     self?.onLoginSuccess?()
       switch resut {
       case .success(let token):
         self?.storageManager.saveToken(token: token)

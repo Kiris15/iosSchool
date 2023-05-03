@@ -28,8 +28,8 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
       setTabVC()
       return
     }
-    let coordinator = assembly.authCoordinator(onLoginSuccess:  { [weak self] userId in
-      self?.assembly.apiClient.getProfile(profileId: userId) { result in
+    let coordinator = assembly.authCoordinator(onLoginSuccess: { [weak self] userId in
+      self?.assembly.apiClient.getProfile(profileId: userId) { [weak self] result in
         switch result {
         case let .success(profile):
           self?.assembly.storageManager.saveUsername(username: profile)

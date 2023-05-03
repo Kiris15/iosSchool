@@ -15,11 +15,11 @@ protocol StorageManager {
   func removeToken()
 
   func saveUsername(username: Profile?)
-  func getUsername() -> String
+  func getUsername() -> String?
   func removeUsername()
 
   func saveDate()
-  func getDate() -> String
+  func getDate() -> String?
 }
 
 class StorageManagerImp: StorageManager {
@@ -88,16 +88,16 @@ class StorageManagerImp: StorageManager {
     }
   }
 
-  func getUsername() -> String {
+  func getUsername() -> String? {
     do {
       guard let username = try keychain.get(StorageManagerKey.username.rawValue) else {
-        return "Логин пользователя"
+        return nil
       }
       return username
     } catch {
       print(error as Any)
     }
-    return "Логин пользователя"
+    return nil
   }
 
   func removeUsername() {
@@ -117,7 +117,7 @@ class StorageManagerImp: StorageManager {
     UserDefaults.standard.set(currentDate, forKey: "DateOfEntrance")
   }
 
-  func getDate() -> String {
+  func getDate() -> String? {
     return UserDefaults.standard.string(forKey: "DateOfEntrance") ?? ".. .. ...."
   }
 }
@@ -130,6 +130,7 @@ private extension StorageManagerImp {
     case token
     case userId
     case username
+    case dateOfEntrance
   }
 
   struct Constants {

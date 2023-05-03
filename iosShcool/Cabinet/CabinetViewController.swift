@@ -11,8 +11,11 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
 
   var escapeToAuth: (() -> Void)?
 
-  init(escapeToAuth: ( () -> Void)?) {
+  private let storageManager: StorageManager
+
+  init(escapeToAuth: ( () -> Void)?, storageManager: StorageManager) {
     self.escapeToAuth = escapeToAuth
+    self.storageManager = storageManager
 
     super.init(nibName: nil, bundle: nil)
   }
@@ -25,6 +28,7 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
     super.viewDidLoad()
 
     rootView.makeView()
+    rootView.cabinetData = CabinetViewData(color: .clear, userName: storageManager.getUsername() ?? "Логин пользователя", dateOfLastEntrance: storageManager.getDate() ?? ".. .. ....")
     rootView.delegate = self
   }
 }
@@ -33,6 +37,7 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
 
 extension CabinetViewController: CabinetViewDelegate {
   func escapeButtonDidTap() {
+    storageManager.cleanKeychainIfNeeded()
     self.escapeToAuth?()
   }
 }

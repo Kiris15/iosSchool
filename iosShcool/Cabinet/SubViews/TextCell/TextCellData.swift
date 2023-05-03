@@ -10,9 +10,11 @@ import Foundation
 struct TextCellData {
   let labelText: String
   let isCircleHiden: Bool
+  let entranceDate:String
 
-  init(isCircleHiden: Bool, labelText: String) {
+  init(isCircleHiden: Bool, labelText: String, entranceDate: String) {
     self.isCircleHiden = isCircleHiden
     self.labelText = labelText
+    self.entranceDate = entranceDate
   }
 }

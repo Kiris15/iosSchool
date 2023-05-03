@@ -19,6 +19,6 @@ extension Assembly: CabinetAssembly {
     }
 
   func cabinetVC(escapeToAuth: (() -> Void)?) -> CabinetViewController<CabinetViewImp> {
-    .init(escapeToAuth: escapeToAuth)
+    .init(escapeToAuth: escapeToAuth, storageManager: storageManager)
     }
 }

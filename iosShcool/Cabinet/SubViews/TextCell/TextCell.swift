@@ -39,8 +39,7 @@ class TextCell: UITableViewCell {
     cabinetColorImage.isHidden = viewModel.isCircleHiden
     textCellLabel.text = viewModel.labelText
     if cabinetColorImage.isHidden == true {
-      let storageManager = StorageManagerImp()
-      registrationDateLabel.text = storageManager.getDate()
+      registrationDateLabel.text = viewModel.entranceDate
     }
   }
 }
