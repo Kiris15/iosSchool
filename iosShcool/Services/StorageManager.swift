@@ -18,7 +18,7 @@ protocol StorageManager {
 class StorageManagerImp: StorageManager {
 
   private let keychain = Keychain(service: Constants.serviceId)
-  
+
   func cleanKeychainIfNeeded() {
     guard !notFirstLaunch() else {
       return

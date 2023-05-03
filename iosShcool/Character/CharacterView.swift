@@ -23,8 +23,9 @@ class CharacterViewImp: UIView, CharacterView {
   private let backgroundColorView: UIView = UIView(frame: .zero)
 
   func makeViews() {
+    backgroundColor = .white
 
-    backgroundColorView.backgroundColor = .white
+    backgroundColorView.backgroundColor = UIColor(named: "Lilac80")
     addSubview(backgroundColorView)
     backgroundColorView.translatesAutoresizingMaskIntoConstraints = false
     backgroundColorView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -32,7 +33,7 @@ class CharacterViewImp: UIView, CharacterView {
     backgroundColorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     backgroundColorView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
 
-    collectionView.backgroundColor = UIColor(named: "Lilac80")
+    collectionView.backgroundColor = .clear
     collectionView.dataSource = self
     collectionView.contentInset = UIEdgeInsets(top: 59, left: 0, bottom: 77, right: 0)
 
@@ -41,9 +42,9 @@ class CharacterViewImp: UIView, CharacterView {
     addSubview(collectionView)
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-    collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+    collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
     collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+    collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
 
   }
 

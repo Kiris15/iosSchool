@@ -13,7 +13,6 @@ protocol LocationDataProvider {
 
 class LocationDataProviderImp: LocationDataProvider {
 
-
   func locations(page: Int, comletion: @escaping (Result<LocationList, ApiError>) -> Void) {
     apiClient.getLocations(page: page) { result in
       switch result {
