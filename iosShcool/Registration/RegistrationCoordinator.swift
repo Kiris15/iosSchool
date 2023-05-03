@@ -10,10 +10,11 @@ import UIKit
 class RegistrationCoordinator: BaseCoordinator<RegistrationCoordinator.Context> {
 
   struct Context {
+  let onLoginSuccess: (() -> Void)?
   }
 
   override func make() -> UIViewController {
-    let controller = assembly.registrationVC()
+    let controller = assembly.registrationVC(onLoginSuccess: context.onLoginSuccess)
 
     controller.backToAuth = { [weak controller] in
       controller?.dismiss(animated: true)

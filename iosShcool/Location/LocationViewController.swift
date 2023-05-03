@@ -32,6 +32,7 @@ class LocationViewController<View: LocationsView>: BaseViewController<View> {
     setupBar()
     rootView.makeView()
     rootView.selectLocation =  selectLocation
+
     rootView.willDisplayCell = { [weak self] indexPath in
       guard let self,
             self.cellVM.count > 0,

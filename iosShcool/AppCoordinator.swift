@@ -40,7 +40,9 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
   private func setTabVC() {
     let tabVC = assembly.rootTabBarControlller()
     let locationCoord = assembly.locationCoordinator()
-    let cabinetCoordinator = assembly.cabinetCoodrinator()
+    let cabinetCoordinator = assembly.cabinetCoodrinator(escapeToAuth: { [weak self] in
+      self?.startAuth()
+    })
 
     let locationVC = locationCoord.make()
     let cabinetVC = cabinetCoordinator.make()

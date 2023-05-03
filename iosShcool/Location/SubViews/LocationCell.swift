@@ -16,11 +16,16 @@ class LocationCell: UITableViewCell {
     }
   }
   @IBOutlet private weak var nameLabel: UILabel!
+  @IBOutlet private weak var typeLabel: UILabel!
+  @IBOutlet private weak var populationLabel: UILabel!
+  @IBOutlet private weak var imageVector: UIImageView!
 
   private func update(_ viewModel: LocationCellData?) {
     guard let viewModel else {
       return
     }
     nameLabel.text = viewModel.name
+    typeLabel.text = viewModel.type
+    populationLabel.text = viewModel.population
   }
 }
