@@ -30,7 +30,7 @@ class StorageManagerImp: StorageManager {
     guard !notFirstLaunch() else {
       return
     }
-    notFirstLaunch()
+    saveFirstLaunch()
 
     do {
       try keychain.removeAll()
@@ -114,11 +114,11 @@ class StorageManagerImp: StorageManager {
     let format = DateFormatter()
     format.dateFormat = "dd.MM.yyyy"
     let currentDate = format.string(from: date)
-    UserDefaults.standard.set(currentDate, forKey: "DateOfEntrance")
+    UserDefaults.standard.set(currentDate, forKey: "dateOfEntrance")
   }
 
   func getDate() -> String? {
-    return UserDefaults.standard.string(forKey: "DateOfEntrance") ?? ".. .. ...."
+    return UserDefaults.standard.string(forKey: StorageManagerKey.dateOfEntrance.rawValue) ?? ".. .. ...."
   }
 }
 

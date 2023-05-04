@@ -39,7 +39,6 @@ class CharacterViewController<View: CharacterView>: BaseViewController<View> {
     let data = CharacterViewData(cells: charactersUrlsList.map { CharacterCellData(url: $0) })
     rootView.update(data: data)
 
-
     charactersUrlsList.forEach { url in
       requestCharacter(url: url) { [weak self] character in
         print(character)

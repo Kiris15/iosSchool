@@ -20,6 +20,5 @@ struct CabinetViewData {
     self.colorOfCabinet = color
     self.userName = userName
     self.dateOfLastEntrance = dateOfLastEntrance
-    
   }
 }

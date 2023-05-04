@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController<View: SplashViewImp>: BaseViewController<View>  {
+class SplashViewController<View: SplashViewImp>: BaseViewController<View> {
 
     private let dataProvider: SplashDataProvider
     private let onSuccess: (() -> Void)?
@@ -25,7 +25,6 @@ class SplashViewController<View: SplashViewImp>: BaseViewController<View>  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
     }
 

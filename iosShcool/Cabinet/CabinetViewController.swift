@@ -28,7 +28,11 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
     super.viewDidLoad()
 
     rootView.makeView()
-    rootView.cabinetData = CabinetViewData(color: .clear, userName: storageManager.getUsername() ?? "Логин пользователя", dateOfLastEntrance: storageManager.getDate() ?? ".. .. ....")
+    rootView.cabinetData = CabinetViewData(
+      color: .clear,
+      userName: storageManager.getUsername() ?? "Логин пользователя",
+      dateOfLastEntrance: storageManager.getDate() ?? ".. .. ...."
+    )
     rootView.delegate = self
   }
 }
@@ -37,7 +41,7 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
 
 extension CabinetViewController: CabinetViewDelegate {
   func escapeButtonDidTap() {
-    storageManager.cleanKeychainIfNeeded()
+    storageManager.removeToken()
     self.escapeToAuth?()
   }
 }

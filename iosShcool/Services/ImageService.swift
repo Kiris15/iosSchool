@@ -22,9 +22,6 @@ class ImageServiceImp: ImageService {
     self.apiClient = apiClient
   }
 
-
   func getImage(url: String, completion: @escaping (UIImage?) -> Void) {
   }
-
-
 }
