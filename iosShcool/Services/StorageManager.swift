@@ -114,7 +114,7 @@ class StorageManagerImp: StorageManager {
     let format = DateFormatter()
     format.dateFormat = "dd.MM.yyyy"
     let currentDate = format.string(from: date)
-    UserDefaults.standard.set(currentDate, forKey: "dateOfEntrance")
+    UserDefaults.standard.set(currentDate, forKey: StorageManagerKey.dateOfEntrance.rawValue)
   }
 
   func getDate() -> String? {
