@@ -20,19 +20,31 @@ class CharacterViewImp: UIView, CharacterView {
   private lazy var collectionView: UICollectionView = {
     UICollectionView(frame: .zero, collectionViewLayout: layout())
   }()
+  private let backgroundColorView: UIView = UIView(frame: .zero)
 
   func makeViews() {
+    backgroundColor = .white
+
+    backgroundColorView.backgroundColor = UIColor(named: "Lilac80")
+    addSubview(backgroundColorView)
+    backgroundColorView.translatesAutoresizingMaskIntoConstraints = false
+    backgroundColorView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+    backgroundColorView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+    backgroundColorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    backgroundColorView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+
     collectionView.backgroundColor = .clear
     collectionView.dataSource = self
+    collectionView.contentInset = UIEdgeInsets(top: 59, left: 0, bottom: 77, right: 0)
 
     let nib = UINib(nibName: CharacterCell.className, bundle: nil)
     collectionView.register(nib, forCellWithReuseIdentifier: CharacterCell.className)
     addSubview(collectionView)
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-    collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+    collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
     collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+    collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
 
   }
 
@@ -50,7 +62,6 @@ class CharacterViewImp: UIView, CharacterView {
       return
     }
     cell.viewModel = data
-
   }
 
   // MARK: - Private methods
@@ -61,7 +72,7 @@ class CharacterViewImp: UIView, CharacterView {
 
   private func provider() -> UICollectionViewCompositionalLayoutSectionProvider {
     { _, _ in
-      let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .estimated(167))
+      let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(167))
       let item = NSCollectionLayoutItem(layoutSize: itemSize)
       let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(167))
       let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
@@ -96,6 +107,7 @@ extension CharacterViewImp: UICollectionViewDataSource {
     guard data.count > indexPath.row else {
       return cell
     }
+    cell.backgroundColor = UIColor(named: "CharacterCellBackground")
     cell.viewModel = data[indexPath.row]
     return cell
   }

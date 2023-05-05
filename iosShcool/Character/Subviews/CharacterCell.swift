@@ -17,12 +17,17 @@ class CharacterCell: UICollectionViewCell {
 
   @IBOutlet private weak var imageView: UIImageView!
   @IBOutlet private weak var nameLabel: UILabel!
+  @IBOutlet private weak var typeLabel: UILabel!
+  @IBOutlet private weak var systemHud: UIActivityIndicatorView!
 
   private func update(viewModel: CharacterCellData?) {
     guard let viewModel else {
       return
     }
+    layer.cornerRadius = 15
     imageView.image = viewModel.isLoading ? UIImage(named: "CharacterPlaseholder") : viewModel.image
+    systemHud.isHidden = !viewModel.isLoading
     nameLabel.text = viewModel.name
+    typeLabel.text = viewModel.typeGender
   }
 }

@@ -15,9 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="upL-e1-cEq">
-                    <rect key="frame" x="0.0" y="8" width="390" height="844"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Authbackground" translatesAutoresizingMaskIntoConstraints="NO" id="upL-e1-cEq">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5p6-3A-R7b">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -140,9 +139,13 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="5p6-3A-R7b" firstAttribute="top" secondItem="4HK-CG-ddz" secondAttribute="top" id="6U7-Pi-fVe"/>
+                <constraint firstItem="upL-e1-cEq" firstAttribute="top" secondItem="4HK-CG-ddz" secondAttribute="top" id="97T-X4-nSE"/>
                 <constraint firstItem="5p6-3A-R7b" firstAttribute="trailing" secondItem="bRE-Xe-aTh" secondAttribute="trailing" id="Ejd-Zw-0yW"/>
                 <constraint firstAttribute="bottom" secondItem="5p6-3A-R7b" secondAttribute="bottom" id="Gqt-eq-jUG"/>
+                <constraint firstAttribute="bottom" secondItem="upL-e1-cEq" secondAttribute="bottom" id="UO4-nR-3D6"/>
                 <constraint firstItem="5p6-3A-R7b" firstAttribute="leading" secondItem="bRE-Xe-aTh" secondAttribute="leading" id="Wlt-Dk-Cmp"/>
+                <constraint firstItem="bRE-Xe-aTh" firstAttribute="trailing" secondItem="upL-e1-cEq" secondAttribute="trailing" id="rLR-sQ-WxR"/>
+                <constraint firstItem="upL-e1-cEq" firstAttribute="leading" secondItem="bRE-Xe-aTh" secondAttribute="leading" id="z3I-sW-TI5"/>
             </constraints>
             <connections>
                 <outlet property="helloLabel" destination="amG-Xa-sdz" id="FVs-W0-ZCr"/>
@@ -157,7 +160,7 @@
         </view>
     </objects>
     <resources>
-        <image name="background" width="390" height="844"/>
+        <image name="Authbackground" width="390" height="844"/>
         <namedColor name="Lilac50">
             <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
