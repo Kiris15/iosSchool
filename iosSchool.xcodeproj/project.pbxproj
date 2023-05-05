@@ -26,7 +26,6 @@
 		C426AD4229FEA0830020F4F7 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD3729FEA0830020F4F7 /* LabelCell.swift */; };
 		C426AD4429FEA0990020F4F7 /* CabinetViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD4329FEA0990020F4F7 /* CabinetViewData.swift */; };
 		C426AD4629FEA0B10020F4F7 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD4529FEA0B10020F4F7 /* CabinetView.swift */; };
-		C426AD4829FEA0C60020F4F7 /* CabinetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD4729FEA0C60020F4F7 /* CabinetDataProvider.swift */; };
 		C426AD4C29FEB5690020F4F7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD4B29FEB5690020F4F7 /* Profile.swift */; };
 		C426AD4E29FEB8830020F4F7 /* ProfileApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AD4D29FEB8830020F4F7 /* ProfileApiClient.swift */; };
 		C42DD94D29ED85E90045D509 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DD94C29ED85E90045D509 /* ImageService.swift */; };
@@ -64,7 +63,6 @@
 		C46D60A129BF4B9C009247EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60A029BF4B9C009247EE /* SceneDelegate.swift */; };
 		C46D60A329BF4B9C009247EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60A229BF4B9C009247EE /* ViewController.swift */; };
 		C46D60A829BF4B9F009247EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C46D60A729BF4B9F009247EE /* Assets.xcassets */; };
-		C46D60B329BF58B0009247EE /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D60B229BF58B0009247EE /* ColorGenerator.swift */; };
 		C475DA3A29C8918E00F8F263 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA3929C8918E00F8F263 /* AppCoordinator.swift */; };
 		C475DA3D29C897B800F8F263 /* AuthDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA3C29C897B800F8F263 /* AuthDataProvider.swift */; };
 		C475DA3F29C8984000F8F263 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA3E29C8984000F8F263 /* AuthViewController.swift */; };
@@ -82,7 +80,6 @@
 		C475DA5A29CB499800F8F263 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA5929CB499800F8F263 /* RegistrationCoordinator.swift */; };
 		C475DA5C29CB49B500F8F263 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA5B29CB49B500F8F263 /* RegistrationView.swift */; };
 		C475DA5E29CB49C800F8F263 /* RegistrationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475DA5D29CB49C800F8F263 /* RegistrationViewData.swift */; };
-		C47873AC29C456EA00C5ABB7 /* TeestGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47873AB29C456EA00C5ABB7 /* TeestGame.swift */; };
 		C47873AE29C4A63400C5ABB7 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47873AD29C4A63400C5ABB7 /* Assembly.swift */; };
 		C4A7883529DA918A002714FD /* LocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7883429DA918A002714FD /* LocationDataProvider.swift */; };
 		C4A7883729DA919E002714FD /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7883629DA919E002714FD /* LocationViewController.swift */; };
@@ -117,7 +114,6 @@
 		C426AD3729FEA0830020F4F7 /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		C426AD4329FEA0990020F4F7 /* CabinetViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CabinetViewData.swift; path = iosShcool/Cabinet/CabinetViewData.swift; sourceTree = SOURCE_ROOT; };
 		C426AD4529FEA0B10020F4F7 /* CabinetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
-		C426AD4729FEA0C60020F4F7 /* CabinetDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetDataProvider.swift; sourceTree = "<group>"; };
 		C426AD4B29FEB5690020F4F7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C426AD4D29FEB8830020F4F7 /* ProfileApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileApiClient.swift; sourceTree = "<group>"; };
 		C42DD94C29ED85E90045D509 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
@@ -154,7 +150,6 @@
 		C46D60A229BF4B9C009247EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C46D60A729BF4B9F009247EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C46D60AC29BF4B9F009247EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C46D60B229BF58B0009247EE /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
 		C475DA3929C8918E00F8F263 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C475DA3C29C897B800F8F263 /* AuthDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataProvider.swift; sourceTree = "<group>"; };
 		C475DA3E29C8984000F8F263 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +167,6 @@
 		C475DA5929CB499800F8F263 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
 		C475DA5B29CB49B500F8F263 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		C475DA5D29CB49C800F8F263 /* RegistrationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewData.swift; sourceTree = "<group>"; };
-		C47873AB29C456EA00C5ABB7 /* TeestGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeestGame.swift; sourceTree = "<group>"; };
 		C47873AD29C4A63400C5ABB7 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		C4A7883429DA918A002714FD /* LocationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataProvider.swift; sourceTree = "<group>"; };
 		C4A7883629DA919E002714FD /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -329,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				C426AD2829FEA0830020F4F7 /* SubViews */,
-				C426AD4729FEA0C60020F4F7 /* CabinetDataProvider.swift */,
 				C44C367129E80A3E00E2299B /* CabinetViewController.swift */,
 				C44C366F29E80A3E00E2299B /* CabinetAssembly.swift */,
 				C44C367029E80A3E00E2299B /* CabinetCoordinator.swift */,
@@ -408,8 +401,6 @@
 				C46D60A229BF4B9C009247EE /* ViewController.swift */,
 				C46D60A729BF4B9F009247EE /* Assets.xcassets */,
 				C46D60AC29BF4B9F009247EE /* Info.plist */,
-				C46D60B229BF58B0009247EE /* ColorGenerator.swift */,
-				C47873AB29C456EA00C5ABB7 /* TeestGame.swift */,
 				C44C366C29E80A1400E2299B /* CustomButton.swift */,
 				C47873AD29C4A63400C5ABB7 /* Assembly.swift */,
 				C475DA3929C8918E00F8F263 /* AppCoordinator.swift */,
@@ -635,10 +626,8 @@
 				C426AD4E29FEB8830020F4F7 /* ProfileApiClient.swift in Sources */,
 				C426AD3929FEA0830020F4F7 /* TextCell.swift in Sources */,
 				C475DA3F29C8984000F8F263 /* AuthViewController.swift in Sources */,
-				C46D60B329BF58B0009247EE /* ColorGenerator.swift in Sources */,
 				C426AD4629FEA0B10020F4F7 /* CabinetView.swift in Sources */,
 				C4A7884C29DA9DAD002714FD /* CharacterViewData.swift in Sources */,
-				C426AD4829FEA0C60020F4F7 /* CabinetDataProvider.swift in Sources */,
 				C4A7884129DA9215002714FD /* LocationViewData.swift in Sources */,
 				C426AD4429FEA0990020F4F7 /* CabinetViewData.swift in Sources */,
 				C475DA5E29CB49C800F8F263 /* RegistrationViewData.swift in Sources */,
@@ -663,7 +652,6 @@
 				C40F2BF529D1BFC0004CF07D /* Location.swift in Sources */,
 				C4A7883929DA91B0002714FD /* LocationAssembly.swift in Sources */,
 				C42DD99929F6B04F0045D509 /* StorageManager.swift in Sources */,
-				C47873AC29C456EA00C5ABB7 /* TeestGame.swift in Sources */,
 				C46D60A129BF4B9C009247EE /* SceneDelegate.swift in Sources */,
 				C4A7884629DA9D50002714FD /* CharacterViewController.swift in Sources */,
 				C42DD98629F2BA3C0045D509 /* CharacterView.swift in Sources */,

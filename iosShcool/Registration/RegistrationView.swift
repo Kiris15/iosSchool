@@ -83,7 +83,7 @@ class RegistrationViewImp: UIView, RegistrationView {
     )
   }
 
-  // MARK: Actions
+  // MARK: - Actions
 
   @IBAction func registrConfirmButtonDidTap(sender: UIButton) {
     endEditing(true)

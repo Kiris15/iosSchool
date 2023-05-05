@@ -68,6 +68,7 @@ class CabinetViewImp: UIView, CabinetView {
   }
 
   private func makeButton(button: CustomButton) {
+
     button.translatesAutoresizingMaskIntoConstraints = false
     button.normalColor = UIColor(named: "VelvetBlue") ?? .white
     button.setTitle("Выйти", for: .normal)
@@ -90,12 +91,14 @@ class CabinetViewImp: UIView, CabinetView {
   }
 
   // MARK: - ObjFunctions
+
   @objc func escapeButtonDidTap(sender: UIButton) {
     delegate?.escapeButtonDidTap()
   }
 }
 
 // MARK: - Extensions
+
 extension CabinetViewImp: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
@@ -108,6 +111,7 @@ extension CabinetViewImp: UITableViewDataSource {
   }
 
   // MARK: - TabelViewSet
+
   func tableView(
     _ tableView: UITableView,
     cellForRowAt indexPath: IndexPath

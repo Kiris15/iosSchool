@@ -46,8 +46,8 @@ class LocationViewController<View: LocationsView>: BaseViewController<View> {
 
     HUD.show(.progress)
     loadPage(page)
-
   }
+
   private func setupBar() {
     title = "Выбор планеты"
     navigationController?.navigationBar.titleTextAttributes = [
@@ -60,6 +60,7 @@ class LocationViewController<View: LocationsView>: BaseViewController<View> {
       action: #selector(reload)
     )
   }
+
   @objc private func reload() {
     page = 1
     cellVM = []
@@ -68,7 +69,6 @@ class LocationViewController<View: LocationsView>: BaseViewController<View> {
 
     HUD.show(.progress)
     loadPage(page)
-
   }
 
   private func loadPage(_ page: Int) {

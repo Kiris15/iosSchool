@@ -23,6 +23,7 @@ class LocationDataProviderImp: LocationDataProvider {
       }
     }
   }
+
   private let apiClient: LocationApiClient
 
   init(apiClient: LocationApiClient) {

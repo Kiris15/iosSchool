@@ -36,6 +36,7 @@ class CharacterViewImp: UIView, CharacterView {
     collectionView.backgroundColor = .clear
     collectionView.dataSource = self
     collectionView.contentInset = UIEdgeInsets(top: 59, left: 0, bottom: 77, right: 0)
+    collectionView.showsVerticalScrollIndicator = false
 
     let nib = UINib(nibName: CharacterCell.className, bundle: nil)
     collectionView.register(nib, forCellWithReuseIdentifier: CharacterCell.className)
@@ -45,7 +46,6 @@ class CharacterViewImp: UIView, CharacterView {
     collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
     collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
-
   }
 
   func update(data: CharacterViewData) {

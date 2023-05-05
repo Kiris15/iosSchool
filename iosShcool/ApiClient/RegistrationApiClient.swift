@@ -24,6 +24,5 @@ extension ApiClient: RegistrationApiClient {
     let url = NetworkConstants.URLStrings.nanoPost + "auth/register"
     let jsonData = try? JSONSerialization.data(withJSONObject: ["username": username, "password": password])
     performRequest(url: url, data: jsonData, method: .post, onRequestCompleted: onRequestComplited)
-
   }
 }

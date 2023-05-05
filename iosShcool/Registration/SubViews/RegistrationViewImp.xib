@@ -15,8 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="6p5-4E-5Ps">
-                    <rect key="frame" x="0.0" y="0.0" width="390" height="852"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Authbackground" translatesAutoresizingMaskIntoConstraints="NO" id="6p5-4E-5Ps">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95t-rK-gur">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -140,11 +140,15 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="95t-rK-gur" secondAttribute="trailing" id="1cK-1W-epd"/>
                 <constraint firstItem="6p5-4E-5Ps" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4JW-qk-cer"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6p5-4E-5Ps" secondAttribute="trailing" id="AtH-2z-mat"/>
+                <constraint firstItem="6p5-4E-5Ps" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Jyk-JX-MDK"/>
+                <constraint firstItem="6p5-4E-5Ps" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Paz-Mb-mAt"/>
                 <constraint firstItem="95t-rK-gur" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="gJk-9p-Rhd"/>
                 <constraint firstItem="95t-rK-gur" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hiY-FL-2Eh"/>
                 <constraint firstItem="95t-rK-gur" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="knI-Je-FWN"/>
                 <constraint firstAttribute="bottom" secondItem="6p5-4E-5Ps" secondAttribute="bottom" id="mC6-pb-lMX"/>
                 <constraint firstItem="6p5-4E-5Ps" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nqB-Xs-1si"/>
+                <constraint firstAttribute="bottom" secondItem="6p5-4E-5Ps" secondAttribute="bottom" id="toC-mE-LsV"/>
                 <constraint firstAttribute="trailing" secondItem="95t-rK-gur" secondAttribute="trailing" id="z9H-lw-bsR"/>
             </constraints>
             <connections>
@@ -161,8 +165,8 @@
         </view>
     </objects>
     <resources>
+        <image name="Authbackground" width="390" height="844"/>
         <image name="RegistrationIcon" width="56" height="56"/>
-        <image name="background" width="390" height="844"/>
         <namedColor name="Lilac50">
             <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -14,7 +14,7 @@ protocol CabinetAssembly {
 
 extension Assembly: CabinetAssembly {
 
-    func cabinetCoodrinator(escapeToAuth: (() -> Void)?) -> CabinetCoordinator {
+  func cabinetCoodrinator(escapeToAuth: (() -> Void)?) -> CabinetCoordinator {
         CabinetCoordinator(assembly: self, context: .init(escapeToAuth: escapeToAuth))
     }
 

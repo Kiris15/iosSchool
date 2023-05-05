@@ -59,6 +59,8 @@ class LocationsViewImp: UIView, LocationsView {
   }
 }
 
+// MARK: - Extensions
+
 extension LocationsViewImp: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     locationData?.cellVM.count ?? 0
@@ -78,14 +80,13 @@ extension LocationsViewImp: UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-
     guard let locationData, locationData.cellVM.count > indexPath.row else {
       return
     }
     selectLocation?(locationData.cellVM[indexPath.row])
   }
+
   func tableView(_ tabelView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     willDisplayCell?(indexPath)
   }
-
 }

@@ -36,5 +36,4 @@ class AuthDataProviderImp: AuthDataProvider {
   init(apiClient: AuthApiClient) {
     self.apiClient = apiClient
   }
-
 }

@@ -78,7 +78,7 @@ class AuthViewImp: UIView, AuthView {
     )
   }
 
-  // MARK: Actions
+// MARK: - Actions
 
   @IBAction func loginButtonDidTap(sender: UIButton) {
     endEditing(true)
@@ -113,7 +113,7 @@ class AuthViewImp: UIView, AuthView {
     scrollView.contentInset = .zero
   }
 
-  // MARK: - Private methods
+// MARK: - Private methods
 
   private func makeButton(button: CustomButton) {
     button.normalColor = UIColor(named: "VelvetBlue") ?? .white

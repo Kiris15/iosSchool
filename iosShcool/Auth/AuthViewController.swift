@@ -29,13 +29,13 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
     fatalError("init(coder:) has not been implemented")
   }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-      rootView.update(with: AuthViewData())
-      rootView.registrationAction = onOpenRegistration
-      rootView.delegate = self
-    }
+    rootView.update(with: AuthViewData())
+    rootView.registrationAction = onOpenRegistration
+    rootView.delegate = self
+  }
 }
 
 // MARK: - AuthViewDelegate

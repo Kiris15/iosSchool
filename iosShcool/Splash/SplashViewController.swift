@@ -9,24 +9,23 @@ import UIKit
 
 class SplashViewController<View: SplashViewImp>: BaseViewController<View> {
 
-    private let dataProvider: SplashDataProvider
-    private let onSuccess: (() -> Void)?
+  private let dataProvider: SplashDataProvider
+  private let onSuccess: (() -> Void)?
 
-    init(dataProvider: SplashDataProvider, onSuccess: (() -> Void)?) {
-        self.dataProvider = dataProvider
-      self.onSuccess = onSuccess
+  init(dataProvider: SplashDataProvider, onSuccess: (() -> Void)?) {
+    self.dataProvider = dataProvider
+    self.onSuccess = onSuccess
 
-        super.init(nibName: nil, bundle: nil)
-    }
+    super.init(nibName: nil, bundle: nil)
+  }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)

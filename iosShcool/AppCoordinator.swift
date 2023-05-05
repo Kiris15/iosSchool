@@ -18,7 +18,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     self.window = window
     let coordinator = assembly.splashCoordinator { [weak self] in
       self?.startAuth()
-
     }
     setRoot(viewController: coordinator.make())
   }
@@ -33,7 +32,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         switch result {
         case let .success(profile):
           self?.assembly.storageManager.saveUsername(username: profile)
-
         case let .failure(error):
           print(error.localizedDescription)
         }
@@ -67,7 +65,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
   }
 
   private func setRoot(viewController: UIViewController?) {
-
     guard let window, let viewController else {
       return
     }

@@ -13,9 +13,9 @@ protocol CharacterApiClient {
     onRequestComplited: @escaping (Result<Character, ApiError>) -> Void
   )
   func singleCharacter(
-          url: String,
-          completion: @escaping (Result<Character, ApiError>) -> Void
-      )
+    url: String,
+    completion: @escaping (Result<Character, ApiError>) -> Void
+  )
 }
 
 extension ApiClient: CharacterApiClient {
@@ -28,9 +28,9 @@ extension ApiClient: CharacterApiClient {
   }
 
   func singleCharacter(
-          url: String,
-          completion onRequestCompleted: @escaping (Result<Character, ApiError>) -> Void
-      ) {
-          performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
-      }
+    url: String,
+    completion onRequestCompleted: @escaping (Result<Character, ApiError>) -> Void
+  ) {
+    performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
+  }
 }

@@ -24,6 +24,5 @@ extension ApiClient: AuthApiClient {
     let url = NetworkConstants.URLStrings.nanoPost +
                 "/auth/login?username=\(username)&password=\(password)"
     performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestComplited)
-
   }
 }

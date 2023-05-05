@@ -40,11 +40,11 @@ class StorageManagerImp: StorageManager {
   }
 
   // MARK: - Token
+
   func saveToken(token: TokenResponce?) {
     guard let token else {
       return
     }
-
     do {
       try keychain.set(token.token, key: StorageManagerKey.token.rawValue)
       try keychain.set(token.userId, key: StorageManagerKey.userId.rawValue)
@@ -54,7 +54,6 @@ class StorageManagerImp: StorageManager {
   }
 
   func getToken() -> TokenResponce? {
-
     do {
       guard let token = try keychain.get(StorageManagerKey.token.rawValue),
             let userId = try keychain.get(StorageManagerKey.userId.rawValue) else {
@@ -109,6 +108,7 @@ class StorageManagerImp: StorageManager {
   }
 
   // MARK: - Date in userdefaults
+
   func saveDate() {
     let date = Date()
     let format = DateFormatter()
@@ -123,6 +123,7 @@ class StorageManagerImp: StorageManager {
 }
 
 // MARK: - Extensions
+
 private extension StorageManagerImp {
 
   enum StorageManagerKey: String {

@@ -12,9 +12,9 @@ class LocationCell: UITableViewCell {
   var viewModel: LocationCellData? {
     didSet {
       update(viewModel)
-
     }
   }
+
   @IBOutlet private weak var nameLabel: UILabel!
   @IBOutlet private weak var typeLabel: UILabel!
   @IBOutlet private weak var populationLabel: UILabel!
