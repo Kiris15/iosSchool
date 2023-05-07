@@ -12,7 +12,7 @@ protocol RegistrationDataProvider {
     login: String,
     password: String,
     repeatPassword: String,
-    comletion: @escaping (Result<TokenResponce, ApiError>) -> Void
+    comletion: @escaping (Result<TokenResponse, ApiError>) -> Void
   )
 }
 
@@ -21,7 +21,7 @@ class RegistrationDataProviderImp: RegistrationDataProvider {
     login: String,
     password: String,
     repeatPassword: String,
-    comletion: @escaping (Result<TokenResponce, ApiError>) -> Void
+    comletion: @escaping (Result<TokenResponse, ApiError>) -> Void
   ) {
     guard password == repeatPassword else {
       comletion(.failure(ApiError.passwordEqual))

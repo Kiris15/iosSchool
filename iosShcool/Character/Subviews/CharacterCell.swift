@@ -25,6 +25,7 @@ class CharacterCell: UICollectionViewCell {
       return
     }
     layer.cornerRadius = 15
+    backgroundColor = UIColor(named: "CharacterCellBackground")
     imageView.image = viewModel.isLoading ? UIImage(named: "CharacterPlaseholder") : viewModel.image
     systemHud.isHidden = !viewModel.isLoading
     nameLabel.text = viewModel.name

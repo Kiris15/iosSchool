@@ -107,7 +107,6 @@ extension CharacterViewImp: UICollectionViewDataSource {
     guard data.count > indexPath.row else {
       return cell
     }
-    cell.backgroundColor = UIColor(named: "CharacterCellBackground")
     cell.viewModel = data[indexPath.row]
     return cell
   }

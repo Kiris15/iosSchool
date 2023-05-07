@@ -34,7 +34,6 @@
                     <constraint firstItem="WME-rs-Rex" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CYg-rX-XHZ"/>
                     <constraint firstItem="WME-rs-Rex" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="JX0-Kq-uJB"/>
                     <constraint firstAttribute="bottom" secondItem="WME-rs-Rex" secondAttribute="bottom" constant="56" id="PPP-ah-v7g"/>
-                    <constraint firstAttribute="bottom" secondItem="fAi-k4-QUn" secondAttribute="bottom" id="W9R-DE-gIM"/>
                     <constraint firstItem="fAi-k4-QUn" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ZPW-sQ-umZ"/>
                     <constraint firstItem="fAi-k4-QUn" firstAttribute="centerY" secondItem="WME-rs-Rex" secondAttribute="bottom" id="l8d-4j-Uwn"/>
                     <constraint firstAttribute="trailing" secondItem="WME-rs-Rex" secondAttribute="trailing" id="yHc-De-Ahj"/>

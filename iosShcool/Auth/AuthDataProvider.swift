@@ -11,7 +11,7 @@ protocol AuthDataProvider {
   func authorization(
     username: String,
     password: String,
-    comletion: @escaping (Result<TokenResponce, ApiError>) -> Void
+    comletion: @escaping (Result<TokenResponse, ApiError>) -> Void
   )
 }
 
@@ -19,7 +19,7 @@ class AuthDataProviderImp: AuthDataProvider {
   func authorization(
     username: String,
     password: String,
-    comletion: @escaping (Result<TokenResponce, ApiError>) -> Void
+    comletion: @escaping (Result<TokenResponse, ApiError>) -> Void
   ) {
     apiClient.authorization(username: username, password: password) { result in
       switch result {

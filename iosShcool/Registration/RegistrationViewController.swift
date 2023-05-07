@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
@@ -38,11 +39,15 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
 extension RegistrationViewController: RegistrationViewDelegate {
   func registrConfirmButtonDidTap(login: String, password: String, repeatPassword: String) {
+    HUD.show(.progress)
     dataProvider.registration(
       login: login,
       password: password,
       repeatPassword: repeatPassword
     ) { [weak self] resut in
+      DispatchQueue.main.async {
+        HUD.hide()
+      }
       switch resut {
       case .success(let success):
         print(success)

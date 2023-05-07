@@ -39,7 +39,6 @@ class CharacterViewController<View: CharacterView>: BaseViewController<View> {
 
     charactersUrlsList.forEach { url in
       requestCharacter(url: url) { [weak self] character in
-        print(character)
         guard let self else {
           return
         }

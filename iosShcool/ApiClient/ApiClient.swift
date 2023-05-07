@@ -28,21 +28,15 @@ class ApiClient {
     let task = URLSession.shared.dataTask(with: request) { data, _, error in
       if error != nil {
         onRequestCompleted(.failure(.serverError))
-      } else if let data {
-        do {
-          let decodedValue: ResponseModel = try JSONDecoder().decode(ResponseModel.self, from: data)
-            onRequestCompleted(.success(decodedValue))
-        } catch (let error) {
-          print(url)
-          print(error)
-          onRequestCompleted(.failure(.dataParsing))
-        }
+      } else if let data,
+                let decodedValue: ResponseModel = try? JSONDecoder().decode(ResponseModel.self, from: data) {
+        onRequestCompleted(.success(decodedValue))
       } else {
         onRequestCompleted(.failure(.dafault(data)))
       }
     }
-    task.resume()
-  }
+  task.resume()
+}
 
   func requestImageData(url: String, completion: ((Data?) -> Void)?) {
     guard let url = URL(string: url) else {

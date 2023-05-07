@@ -10,8 +10,8 @@ import KeychainAccess
 
 protocol StorageManager {
   func cleanKeychainIfNeeded()
-  func saveToken(token: TokenResponce?)
-  func getToken() -> TokenResponce?
+  func saveToken(token: TokenResponse?)
+  func getToken() -> TokenResponse?
   func removeToken()
 
   func saveUsername(username: Profile?)
@@ -41,7 +41,7 @@ class StorageManagerImp: StorageManager {
 
   // MARK: - Token
 
-  func saveToken(token: TokenResponce?) {
+  func saveToken(token: TokenResponse?) {
     guard let token else {
       return
     }
@@ -53,13 +53,13 @@ class StorageManagerImp: StorageManager {
     }
   }
 
-  func getToken() -> TokenResponce? {
+  func getToken() -> TokenResponse? {
     do {
       guard let token = try keychain.get(StorageManagerKey.token.rawValue),
             let userId = try keychain.get(StorageManagerKey.userId.rawValue) else {
         return nil
       }
-      return TokenResponce(token: token, userId: userId)
+      return TokenResponse(token: token, userId: userId)
     } catch {
       print(error as Any)
     }
@@ -110,11 +110,9 @@ class StorageManagerImp: StorageManager {
   // MARK: - Date in userdefaults
 
   func saveDate() {
-    let date = Date()
     let format = DateFormatter()
     format.dateFormat = "dd.MM.yyyy"
-    let currentDate = format.string(from: date)
-    UserDefaults.standard.set(currentDate, forKey: StorageManagerKey.dateOfEntrance.rawValue)
+    UserDefaults.standard.set(format.string(from: Date()), forKey: StorageManagerKey.dateOfEntrance.rawValue)
   }
 
   func getDate() -> String? {

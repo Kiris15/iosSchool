@@ -13,7 +13,7 @@ class CabinetViewController<View: CabinetView>: BaseViewController<View> {
 
   private let storageManager: StorageManager
 
-  init(escapeToAuth: ( () -> Void)?, storageManager: StorageManager) {
+  init(escapeToAuth: (() -> Void)?, storageManager: StorageManager) {
     self.escapeToAuth = escapeToAuth
     self.storageManager = storageManager
 

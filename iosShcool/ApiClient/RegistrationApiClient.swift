@@ -11,7 +11,7 @@ protocol RegistrationApiClient {
   func registration(
     username: String,
     password: String,
-    onRequestComplited: @escaping (Result<TokenResponce, ApiError>) -> Void
+    onRequestComplited: @escaping (Result<TokenResponse, ApiError>) -> Void
   )
 }
 
@@ -19,7 +19,7 @@ extension ApiClient: RegistrationApiClient {
   func registration(
     username: String,
     password: String,
-    onRequestComplited: @escaping (Result<TokenResponce, ApiError>) -> Void
+    onRequestComplited: @escaping (Result<TokenResponse, ApiError>) -> Void
   ) {
     let url = NetworkConstants.URLStrings.nanoPost + "auth/register"
     let jsonData = try? JSONSerialization.data(withJSONObject: ["username": username, "password": password])

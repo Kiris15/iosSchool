@@ -8,11 +8,11 @@
 import UIKit
 
 protocol LocationsView: UIView {
+  var selectLocation: ((LocationCellData) -> Void)? { get set }
+  var willDisplayCell: ((IndexPath) -> Void)? { get set }
+
   func makeView()
   func update(data: LocationViewData)
-  var selectLocation: ((LocationCellData) -> Void)? { get set }
-
-  var willDisplayCell: ((IndexPath) -> Void)? { get set }
 }
 
 class LocationsViewImp: UIView, LocationsView {

@@ -36,14 +36,14 @@ class ImageServiceImp: ImageService {
       self.imageDict.removeAll()
     }
     DispatchQueue.global().async {
-      self.apiClient.requestImageData(url: url) { data in
+      self.apiClient.requestImageData(url: url) { [weak self] data in
         guard let data = data else {
           return
         }
         let image = UIImage(data: data)
 
-        self.updateQueue.async {
-          self.imageDict[url] = image
+        self?.updateQueue.async {
+          self?.imageDict[url] = image
         }
         completion(image)
       }
